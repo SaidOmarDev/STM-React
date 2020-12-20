@@ -1,0 +1,28 @@
+.head{
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+.head h3{
+    color: #373f50;
+    font-weight: bold;
+    margin-bottom: 0;
+    text-shadow: 0 0 5px .7px #aaa;
+}
+.head a{
+    border: 1px solid rgba(78,84,200,0.35);
+    color: #4e54c8;
+    border-radius: 3px;
+    font-size: 14px;
+    transition: all .3s ease-in-out;
+}
+.head a:hover{
+    background-color: #4e54c8;
+    color: #fff;
+}
+.head button:hover{
+    color: #FE696A !important;
+}
+.head button .angle-right{
+    margin-left: 10px;
+}

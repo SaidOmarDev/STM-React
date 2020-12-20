@@ -1,0 +1,62 @@
+.related-section{
+    background-color: #F6F9FC;
+    padding: 50px 0;
+    margin: 50px 0;
+}
+.related-section .rating-stars{
+    display: none;
+}
+.related-section .product .cart-view{
+    position: absolute;
+    right: .75rem;
+    bottom: .75rem;
+    opacity: 0;
+    z-index: 10;
+    transition: opacity .3s ease-in-out;
+}
+.related-section .product.card:hover .cart-view{
+    opacity: 1;
+}
+.related-section .owl-theme .owl-nav{
+    margin-top: -1.375rem;
+}
+.related-section .owl-theme .owl-nav button{
+    position: absolute;
+    top: 50%;
+    left: -22px;
+    transform: translate(0, -50%);
+    width: 2.75rem;
+    height: 2.75rem;
+    background-color: #fff;
+    border: 1px solid #e3e9ef;
+    margin: 0;
+    border-radius: 50%;
+    font-size: 22px;
+    text-align: center;
+    transition: all .3s ease-in-out;
+    z-index: 1000;
+}
+.related-section .owl-theme .owl-nav button.owl-next{
+    left: auto;
+    right: -22px;
+}
+.related-section .owl-theme .owl-nav button:hover{
+    background-color: #fff;
+    color: #FE696A;
+}
+.related-section .owl-theme .owl-nav button:focus,
+.related-section .owl-theme .owl-dots .owl-dot:focus{
+    box-shadow: none;
+    outline: none;
+}
+.related-section .owl-theme .owl-dots{
+    margin-top: 20px;
+}
+.related-section .owl-theme .owl-dots .owl-dot span{
+    width: 8px;
+    height: 8px;
+}
+.related-section .owl-theme .owl-dots .owl-dot.active span{
+    width: 20px;
+    background-color: #FE696A;
+}

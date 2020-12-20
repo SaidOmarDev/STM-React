@@ -1,0 +1,54 @@
+.review{
+    padding: 50px 0;
+}
+.review .new-product{
+    background-image: linear-gradient( to right, #eff6fa, #fff);
+    margin-bottom: 20px;
+    border-color: #eff6fa;
+}
+.review .new-product .pro-img img {
+    width: 100px;
+    height: 100px;
+}
+.new-product .pro-info .pro-name:hover{
+    color: #232363;
+}
+.review .new-product .qun {
+    display: flex;
+    margin-top: 10px;
+    font-size: 12px;
+    justify-content: space-between;
+    font-weight: 500;
+}
+.shipping-address{
+    padding: 1.25rem;
+    background-color: #eff6fa;
+    margin: 40px 0;
+}
+.shipping-address p{
+    color: #7d879c;
+    font-size: 14px;
+    margin-bottom: .5rem;
+}
+.review .proceed{
+    padding-top: 2rem;
+    border-top: 1px solid #e3e9ef;
+}
+.review .proceed .back{
+    color: #4b566b;
+    background-color: #e3e9ef;
+    padding: 10px 22px;
+}
+.review .proceed .back:hover{
+    background-color: #CDE3F1;
+}
+.review .proceed .go-proceed{
+    color: #fff;
+    background-color: #3838bd;
+    box-shadow: 0 0.5rem 1.125rem -0.5rem rgba(106,106,252,0.9);
+    padding: 10px 22px;
+}
+.review .proceed .go-proceed:hover{
+    background-color: #232363;
+    box-shadow: none;
+}

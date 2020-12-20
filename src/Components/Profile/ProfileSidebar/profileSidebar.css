@@ -1,0 +1,72 @@
+.profile-sidebar .cart-summary{
+    max-width: auto;
+    margin-left: 0;
+    border-radius: .4375rem;
+    background-color: #fff;
+    margin-top: 0;
+    padding: 1.875rem 0 0;
+}
+.profile-sidebar .cart-summary .user-prief{
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding: 0 1.5rem;
+}
+.profile-sidebar .cart-summary .user-prief img{
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    margin-right: 10px;
+}
+.profile-sidebar .cart-summary .user-prief .user-info h6{
+    color: #4b566b;
+    text-transform: capitalize;
+    font-size: 16px;
+}
+.profile-sidebar .cart-summary .user-prief .user-info p{
+    color: #696ED0;
+    font-size: 14px;
+    margin-bottom: 0;
+}
+.profile-sidebar .cart-summary h3{
+    background-color: #f6f9fc;
+    padding: 1rem 1.5rem;
+    font-size: .875rem;
+    font-weight: 500;
+    color: #696ED0;
+    margin-bottom: 0;
+}
+.profile-sidebar .cart-summary ul{
+    margin-bottom: 0;
+}
+.profile-sidebar .cart-summary ul li{
+    border-bottom: 1px solid #e3e9ef;
+}
+.profile-sidebar .cart-summary ul li a{
+    padding: 1rem 1.5rem;
+    display: block;
+    color: #5c5f91;
+    text-transform: capitalize;
+    transition: all .3s ease-in-out;
+}
+.profile-sidebar .cart-summary ul li:last-child{
+    border-bottom: none;
+}
+.profile-sidebar .cart-summary ul li a.active{
+    color: #232363;
+}
+.profile-sidebar .cart-summary ul li a:hover{
+    text-decoration: none;
+    color: #232363;
+}
+.profile-sidebar .cart-summary ul li a .profile-icons{
+    margin-right: .5rem;
+    opacity: .9;
+    margin-top: -.125rem;
+    font-size: 16px;
+}
+.profile-sidebar .cart-summary ul li a span{
+    float: right;
+    color: #7d879c;
+}

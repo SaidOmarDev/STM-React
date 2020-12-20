@@ -1,0 +1,7 @@
+.rating-stars span{
+    color: #fea569;
+    font-size: .75rem;
+    display: flex;
+    height: 100%;
+    align-items: center;
+}

@@ -1,0 +1,42 @@
+.search .input-group .btn{
+    border-radius: 0;
+    border-color: #ddd;
+    background-color: #fff;
+}
+.search .input-group .form-control{
+    font-size: 13px;
+    color: #232363;
+    padding: .7rem .75rem;
+    height: 100%;
+    border-radius: 0;
+    border-color: #ddd;
+}
+.search .input-group .search-icon{
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translate(0, -50%);
+    color: #232363;
+    transition: color .2s ease-in-out;
+    font-size: 25px;
+    z-index: 100;
+}
+.search .input-group .search-icon:hover{
+    cursor: pointer;
+}
+.search .input-group .input-group-prepend{
+    border-right: 1px solid #ccc;
+}
+.shop-sidebar .search .input-group-prepend{
+    display: none;
+}
+.shop-sidebar .search .input-group{
+    margin-bottom: 10px;
+}
+.shop-sidebar .search .input-group .form-control{
+    border-radius: 3px;
+    padding: 10px 15px;
+}
+.shop-sidebar .search .input-group .search-icon{
+    font-size: 18px;
+}

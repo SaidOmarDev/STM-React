@@ -1,0 +1,40 @@
+.about{
+    padding: 50px 0;
+}
+.about .main-img{
+    width: 100%;
+    height: 100%;
+}
+.about .main-content{
+    padding: 0 50px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.about .main-content h3{
+    padding-bottom: 10px;
+    color: #373f50;
+}
+.about .main-content p{
+    font-size: 13px;
+    color: #586175;
+}
+.about .main-content .btn{
+    width: max-content;
+    color: #fff;
+    background-color: #3838bd;
+    box-shadow: 0 0.5rem 1.125rem -0.5rem rgba(56,56,189,0.9);
+}
+.about .main-content .btn.app{
+    width: auto;
+    padding: 0;
+    width: 150px;
+    /* height: 50px; */
+    background-color: #fff;
+    box-shadow: none;
+}
+.about .main-content .btn.app img{
+    width: 100%;
+    height: 100%;
+}

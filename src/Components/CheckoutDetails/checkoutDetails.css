@@ -1,0 +1,99 @@
+.checkout-details{
+    padding: 50px 0;
+}
+.details .user{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #F6F9FC;
+    padding: 1.5rem;
+    margin-bottom: 30px;
+    border-radius: 5px;
+}
+.details .user-prief{
+    display: flex;
+    align-items: center;
+}
+.details .user-prief img{
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    margin-right: 10px;
+}
+.details .user-prief .user-info h6{
+    color: #373f50;
+    text-transform: capitalize;
+    font-size: 16px;
+}
+.details .user-prief .user-info p{
+    color: #4e54c8;
+    font-size: 14px;
+    margin-bottom: 0;
+}
+.details .user>a{
+    box-shadow: 0 0.5rem 1.125rem -0.5rem rgba(0,0,0,0.15);
+    padding: .425rem 1rem;
+    font-size: .8125rem;
+    line-height: 1.5;
+    border-radius: .1875rem;
+    color: #4b566b;
+    background-color: #fff;
+}
+.details .user>a:hover{
+    box-shadow: none;
+}
+.details .user>a .fa-edit{
+    margin-right: 5px;
+    font-size: 14px;
+}
+
+.details > h6{
+    padding-top: .25rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e3e9ef;
+    margin-bottom: 1rem;
+    font-weight: 500;
+    line-height: 1.2;
+    color: #373f50;
+    text-transform: capitalize;
+}
+.details form{
+    margin-bottom: 2rem;
+}
+.details label{
+    color: #373f50;
+    padding-top: .0625rem;
+    font-size: .875rem;
+}
+.details input{
+    padding: .625rem 1rem;
+    font-size: .9375rem;
+    color: #4b566b;
+    border: 1px solid #e3e9ef;
+    border-radius: .3125rem;
+    box-shadow: 0 0 0 0 transparent;
+    transition: border-color 0.2s ease-in-out,box-shadow 0.2s ease-in-out;
+}
+.details .proceed{
+    padding-top: 3rem;
+    border-top: 1px solid #e3e9ef;
+}
+.details .proceed .back{
+    color: #4b566b;
+    background-color: #e3e9ef;
+    padding: 10px 22px;
+}
+.details .proceed .back:hover{
+    background-color: #CDE3F1;
+}
+.details .proceed .go-proceed{
+    color: #fff;
+    background-color: #3838bd;
+    box-shadow: 0 0.5rem 1.125rem -0.5rem rgba(106,106,252,0.9);
+    padding: 10px 22px;
+}
+.details .proceed .go-proceed:hover{
+    background-color: #232363;
+    box-shadow: none;
+}

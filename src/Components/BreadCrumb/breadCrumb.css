@@ -1,0 +1,40 @@
+.details-header{
+    background-color: #0e0e33;
+    padding: 25px 0;
+    margin: 30px 0 50px;
+}
+.details-header .header-content{
+    display: flex;
+    justify-content: space-between;
+}
+.details-header h3{
+    text-transform: capitalize;
+    color: #fff;
+    font-weight: 500;
+    margin-bottom: 10px;
+    font-size: 28px;
+}
+.details-header .pro-reviews .fa-star{
+    font-size: 12px;
+    color: #fea569;
+}
+.details-header .breadcrumb{
+    background-color: transparent;
+    font-size: .8125rem;
+    font-weight: normal;
+    padding: 0;
+}
+.details-header .breadcrumb .active{
+    color: #ccc;
+}
+.details-header .breadcrumb a{
+    color: #fff;
+    font-size: .8125rem;
+    font-weight: normal;
+}
+.details-header .rating-nums{
+     color: #ccc;
+     font-weight: 500;
+     font-size: 14px;
+     margin-left: 5px;
+}

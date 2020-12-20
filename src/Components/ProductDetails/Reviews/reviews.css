@@ -1,0 +1,100 @@
+.avg-rating h2{
+    font-weight: 500;
+    line-height: 1.2;
+    color: #373f50;
+    font-size: 28px;
+    margin-bottom: 24px;
+}
+.avg-rating .fa-star{
+    font-size: 14px;
+    color: #4e54c8;
+}
+.avg-rating .overall-rating{
+    font-size: 16px;
+    margin-left: 5px;
+    color: #4b566b;
+}
+.avg-rating p{
+    padding-top: 16px;
+    font-size: 14px;
+    color: #7d879c;
+}
+.avg-rating .star-numbers{
+    display: flex;
+    align-items: center;
+    margin-bottom: .5rem;
+}
+.avg-rating .star-numbers .star-number{
+    white-space: nowrap;
+    margin-right: 1rem;
+    color: #7d879c;
+}
+.avg-rating .star-numbers .star-number .fa-star{
+    font-size: 12px;
+    color: #4b566b;
+}
+.avg-rating .star-numbers .progress{
+    background-color: #f3f5f9;
+    height: 4px;
+}
+.avg-rating .star-numbers .rating-number{
+    margin-left: 1rem;
+    color: #7d879c;
+}
+.reviews .customer-reviews .customer-info{
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+}
+.reviews .customer-reviews .customer-info .main-cust-info{
+    display: flex;
+    align-items: center;
+    padding-right: .5rem;
+    margin-right: 1.5rem;
+}
+.reviews .customer-reviews .customer-info .main-cust-info img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+.reviews .customer-reviews .customer-info .main-cust-info h5{
+    color: #373F50;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+.reviews .customer-reviews p{
+    margin-bottom: 0;
+    font-size: 13px;
+    color: #7d879c;
+}
+.reviews .customer-reviews> p{
+    font-size: 14px;
+    margin: 1rem 0 2rem;
+}
+.reviews .customer-reviews .customer-info .fa-star{
+    color: #fea569;
+    font-size: .75rem;
+}
+.reviews form{
+    margin: 1.5rem 0;
+    padding: 1.5rem;
+    background-color: #f6f9fc;
+    overflow: hidden;
+}
+.reviews form,
+.reviews form input,
+.reviews form textarea{
+    font-size: 14px;
+}
+.reviews form button{
+    float: right;
+    background-color: #6a6afc;
+    color: #fff;
+    box-shadow: 0 0.5rem 1.125rem -0.5rem rgba(106, 106, 252,0.9);
+}
+.reviews form button:hover{
+    background-color: #232363;
+    box-shadow: none;
+    color: #fff;
+}

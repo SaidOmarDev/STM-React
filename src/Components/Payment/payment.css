@@ -1,0 +1,28 @@
+.billing-info{
+    padding: 50px 0;
+}
+.billing-info .card{
+    box-shadow: 0 0.3rem 1.525rem -0.375rem rgba(0,0,0,0.1);
+    padding: 1.875rem;
+    border-radius: .4375rem;
+    border-color: transparent;
+}
+.billing-info .card .input-group-text{
+    background-color: #eff6fa;
+    color: #3838bd;
+}
+.billing-info .btn.complete{
+    border: 1px solid #3838bd;
+    color: #fff;
+    background-color: #3838bd;
+    box-shadow: 0 0.5rem 1.125rem -0.5rem rgba(56, 56, 189, .9);
+    float: right;
+    font-size: 15px;
+    transition: all .3s ease-in-out;
+    padding: 10px 22px;
+    margin: 15px 0;
+}
+.billing-info .btn.complete:hover{
+    background-color: #232363;
+    box-shadow: none;
+}

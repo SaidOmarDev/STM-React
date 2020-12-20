@@ -1,0 +1,48 @@
+input.form-control:focus{
+    box-shadow: none;
+    outline: none;
+}
+.main-header{
+    padding: 40px 0;
+    background-color: #eff6fa;
+}
+.main-header .row>div{
+    align-items: center;
+}
+.main-header .navbar-brand{
+    color: #6a6afc;
+    font-weight: bold;
+}
+.main-header .shop-setting{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.main-header .shop-setting>div{
+    display: flex;
+    justify-content: space-between;
+}
+.main-header .shop-setting .wishlist{
+    margin-right: 25px;
+}
+.main-header .shop-setting .main-icon{
+    font-size: 32px;
+    margin-right: 5px;
+    color: #6a6afc;
+}
+.main-header .shop-setting a{
+    display: flex;
+    color: #303030;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: -5px;
+}
+.main-header .shop-setting a:hover{
+    text-decoration: none;
+    color: #6a6afc;
+
+}
+.main-header .shop-setting span{
+    color: #7a7a7a;
+    font-size: 12px;
+}

@@ -1,0 +1,12 @@
+.quantity .input-group{
+    width: 150px;
+}
+.quantity .form-control{
+    text-align: center;
+}
+.quantity .input-group-text{
+    background-color: #fff;
+}
+.quantity .input-group-text:hover{
+    background-color: #eee;
+}

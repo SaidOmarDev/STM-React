@@ -1,0 +1,11 @@
+.pagination{
+    justify-content: center;
+    margin-top: 20px;
+}
+.pagination .page-link{
+    color: #232363;
+}
+.pagination .page-link:focus{
+    box-shadow: none;
+    outline: none;
+}

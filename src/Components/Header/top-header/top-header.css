@@ -1,0 +1,71 @@
+.topHeader{
+    background-color: #0e0e33;
+    color: #f7f7f7;
+    padding: 10px 0;
+    font-size: 12px !important;
+}
+.topHeader .right,
+.topHeader .left,
+.topHeader .login{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+}
+.topHeader .right>div .fas{
+    margin-right: 5px;
+}
+.topHeader .right .email{
+    padding-right: 10px;
+    border-right: 1px solid #7a7a7a;
+}
+.topHeader .right .phone{
+    margin-right: 15px;
+    padding-left: 10px;
+    border-left: 1px solid #7a7a7a;
+}
+.topHeader .right .top-icon{
+    font-size: 18px;
+    color: #6a6afc;
+    margin-right: 5px;
+}
+.topHeader .left a{
+    color: #f7f7f7;
+}
+.topHeader .left a:hover{
+    color: #fff;
+    text-decoration: none;
+}
+.topHeader .left .dropdown-menu{
+    top: 5px !important;
+    min-width: max-content;
+    font-size: 12px;
+}
+.topHeader .left .dropdown-menu .dropdown-item:hover{
+    background-color: #eee;
+    cursor: pointer;
+}
+.topHeader .left img{
+    margin-right: 5px;
+    width: 25px !important;
+}
+.topHeader .login{
+    justify-content: flex-end;
+}
+.topHeader .login .user-icon{
+    font-size: 20px;
+    margin-right: 5px;
+}
+.topHeader .login a{
+    color: #f7f7f7;
+    font-weight: 500;
+    padding: 0 5px;
+    transition: color .2s ease-in-out;
+}
+.topHeader .login a:first-of-type{
+    border-right: 1px solid #7a7a7a;
+}
+.topHeader .login a:hover{
+    text-decoration: none;
+    color: #6a6afc;
+}

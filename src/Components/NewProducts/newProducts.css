@@ -1,0 +1,23 @@
+.new-section{
+    padding: 100px 0;
+}
+.new-section .owl-theme .owl-dots{
+    width: fit-content;
+    margin: 0 auto;
+}
+.new-section .owl-theme .owl-dots .owl-dot:focus{
+    box-shadow: none;
+    outline: none;
+}
+.new-section .owl-theme .owl-dots .owl-dot span{
+    width: 8px;
+    height: 8px;
+    display: inline-block;
+    margin: 5px;
+    border-radius: 5px;
+    background-color: rgb(212, 212, 212);
+}
+.new-section .owl-theme .owl-dots .owl-dot.active span{
+    width: 20px;
+    background-color: #FE696A;
+}
