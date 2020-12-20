@@ -3,20 +3,20 @@ import './deals.css';
 import dealImg from '../../../assets/images/deals.png'
 
 const Deals = (props) => {
-    const [hours, setHours] = useState('10');
-    const [mins, setMins] = useState('15');
-    const [secs, setSecs] = useState('44');
-    const timeClock = () => {
-        let myDate = new Date();
-        let hours = myDate.getHours();
-        setHours(hours);
-        let minutes = myDate.getMinutes(); 
-        minutes = minutes < 10 ? '0' + minutes : minutes;
-        setMins(minutes);
-        let seconds = myDate.getSeconds();
-        seconds = seconds < 10 ? '0' + seconds : seconds;
-        setSecs(seconds);
-    }
+    // const [hours, setHours] = useState('10');
+    // const [mins, setMins] = useState('15');
+    // const [secs, setSecs] = useState('44');
+    // const timeClock = () => {
+    //     let myDate = new Date();
+    //     let hours = myDate.getHours();
+    //     setHours(hours);
+    //     let minutes = myDate.getMinutes(); 
+    //     minutes = minutes < 10 ? '0' + minutes : minutes;
+    //     setMins(minutes);
+    //     let seconds = myDate.getSeconds();
+    //     seconds = seconds < 10 ? '0' + seconds : seconds;
+    //     setSecs(seconds);
+    // }
     useEffect(()=>{
         // const timer = setTimeout(()=>{
         //     timeClock();
