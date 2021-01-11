@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+
 import BreadCrumb from '../../SecondaryComponents/BreadCrumb/breadCrumb';
 import CartSummary from '../../MainPartialComponents/CartSummary/cartSummary'
 import OrderSteps from '../../SecondaryComponents/OrderSteps/orderSteps'
@@ -7,6 +9,11 @@ import {FaEdit, FaAngleLeft, FaAngleRight} from 'react-icons/fa'
 import './checkoutDetails.css'
 
 const CheckoutDetails = (props) => {
+    const cart = useSelector((state) => state.cart.items)
+
+    let grandTotal = 0;
+    cart.map(item => grandTotal += item.price * item.quantity);
+
     return (
         <React.Fragment>
             <BreadCrumb pagename="Checkout Details"/>
@@ -68,13 +75,13 @@ const CheckoutDetails = (props) => {
                                         <Link to="/shoppingCart" className="btn btn-block back"><FaAngleLeft className="checkout-icons"/> back to cart</Link>
                                     </div>
                                     <div className="col-md-6">
-                                        <Link to="#" className="btn btn-block go-proceed"> proceed to payment <FaAngleRight className="checkout-icons"/></Link>
+                                        <Link to="/payment" className="btn btn-block go-proceed"> proceed to payment <FaAngleRight className="checkout-icons"/></Link>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div className="col-md-4">
-                            <CartSummary />
+                            <CartSummary page="checkout" grandTotal={grandTotal}/>
                         </div>
                     </div>
                 </div>

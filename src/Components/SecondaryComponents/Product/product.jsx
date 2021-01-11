@@ -5,7 +5,7 @@ import {addToCart} from '../../../actions/cartActions'
 import {addToWishlist} from '../../../actions/wishlistActions'
 
 import RateStars from '../RateStars/rate-stars'
-import {FaShoppingCart} from 'react-icons/fa'
+import {FaShoppingCart, FaHeart} from 'react-icons/fa'
 import {BiHeart} from 'react-icons/bi'
 import {AiFillCheckCircle} from 'react-icons/ai'
 import './product.css'
@@ -30,7 +30,7 @@ const Product = (props) => {
                     <span className="status badge badge-danger">sale</span>
                 </div>
                 {props.inWishlist ? 
-                    (<span className="fav active" ><BiHeart className="fav-icon"/></span>): 
+                    (<span className="fav active" ><FaHeart className="fav-icon"/></span>): 
                     (<span className="fav"  onClick={()=>addToWishListHandler(props.product)}><BiHeart className="fav-icon"/></span>)
                 }
             </div>
@@ -48,7 +48,7 @@ const Product = (props) => {
                 </div>
                 <div className="cart-view">
                     {props.inCart ? 
-                        <div className="btn d-block added-cart">Added to cart <AiFillCheckCircle className="added-icon"/></div> : 
+                        <Link to="/shoppingCart" className="btn d-block added-cart"><FaShoppingCart className="cart-icon"/>View Cart <AiFillCheckCircle className="added-icon"/></Link> : 
                         <button className="btn add-cart d-block" onClick={()=>addToCartHandler(props.product)}><FaShoppingCart className="cart-icon"/>{props.addText}</button>
                     }
                     {/* <button className="btn q-view d-block"><FaEye className="view-icon"/>Quick View</button> */}

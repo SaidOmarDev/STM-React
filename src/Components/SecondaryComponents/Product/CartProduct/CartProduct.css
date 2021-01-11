@@ -72,10 +72,8 @@
     cursor: pointer;
   }
   .cart-product.card .fav.active{
-    background-color: #FE696A;
-    color: #fff;
+    color: #FE696A;
   }
   .cart-product.card .fav.active:hover{
-    color: #fff;
     cursor: default;
   }

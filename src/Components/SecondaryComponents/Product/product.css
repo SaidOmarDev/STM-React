@@ -66,11 +66,11 @@
     z-index: 1000;
   }
   .product.card .fav.active{
-    background-color: #FE696A;
-    color: #fff;
+    /* background-color: #FE696A; */
+    color: #FE696A;
   }
   .product.card .fav.active:hover{
-    color: #fff;
+    /* color: #fff; */
     cursor: default;
   }
   .product.card .fav:hover{
@@ -148,8 +148,9 @@
     background-color: #232363;
     box-shadow: none;
   }
-  .product.card .cart-view .add-cart .cart-icon,
-  .product.card .cart-view .q-view .view-icon{
+  .product.card .cart-view .added-cart .cart-icon,
+  .product.card .cart-view .q-view .view-icon,
+  .product.card .cart-view .add-cart .cart-icon{
     margin-right: 5px;
     font-size: 18px;
   }

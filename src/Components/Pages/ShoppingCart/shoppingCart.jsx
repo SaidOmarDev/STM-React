@@ -54,7 +54,7 @@ const ShoppingCart = (props) => {
                             
                         </div>
                         <div className="col-md-4">
-                            <CartSummary grandTotal={grandTotal}/>
+                            <CartSummary page="cart" grandTotal={grandTotal}/>
                         </div>
                     </div>
                     {/* <Related/> */}

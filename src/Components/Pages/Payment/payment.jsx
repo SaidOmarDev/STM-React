@@ -12,7 +12,7 @@ const Payment = (props) => {
             <div className="billing-info">
                 <div className="container">
                     <div className="row">
-                        <div className="col-md-8">
+                        <div className="col-lg-8">
                             <OrderSteps page="payment"/>
                             <div className="card mb-4">
                                 <h4 className="mb-3">Payment</h4>
@@ -48,8 +48,8 @@ const Payment = (props) => {
                                 </form>
                             </div>
                         </div>
-                        <div className="col-md-4">
-                            <CartSummary />
+                        <div className="col-lg-4">
+                            {/* <CartSummary /> */}
                         </div>
                     </div>
                 </div>

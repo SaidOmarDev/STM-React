@@ -18,7 +18,7 @@ const ProfileInfo = (props) => {
                     </div>
                     <div className="profile-info">
                         <div className="user-prief">
-                            <img src="./images/avatar.png" alt=""/>
+                            <img src="/images/avatar.png" alt=""/>
                             <div className="user-info">
                                 <button className="btn"><i className="far fa-edit"></i>Change photo</button>
                                 <p>Said Omar</p>

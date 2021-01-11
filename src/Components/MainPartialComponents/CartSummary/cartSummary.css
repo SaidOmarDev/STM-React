@@ -5,6 +5,11 @@
     border-radius: .4375rem;
     position: relative;
 }
+.cart-summary .order-products{
+    height: 150px;
+    margin-bottom: 20px;
+    overflow: auto;
+}
 .cart-summary h4{
     text-transform: capitalize;
     color: #373f50;

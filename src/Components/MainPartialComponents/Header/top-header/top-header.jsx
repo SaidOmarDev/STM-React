@@ -15,16 +15,16 @@ const TopHeader = (props) => {
                             <div className="lang">
                                 <div className="dropdown">
                                     <a href="#" className="dropdown-toggle" data-toggle="dropdown">
-                                        <img src="./images/eng.png" alt="English"/>
+                                        <img src="/images/eng.png" alt="English"/>
                                         Eng
                                     </a>
                                     <ul className="dropdown-menu">
                                         <li className="dropdown-item">
-                                            <img src="./images/eng.png" alt="English"/>
+                                            <img src="/images/eng.png" alt="English"/>
                                             Eng
                                         </li>
                                         <li className="dropdown-item">
-                                            <img src="./images/ar.png" alt="English"/>
+                                            <img src="/images/ar.png" alt="English"/>
                                             عربي
                                         </li>
                                     </ul>

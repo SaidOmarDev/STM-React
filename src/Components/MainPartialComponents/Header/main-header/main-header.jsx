@@ -21,14 +21,14 @@ const MainHeader = (props) => {
                     <div className="col-md-4">
                         <div className="shop-setting">
                             <div className="wishlist">
-                                <AiOutlineShoppingCart className="main-icon"/>
+                                <FaRegHeart className="main-icon"/>
                                 <div>
                                     <Link to="/profile/wishlist">Wishlist</Link>
                                     <span>{wishlist.length}</span>
                                 </div>
                             </div>
                             <div className="cart">
-                                <FaRegHeart className="main-icon"/>
+                                <AiOutlineShoppingCart className="main-icon"/>
                                 <div>
                                     <Link to="/shoppingCart">Cart</Link>
                                     <span>EGP {500}</span>

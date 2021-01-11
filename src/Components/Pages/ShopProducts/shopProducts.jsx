@@ -1,6 +1,5 @@
-import React, { useEffect } from 'react'
-import {useDispatch, useSelector} from 'react-redux'
-import {fetchProducts} from '../../../actions/productActions'
+import React from 'react'
+import {useSelector} from 'react-redux'
 
 
 import BreadCrumb from '../../SecondaryComponents/BreadCrumb/breadCrumb'

@@ -7,7 +7,7 @@ import {removeFromWishlist, addToWishlist} from '../../../../actions/wishlistAct
 import RateStars from '../../RateStars/rate-stars'
 import {BiHeart} from 'react-icons/bi'
 import {MdRemoveShoppingCart} from 'react-icons/md'
-import {FaShoppingCart} from 'react-icons/fa'
+import {FaShoppingCart, FaHeart} from 'react-icons/fa'
 import {TiDeleteOutline} from 'react-icons/ti'
 import './CartProduct.css'
 
@@ -107,7 +107,7 @@ const CartProduct = (props) => {
                             <React.Fragment>
                                 {props.inWishlist ? 
                                     <span className="fav btn active">
-                                        <BiHeart className="fav-icon"/>
+                                        <FaHeart className="fav-icon"/>
                                     </span>
                                     : 
                                     <span className="fav btn" onClick={()=>addToWishlistHandler(props.product)}>

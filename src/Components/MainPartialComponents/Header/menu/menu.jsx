@@ -126,7 +126,7 @@ const Menu = (props) => {
                             <div className="navbar-nav">
                                 <NavLink className="nav-link" to="/" exact>Home <span className="sr-only">(current)</span></NavLink>
                                 <NavLink className="nav-link" to="/shopProducts">Shop</NavLink>
-                                <NavLink className="nav-link" to="/review">Review</NavLink>
+                                <NavLink className="nav-link" to="/profile/orders">Orders</NavLink>
                                 <NavLink className="nav-link" to="/about">About Us</NavLink>
                                 <NavLink className="nav-link" to="/contacts">Contacts</NavLink>
                             </div>
