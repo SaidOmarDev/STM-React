@@ -1,0 +1,59 @@
+.order {
+    margin-bottom: 20px;
+}
+.order .card{
+    border: none;
+    box-shadow: 0 0.3rem 1.525rem -0.375rem rgba(225,225,255,1);
+}
+.order .card .card-header{
+    background-color: #fff;
+}
+.order .card .card-header p{
+    margin-bottom: 0;
+}
+.order .card .card-header p span{
+    margin-right: 15px;
+}
+.order .card .card-header p span.order-id{
+    color: #232363;
+    font-weight: 500;
+}
+.order .card .card-body h5{
+    color: #6565ee;
+}
+.order .card .card-body .pay-code{
+    color: #00b517 !important;
+}
+.order .card .card-body .order-total{
+    font-weight: 500;
+}
+.order .card .card-body .order-product{
+    padding: 10px;
+    border-top: 1px solid #eee;
+    display: flex;
+    font-weight: normal;
+    font-size: 15px;
+    color: #232363;
+    justify-content: space-between;
+    transition: all .2s ease-in-out;
+    /* align-items: center; */
+}
+.order .card .card-body .order-product:hover{
+    background-color: rgb(240, 240, 240);
+}
+.order .card .card-body .order-product img{
+    width: 50px;
+    height: 50px;
+}
+.order .card .card-body .order-product .btn{
+    border-color: #a7a7ff;
+    margin-left: 5px;
+    transition: all .2s ease-in-out;
+}
+.order .card .card-body .order-product .btn:hover{
+    border-color: #6565ee;
+    background-color: #e2e2ff;
+}
+.order .card .card-body .order-product .price{
+    font-weight: 700;
+}

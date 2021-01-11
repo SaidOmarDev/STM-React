@@ -1,0 +1,70 @@
+.offers{
+    padding: 50px 0;
+}
+.deals-card{
+    padding: 85px 50px 35px;
+    box-shadow: 0px 10px 25px rgba(0,0,0,0.1);
+    border-radius: 5px;
+    border-color: transparent;
+}
+.deals-card .title {
+    position: absolute;
+    top: 27px;
+    left: 40px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #000000;
+}
+
+.offers .offers-cards button.slick-arrow{
+    position: relative;
+    display: flex;
+    width: 100%;
+}
+.offers .offers-cards button.slick-arrow::before{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 0;
+    font-size: 28px;
+    margin: 5px;
+    color: #666666;
+    transition: all 200ms ease;
+}
+.offers .offers-cards .slick-arrow.slick-prev{
+    right: 20px;
+}
+.slick-dots li{
+    padding: 0;
+    margin: 0;
+}
+.slick-dots li.slick-active button:before{
+    font-size: 18px;
+    color: #232363;
+    opacity: 1;
+}
+.slick-dots li button:before{
+    color: #9898ff;
+    font-size: 12px;
+    transition: all .2s ease-in-out;
+}
+
+.offers .owl-theme .owl-nav button:hover{
+    background-color: transparent;
+    color: #FE696A;
+}
+.offers .owl-theme .owl-nav button:focus{
+    box-shadow: none;
+    outline: none;
+}
+.offers .offers-cards{
+    position: relative;
+}
+.offers .product{
+    margin: 0 8px 20px;
+}
+.offers .offers-cards .owl-nav {
+    display: block !important;
+    top: -10px;
+    right: 10px;
+}

@@ -1,9 +1,11 @@
 import React from 'react'
+import BreadCrumb from '../BreadCrumb/breadCrumb';
 import ProfileSidebar from './ProfileSidebar/profileSideBar'
 
 const Profile = (props) => {
     return ( 
         <div className="profile">
+            <BreadCrumb />
             <div className="container">
                 <div className="row">
                     <div className="col-md-4">

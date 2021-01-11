@@ -1,0 +1,52 @@
+.profile-data .wishlist-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 0.3rem 1.525rem -0.375rem rgba(225,225,255,1);
+}
+.profile-data .wishlist-header .btn{
+    color: #fff;
+    background-color: #f34770;
+}
+.profile-data .profile-info .user-prief {
+    display: flex;
+    align-items: center;
+    background-color: #F6F9FC;
+    padding: 1rem;
+    margin-bottom: 30px;
+    border-radius: 5px;
+}
+.profile-data .profile-info .user-prief img {
+    width: 90px;
+    height: 90px;
+    border: 3px solid #fff;
+    margin-right: 10px;
+}
+.profile-data .profile-info .user-prief .user-info .btn {
+    box-shadow: 0 0.5rem 1.125rem -0.5rem rgba(0,0,0,0.15);
+    padding: .425rem 1rem;
+    font-size: .8125rem;
+    line-height: 1.5;
+    border-radius: .1875rem;
+    color: #4b566b;
+    background-color: #fff;
+    margin-bottom: 10px;
+    transition: all .2 ease-in-out;
+}
+.profile-data .profile-info .user-prief .user-info .btn:hover{
+    box-shadow: none;
+}
+.profile-data .profile-info form .btn {
+    background-color: #3434d3;
+    color: white;
+    font-weight: 500;
+    font-size: 14px;
+    box-shadow: 0 0.5rem 1.125rem -0.5rem rgba(106,106,252,0.9);
+    float: right;
+}
+.profile-data .profile-info form .btn:hover{
+    box-shadow: none;
+    background-color: 232363;
+}

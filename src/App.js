@@ -1,30 +1,52 @@
 import {Switch, Route} from 'react-router-dom'
+import {useDispatch} from 'react-redux'
+import {fetchProducts} from './actions/productActions'
+import {fetchCart} from './actions/cartActions'
+import { fetchWishlist } from './actions/wishlistActions'
 
 import './App.css';
-import Header from './Components/Header/header';
-import Footer from './Components/Footer/footer';
-import ProductDetails from './Components/ProductDetails/productDetails';
-import Home from './Components/Home/Home';
-import ShoppingCart from './Components/ShoppingCart/shoppingCart';
-import Wishlist from './Components/Profile/Wishlist/wishlist';
-import ShopProducts from './Components/ShopProducts/shopProducts';
-import ProfileInfo from './Components/Profile/ProfileInfo/profileInfo';
-import Orders from './Components/Profile/Orders/orders';
-import Addresses from './Components/Profile/Addresses/addresses';
-import CheckoutDetails from './Components/CheckoutDetails/checkoutDetails';
-import Payment from './Components/Payment/payment';
-import Review from './Components/Review/review';
-import Login from './Components/Login/login';
-import Register from './Components/Register/register';
-import Contacts from './Components/Contacts/contacts';
-import About from './Components/About/about';
+import Header from './Components/MainPartialComponents/Header/header';
+import Footer from './Components/MainPartialComponents/Footer/footer';
+import ProductDetails from './Components/Pages/ProductDetails/productDetails';
+import Home from './Components/Pages/Home/Home';
+import ShoppingCart from './Components/Pages/ShoppingCart/shoppingCart';
+import Wishlist from './Components/Pages/Wishlist/wishlist';
+import ShopProducts from './Components/Pages/ShopProducts/shopProducts';
+import ProfileInfo from './Components/Pages/ProfileInfo/profileInfo';
+import Orders from './Components/Pages/Orders/orders';
+import Addresses from './Components/Pages/Addresses/addresses';
+import CheckoutDetails from './Components/Pages/CheckoutDetails/checkoutDetails';
+import Payment from './Components/Pages/Payment/payment';
+import Review from './Components/Pages/Review/review';
+import Login from './Components/Pages/Login/login';
+import Register from './Components/Pages/Register/register';
+import Contacts from './Components/Pages/Contacts/contacts';
+import About from './Components/Pages/About/about';
+import { useEffect } from 'react';
 
-function App() {
+function App(props) {
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(fetchProducts());
+  })
+
+  useEffect(() => {
+    dispatch(fetchCart());
+  },[dispatch]);
+
+  useEffect(() => {
+      dispatch(fetchWishlist());
+  },[dispatch]);
+
   return (
     <div className="">
         <Header />
         <Switch>
-          <Route path="/productDetails" component={ProductDetails} />
+          <Route path="/productDetails/:id" render={(props)=>(
+            <ProductDetails
+              {...props}
+            />)} />
           <Route path="/shoppingCart" component={ShoppingCart} />
           <Route path="/profile/wishlist" component={Wishlist} />
           <Route path="/shopProducts" component={ShopProducts} />

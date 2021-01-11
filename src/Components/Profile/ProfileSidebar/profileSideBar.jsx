@@ -1,15 +1,14 @@
 import React from 'react'
-import {FaShoppingBag, FaRegHeart, FaRegUser, FaMapMarkerAlt} from 'react-icons/fa'
 import { NavLink } from 'react-router-dom'
-
-import avatar from '../../../assets/images/avatar.png'
+import {FaShoppingBag, FaRegHeart, FaRegUser, FaMapMarkerAlt} from 'react-icons/fa'
 import './profileSidebar.css'
+
 const ProfileSidebar = (props) => {
     return ( 
         <div className="profile-sidebar">
             <div className="cart-summary">
                 <div className="user-prief">
-                    <img src={avatar} alt=""/>
+                    <img src="/images/avatar.png" alt=""/>
                     <div className="user-info">
                         <h6>user name</h6>
                         <p>useremail@gmail.com</p>

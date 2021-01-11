@@ -1,0 +1,17 @@
+/* .pagi-nav{
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    transform: translate(-50%, 0);
+} */
+.pagination{
+    justify-content: center;
+    margin: 0;
+}
+.pagination .page-link{
+    color: #232363;
+}
+.pagination .page-link:focus{
+    box-shadow: none;
+    outline: none;
+}
