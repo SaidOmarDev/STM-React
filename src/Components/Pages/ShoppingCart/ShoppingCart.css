@@ -1,5 +1,24 @@
 .shopping-cart{
-    padding: 100px 0;
+    padding: 50px 0;
+}
+/* .cart-bottom{
+    display: block
+} */
+.shopping-cart .panel-body{
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+.shopping-cart .panel-body img{
+    max-width: 200px;
+    max-height: 200px;
+    margin: 0 auto;
+}
+.shopping-cart .panel-body p{
+    margin: 20px 0;
+    font-size: 24px;
+    font-weight: bold;
+    color: #3838bd
 }
 .back-btn,
 .update-btn{
@@ -21,7 +40,7 @@
     justify-content: space-between;
     align-items: center;
     position: absolute;
-    bottom: -50px;
+    /* bottom: -50px; */
     left: 50%;
     transform: translate(-50%, 0);
     width: 100%;

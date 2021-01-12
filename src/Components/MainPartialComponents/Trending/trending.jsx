@@ -7,16 +7,18 @@ import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css' 
 import Product from '../../SecondaryComponents/Product/product'
 import NewHead from '../../SecondaryComponents/SectionHeader/NewHead/newHead';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/swiper-bundle.css'
+// import SwiperCore, { Navigation, Pagination} from 'swiper';
+// import { Swiper, SwiperSlide } from 'swiper/react';
+// import 'swiper/swiper-bundle.css'
 import './trending.css'
 
 const Trending = (props) => {
 
     let settings = {
         dots: false,
-        arrows: true,
+        arrows: false,
         infinite: true,
+        autoplay: true,
         speed: 500,
         slidesToShow: 4,
         slidesToScroll: 1
@@ -40,7 +42,7 @@ const Trending = (props) => {
         <div className="trend-section">
             <div className="container">
                 <NewHead header="Trending Products"/>
-                {/* <Slider {...settings}>
+                <Slider {...settings}>
                     {props.products.map(product=>(
                         <div key={product.id}>
                             <Product 
@@ -52,11 +54,12 @@ const Trending = (props) => {
                             />
                         </div>
                     ))}
-                </Slider> */}
-                <Swiper 
+                </Slider>
+                {/* <Swiper 
                     spaceBetween={10}
                     slidesPerView={4}
-                    navigation
+                    navigation={true}
+                    autoplay
                     pagination={{ clickable: true }}
                 >
                     {props.products.map(product=>(
@@ -70,7 +73,7 @@ const Trending = (props) => {
                             />
                         </SwiperSlide>
                     ))}
-                </Swiper>
+                </Swiper> */}
             </div>
         </div>
      );

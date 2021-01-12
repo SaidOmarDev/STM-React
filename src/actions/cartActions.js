@@ -59,6 +59,7 @@ export function addToCart(product) {
  export function updateCartQuantity(productId, quantity) {
     return async function(dispatch){
         const {data} = await axios.patch('http://localhost:3001/cart/'+ productId, {"quantity": quantity})
+        console.log(data);
        dispatch({
            type: TYPES.UPDATE_CART_QUANTITY,
            payload: {

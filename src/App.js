@@ -25,7 +25,7 @@ import About from './Components/Pages/About/about';
 import { useEffect } from 'react';
 
 function App(props) {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(fetchProducts());

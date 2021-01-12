@@ -1,6 +1,9 @@
 .wishlist-wrapper{
     padding: 100px 0;
 }
+.wishlist-wrapper .cart-bottom{
+    display: block
+}
 .wishlist-wrapper .cart-product.card .pro-img img{
     height: 200px;
 }

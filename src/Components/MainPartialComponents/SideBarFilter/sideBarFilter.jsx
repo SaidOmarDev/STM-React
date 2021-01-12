@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import {useDispatch} from 'react-redux'
+import {filterProducts} from '../../../actions/filterActions'
+
 import Search from '../../SecondaryComponents/Search/search';
 import Slider, {Range} from 'rc-slider'
 import {FaAngleDown} from 'react-icons/fa'
@@ -8,6 +11,7 @@ import './sideBarFilter.css'
 
 const SideBarFilter = (props) => {
     const [priceRange, setPriceRange] = useState([ 0, 0]);
+    const dispatch = useDispatch();
     
     const handleChange = (rangeValue)=>{
         setPriceRange(rangeValue)
@@ -16,26 +20,30 @@ const SideBarFilter = (props) => {
         // priceRange[0]= e.target.value
         // setPriceRange()
     }
+    const filterHandler = (products, category) => {
+        console.log(products);
+        dispatch(filterProducts(products, category))
+    }
     return ( 
         <div className="cart-summary shop-sidebar">
             <div className="categories">
                 <h4>Categories</h4>
                 <div className="content-bar">
                     <div className="head-bar" data-toggle="collapse" data-target="#first">
-                        <h3>Books<FaAngleDown className="angle-icon"/></h3>
+                        <h3>Clothes<FaAngleDown className="angle-icon"/></h3>
                     </div>
                     <div className="collapse bar-content" id="first">
                         <Search/>
                         <ul className="list-unstyled">
-                            <li className=""><a href="#">View all</a><span>135</span></li>
-                            <li><a href="#">subCategory</a><span>37</span></li>
-                            <li><a href="#">subCategory</a><span>98</span></li>
+                            <li className=""><span className="cate-link" onClick={()=>filterHandler(props.products, "Clothes")}>View all</span><span>135</span></li>
+                            <li><span className="cate-link">subCategory</span><span>37</span></li>
+                            <li><span className="cate-link">subCategory</span><span>98</span></li>
                         </ul>
                     </div>
                 </div>
                 <div className="content-bar">
                     <div className="head-bar" data-toggle="collapse" data-target="#second">
-                        <h3>Food<FaAngleDown className="angle-icon"/></h3>
+                        <h3>Gadgets<FaAngleDown className="angle-icon"/></h3>
                     </div>
                     <div className="collapse bar-content" id="second">
                         <Search/>
@@ -48,7 +56,7 @@ const SideBarFilter = (props) => {
                 </div>
                 <div className="content-bar">
                     <div className="head-bar" data-toggle="collapse" data-target="#three">
-                        <h3>Accessories<FaAngleDown className="angle-icon"/></h3>
+                        <h3>Furniture<FaAngleDown className="angle-icon"/></h3>
                     </div>
                     <div className="collapse bar-content" id="three">
                         <Search/>
@@ -61,22 +69,9 @@ const SideBarFilter = (props) => {
                 </div>
                 <div className="content-bar">
                     <div className="head-bar" data-toggle="collapse" data-target="#four">
-                        <h3>Clothes<FaAngleDown className="angle-icon"/></h3>
+                        <h3>Electronics<FaAngleDown className="angle-icon"/></h3>
                     </div>
                     <div className="collapse bar-content" id="four">
-                        <Search/>
-                        <ul className="list-unstyled">
-                            <li className=""><a href="#">View all</a><span>135</span></li>
-                            <li><a href="#">subCategory</a><span>37</span></li>
-                            <li><a href="#">subCategory</a><span>98</span></li>
-                        </ul>
-                    </div>
-                </div>
-                <div className="content-bar">
-                    <div className="head-bar" data-toggle="collapse" data-target="#five">
-                        <h3>Phones<FaAngleDown className="angle-icon"/></h3>
-                    </div>
-                    <div className="collapse bar-content" id="five">
                         <Search/>
                         <ul className="list-unstyled">
                             <li className=""><a href="#">View all</a><span>135</span></li>

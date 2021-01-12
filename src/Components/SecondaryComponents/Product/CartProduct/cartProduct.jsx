@@ -16,8 +16,10 @@ const CartProduct = (props) => {
     const [quantity, setQuntity] = useState(props.product.quantity)
     
     const incrementHandler = ()=>{
-        setQuntity(quantity+1)
+        console.log(quantity);
+        setQuntity(prevState => prevState + 1)
         dispatch(updateCartQuantity(props.product.id,quantity))
+        console.log(quantity);
     }
     const decrementHandler = ()=>{
         setQuntity(quantity-1)

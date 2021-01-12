@@ -46,6 +46,7 @@ const ShoppingCart = (props) => {
                                 ) : 
                                 (
                                     <div className="panel-body">
+                                        <img src="/images/empty-cart.png" />
                                         <p>Cart is empty</p>
                                     </div>
                                 )

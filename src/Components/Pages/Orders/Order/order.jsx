@@ -1,5 +1,6 @@
 import React from 'react'
 import OrderProduct from './OrderProduct/orderProduct'
+import OrderStatus from '../../../SecondaryComponents/OrderStatus/orderStatus'
 import './order.css'
 
 const Order = (props) => {
@@ -7,6 +8,7 @@ const Order = (props) => {
         <div className="order">
             <div className="card">
                 <div className="card-header">
+                    <OrderStatus />
                     <p>
                         <span className="order-id">Order ID: 6123456789</span>
                         <span>Order Date: 16 December 2018</span>

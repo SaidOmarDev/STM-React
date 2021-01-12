@@ -43,6 +43,15 @@
     color: #FE696A;
     text-decoration: none;
 }
+.shop-sidebar .categories .content-bar .bar-content ul li .cate-link{
+    color: #4b566b;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+.shop-sidebar .categories .content-bar .bar-content ul li .cate-link:hover{
+    color: #FE696A;
+    text-decoration: none;
+}
 .price-range,
 .colors{
     margin-top: 1.5rem;
