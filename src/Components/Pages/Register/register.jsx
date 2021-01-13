@@ -12,7 +12,7 @@ const MyTextInput = ({label, ...props}) => {
             <input className="form-control" {...field} {...props}/>
             {meta.touched && meta.error ? (
                 <div className="error">{meta.error}</div>
-            ) : null}
+            ) : (<div className="noerror"></div>)}
         </>
     );
 };
@@ -40,7 +40,7 @@ const MyCheckBox = ({children, ...props}) => {
             </label>
             {meta.touched && meta.error ? (
                 <div className="error">{meta.error}</div>
-            ) : null}
+            ) : (<div className="noerror"></div>)}
         </>
     );
 };
@@ -52,7 +52,7 @@ const MySelect = ({ label, ...props }) => {
         <select className="custom-select form-control" {...field} {...props} />
         {meta.touched && meta.error ? (
           <div className="error">{meta.error}</div>
-        ) : null}
+        ) : (<div className="noerror"></div>)}
       </div>
     );
 };
@@ -78,16 +78,17 @@ const Register = (props) => {
                         fullName: Yup.string().max(20, '* Must be 20 character or less').required('* required'),
                         email: Yup.string().email('* Invalid Email address').required('* required'),
                         phone: Yup.number().required('* required'),
-                        acceptedTerms: Yup.boolean().required('* required')
-                        .oneOf([true], 'You must accept the terms and conditions.'),
-                        password: Yup.string().required('* required'),
+                        acceptTerms: Yup.boolean().oneOf([true], '* You must accept the terms and conditions.'),
+                        password: Yup.string().min(8, '* Must be 8 character or more').required('* required'),
                         confirmPassword: Yup.string().required('* required'),
-                        birthDate: Yup.string().required('* required')
+                        birthDate: Yup.string().required('* required'),
+                        gender: Yup.string().oneOf(["Male", "Female"], '* required')
                     })}
                     onSubmit={(values, {setSubmitting}) => {
                         setTimeout(() => {
                             alert(JSON.stringify(values, null, 2));
-                            setSubmitting(false);   
+                            setSubmitting(false); 
+                            console.log(values)  
                         }, 400)
                     }}>
                     <Form>
@@ -165,7 +166,7 @@ const Register = (props) => {
                             </div>
                         </div>
                         <div className="form-group">
-                            <MyCheckBox name="acceptedTerms">
+                            <MyCheckBox name="acceptTerms">
                                 <div className="custom-control-label">I accept the <a href="policy.html">Terms & Policy</a></div>
                             </MyCheckBox>
                         </div>

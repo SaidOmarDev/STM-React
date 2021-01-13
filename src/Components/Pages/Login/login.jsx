@@ -12,7 +12,7 @@ const MyTextInput = ({label, ...props}) => {
             <input className="form-control" {...field} {...props}/>
             {meta.touched && meta.error ? (
                 <div className="error">{meta.error}</div>
-            ) : null}
+            ) : (<div className="noerror"></div>)}
         </>
     );
 };
@@ -26,7 +26,7 @@ const MyCheckBox = ({children, ...props}) => {
             </label>
             {meta.touched && meta.error ? (
                 <div className="error">{meta.error}</div>
-            ) : null}
+            ) : (<div className="noerror"></div>)}
         </>
     );
 };
@@ -45,12 +45,13 @@ const Login = (props) => {
                     validationSchema={Yup.object().shape({
                         email: Yup.string().email('*Invalid Email Address').required('*Required'),
                         password: Yup.string().required('*required'),
-                        rememberMe: Yup.boolean().required('*required')
+                        rememberMe: Yup.boolean()
                     })}
                     onSubmit={(values, {setSubmitting}) => {
                         setTimeout(() => {
                             alert(JSON.stringify(values, null, 2));
                             setSubmitting(false);
+                            console.log(values);
                         }, 400)
                     }}
                 >

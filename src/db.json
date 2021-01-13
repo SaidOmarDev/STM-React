@@ -91,28 +91,7 @@
       "quantity": 0
     }
   ],
-  "cart": [
-    {
-      "id": "2",
-      "name": "Bag",
-      "price": 255,
-      "image": "/images/pro1.jpg",
-      "shortDesc": "Nulla facilisi. Curabitur at lacus ac velit ornare lobortis.",
-      "description": "Cras sagittis. Praesent nec nisl a purus blandit viverra. Ut leo. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Fusce a quam.",
-      "category": "Gadgets",
-      "quantity": 4
-    },
-    {
-      "id": "1",
-      "name": "Dress",
-      "price": 500,
-      "image": "/images/pro4.jpg",
-      "shortDesc": "Nulla facilisi. Curabitur at lacus ac velit ornare lobortis.",
-      "description": "Cras sagittis. Praesent nec nisl a purus blandit viverra. Ut leo. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Fusce a quam.",
-      "category": "Clothes",
-      "quantity": 8
-    }
-  ],
+  "cart": [],
   "wishlist": [
     {
       "id": "7",

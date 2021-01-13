@@ -20,6 +20,9 @@
     color: #4b566b;
     font-size: 14px;
 }
+.login-form .form-group{
+    margin-bottom: 5px;
+}
 .login-form .form-control{
     font-size: 14px;
 }
@@ -37,6 +40,9 @@
     font-weight: 500;
     margin-top: 40px;
     box-shadow: 0 0.5rem 1.125rem -0.5rem rgba(106,106,252,0.9);
+}
+.register .btn{
+    margin-top: 15px;
 }
 .login-form .btn:hover{
     background-color: #232363;
@@ -67,7 +73,8 @@
 }
 .login-form .error,
 .login-form .noerror{
-    height: 20px;
+    height: 15px;
+    font-size: 13px;
     color: #FE696A;
 }
 .login-form .noerror{
