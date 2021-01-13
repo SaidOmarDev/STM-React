@@ -72,7 +72,8 @@ const Register = (props) => {
                         password: '',
                         confirmPassword: '',
                         acceptTerms: false,
-                        gender: ''
+                        gender: '',
+                        country: ''
                     }}
                     validationSchema={Yup.object().shape({
                         fullName: Yup.string().max(20, '* Must be 20 character or less').required('* required'),
@@ -80,9 +81,10 @@ const Register = (props) => {
                         phone: Yup.number().required('* required'),
                         acceptTerms: Yup.boolean().oneOf([true], '* You must accept the terms and conditions.'),
                         password: Yup.string().min(8, '* Must be 8 character or more').required('* required'),
-                        confirmPassword: Yup.string().required('* required'),
+                        confirmPassword: Yup.string().oneOf([Yup.ref('password')], 'Passwords must match'),
                         birthDate: Yup.string().required('* required'),
-                        gender: Yup.string().oneOf(["Male", "Female"], '* required')
+                        gender: Yup.string().oneOf(["Male", "Female"], '* required'),
+                        country: Yup.string().oneOf(['egy', 'ksa', 'usa'], '* Invalid Country Name').required('* required country selection')
                     })}
                     onSubmit={(values, {setSubmitting}) => {
                         setTimeout(() => {
@@ -121,6 +123,16 @@ const Register = (props) => {
                                         type="date"
                                         placeholder="12/12/2020"
                                     />
+                                </div>
+                            </div>
+                            <div className="col-12">
+                                <div className="form-group">
+                                    <MySelect label="Country" name="country" >
+                                        <option value="">Select a Country</option>
+                                        <option value="egy">Egypt</option>
+                                        <option value="ksa">Saudi Arabia</option>
+                                        <option value="usa">United States</option>
+                                    </MySelect>
                                 </div>
                             </div>
                             <div className="col-12">

@@ -1,5 +1,7 @@
 import React from 'react'
 import {useSelector} from 'react-redux'
+
+import {HiOutlineShoppingBag} from 'react-icons/hi'
 import Pagination from '../../SecondaryComponents/Pagination/pagination'
 import CartProduct from '../../SecondaryComponents/Product/CartProduct/cartProduct'
 import ProfileSidebar from '../../Profile/ProfileSidebar/profileSideBar'
@@ -36,6 +38,7 @@ const Wishlist = (props) => {
                             </React.Fragment>
                         ) : (
                             <div className="panel-body">
+                                <HiOutlineShoppingBag className="bag-icon"/>
                                 <p>WishList is empty</p>
                             </div>
                         )}

@@ -1,7 +1,7 @@
 .shop{
-    padding: 50px 0;
+    padding: 50px 0 100px;
 }
 .shop .cart-bottom{
-    bottom: 0;
+    bottom: -50px;
     display: block
 }

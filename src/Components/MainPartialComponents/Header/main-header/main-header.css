@@ -4,7 +4,7 @@ input.form-control:focus{
 }
 .main-header{
     padding: 40px 0;
-    background-color: #eff6fa;
+    background-color: #deecff;
 }
 .main-header .row>div{
     align-items: center;
@@ -36,13 +36,13 @@ input.form-control:focus{
     font-size: 16px;
     font-weight: bold;
     margin-bottom: -5px;
+    transition: all .2s ease-in-out;
 }
 .main-header .shop-setting a:hover{
     text-decoration: none;
     color: #6a6afc;
-
 }
 .main-header .shop-setting span{
-    color: #7a7a7a;
+    color: #6a6afc;
     font-size: 12px;
 }

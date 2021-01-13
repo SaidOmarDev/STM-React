@@ -118,10 +118,10 @@
   }
   .product.card .cart-view{
     margin-top: 20px;
-    transition: all .3s ease-in-out;
+    transition: all .1s ease-in-out;
   }
   .product.card .cart-view .add-cart{
-    background-color: #3434d3;
+    background-color: #6a6afc;
     color: white;
     font-weight: 500;
     font-size: 12px;
@@ -129,7 +129,7 @@
     box-shadow: 0 0.5rem 1.125rem -0.5rem rgba(106,106,252,0.9);
   }
   .product.card .cart-view .added-cart{
-    background-color: #3434d3;
+    background-color: #6a6afc;
     color: white;
     font-weight: 500;
     font-size: 12px;
@@ -145,7 +145,7 @@
     color: #28a745;
   }
   .product.card .cart-view .add-cart:hover{
-    background-color: #232363;
+    background-color: #4343b9;
     box-shadow: none;
   }
   .product.card .cart-view .added-cart .cart-icon,

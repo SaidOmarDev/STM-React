@@ -1,5 +1,5 @@
 .shopping-cart{
-    padding: 50px 0;
+    padding: 50px 0 100px;
 }
 /* .cart-bottom{
     display: block
@@ -18,7 +18,7 @@
     margin: 20px 0;
     font-size: 24px;
     font-weight: bold;
-    color: #3838bd
+    color: #3131D4
 }
 .back-btn,
 .update-btn{
@@ -43,4 +43,7 @@
     left: 50%;
     transform: translate(-50%, 0);
     width: 100%;
+}
+.shopping-cart .cart-bottom{
+    bottom: -50px;
 }

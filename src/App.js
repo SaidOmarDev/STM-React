@@ -29,15 +29,15 @@ function App(props) {
 
   useEffect(() => {
     dispatch(fetchProducts());
-  })
-
-  useEffect(() => {
     dispatch(fetchCart());
-  },[dispatch]);
+    dispatch(fetchWishlist());
+  },[dispatch])
 
-  useEffect(() => {
-      dispatch(fetchWishlist());
-  },[dispatch]);
+  // useEffect(() => {
+  // },[dispatch]);
+
+  // useEffect(() => {
+  // },[dispatch]);
 
   return (
     <div className="">

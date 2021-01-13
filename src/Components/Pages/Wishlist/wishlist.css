@@ -2,8 +2,20 @@
     padding: 100px 0;
 }
 .wishlist-wrapper .cart-bottom{
-    display: block
+    display: block;
+    bottom: -50px;
 }
 .wishlist-wrapper .cart-product.card .pro-img img{
     height: 200px;
+}
+.wishlist-wrapper .panel-body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #3131D4;
+    font-size: 22px;
+    font-weight: bold;
+}
+.wishlist-wrapper .panel-body .bag-icon{
+    font-size: 150px;
 }
