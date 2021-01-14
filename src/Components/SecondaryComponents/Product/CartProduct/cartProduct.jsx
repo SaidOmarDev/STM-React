@@ -16,18 +16,16 @@ const CartProduct = (props) => {
     const [quantity, setQuntity] = useState(props.product.quantity)
     
     const incrementHandler = ()=>{
-        console.log(quantity);
         setQuntity(prevState => prevState + 1)
         dispatch(updateCartQuantity(props.product.id,quantity))
-        console.log(quantity);
     }
     const decrementHandler = ()=>{
-        setQuntity(quantity-1)
+        setQuntity(prevState => prevState - 1)
         dispatch(updateCartQuantity(props.product.id,quantity))
     }
 
     const handleChange = (e)=>{
-        setQuntity(e.target.value)
+        setQuntity(prevState => prevState += 1 )
         dispatch(updateCartQuantity(props.product.id,quantity))
     }
 
@@ -48,13 +46,13 @@ const CartProduct = (props) => {
     return ( 
         <div className="cart-product card">
             <div className="pro-img">
-                <Link to="/productDetails"><img src={props.product.image} alt="product" /></Link>
+                <Link to={`/productDetails/${props.product.id}`}><img src={props.product.image} alt="product" /></Link>
             </div>
             <div className="pro-desc">
                 <div className="pro-info">
                     <span className="categ">{props.product.category}</span>
                     <div>
-                        <Link to="/productDetails"><h4 className="pro-name">{props.product.name}</h4></Link>
+                        <Link to={`/productDetails/${props.product.id}`}><h4 className="pro-name">{props.product.name}</h4></Link>
                         <RateStars />
                     </div>
                     <div>

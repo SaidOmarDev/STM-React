@@ -13,7 +13,6 @@ const ShopProducts = () => {
     const products = useSelector((state) => state.products.items);
     const cart = useSelector((state) => state.cart.items);
     const wishlist = useSelector((state) => state.wishlist.items);
-    console.log(products);
     return ( 
         <React.Fragment>
             <BreadCrumb pagename="Shop"/>

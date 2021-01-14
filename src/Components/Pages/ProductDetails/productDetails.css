@@ -157,3 +157,17 @@
     margin-right: 5px;
     font-size: 18px;
 }
+
+.pro-details .nav{
+    border-bottom: 1px solid #eee;
+    margin: 50px 0 30px;
+}
+.pro-details .nav .nav-item.nav-link{
+    color: #232363;
+    font-weight: 500;
+    padding: 5px 15px;  
+}
+.pro-details .nav .nav-item.nav-link.active{
+    background-color: #232363;
+    color: #fff;
+}

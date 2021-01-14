@@ -87,6 +87,11 @@
 .reviews form textarea{
     font-size: 14px;
 }
+.reviews form .rating-form{
+    font-size: 20px;
+    color: #fea569;
+    margin-bottom: 15px;
+}
 .reviews form button{
     float: right;
     background-color: #6a6afc;

@@ -5,7 +5,6 @@ const initialState = {
 };
 
 export default function(state = initialState, action) { 
-    // let cart = state.items;
     switch(action.type){
         case TYPES.FETCH_CART:
             return {
@@ -13,7 +12,6 @@ export default function(state = initialState, action) {
                 items: action.payload
             };
         case TYPES.ADD_TO_CART:
-            // cart.push(action.payload)
             return {
                 ...state,
                 items: [...state.items, action.payload]
@@ -27,8 +25,6 @@ export default function(state = initialState, action) {
             let product = state.items.find(item => item.id === action.payload.productId);
             let index = state.items.indexOf(product)
             state.items.splice(index, 1, action.payload.data);
-            // product.quantity = action.payload.quantity;
-            // newCart.push(product);
             return {
                 ...state,
                 items: [...state.items]

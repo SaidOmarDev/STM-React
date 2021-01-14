@@ -1,10 +1,10 @@
+import { useEffect } from 'react';
 import {Switch, Route} from 'react-router-dom'
 import {useDispatch} from 'react-redux'
 import {fetchProducts} from './actions/productActions'
 import {fetchCart} from './actions/cartActions'
 import { fetchWishlist } from './actions/wishlistActions'
 
-import './App.css';
 import Header from './Components/MainPartialComponents/Header/header';
 import Footer from './Components/MainPartialComponents/Footer/footer';
 import ProductDetails from './Components/Pages/ProductDetails/productDetails';
@@ -22,7 +22,7 @@ import Login from './Components/Pages/Login/login';
 import Register from './Components/Pages/Register/register';
 import Contacts from './Components/Pages/Contacts/contacts';
 import About from './Components/Pages/About/about';
-import { useEffect } from 'react';
+import './App.css';
 
 function App(props) {
   const dispatch = useDispatch();

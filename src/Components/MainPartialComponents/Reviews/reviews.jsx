@@ -1,4 +1,6 @@
 import React from 'react'
+import Rating from 'react-rating'
+import { AiFillStar, AiOutlineStar} from 'react-icons/ai';
 import RateStars from '../../SecondaryComponents/RateStars/rate-stars';
 import './reviews.css'
 
@@ -155,7 +157,15 @@ const Reviews = (props) => {
                         </div><hr/>
                     </div>
                 </div>
+
                 <form action="">
+                    <Rating 
+                        emptySymbol= {<AiOutlineStar className="icon" />}
+                        fullSymbol= {<AiFillStar className="icon" />}
+                        fractions={2}
+                        onChange={(rate) => alert(rate)}
+                        className="rating-form"
+                    />
                     <div className="row">
                         <div className="form-group col-md-6">
                             <label htmlFor="fname">Full Name</label>
