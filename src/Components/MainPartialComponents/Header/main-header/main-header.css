@@ -15,18 +15,21 @@ input.form-control:focus{
 }
 .main-header .shop-setting{
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
+}
+.main-header .shop-setting.notAuth{
+    justify-content: flex-end;
 }
 .main-header .shop-setting>div{
     display: flex;
     justify-content: space-between;
 }
-.main-header .shop-setting .wishlist{
+.main-header .shop-setting.notAuth .wishlist{
     margin-right: 25px;
 }
 .main-header .shop-setting .main-icon{
-    font-size: 32px;
+    font-size: 26px;
     margin-right: 5px;
     color: #6a6afc;
 }
@@ -45,4 +48,43 @@ input.form-control:focus{
 .main-header .shop-setting span{
     color: #6a6afc;
     font-size: 12px;
+}
+.main-header .shop-setting .account{
+    align-items: center;
+}
+.main-header .shop-setting .account img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+}
+.main-header .shop-setting .account .btn{
+    background-color: transparent;
+    border: none;
+    color: #303030;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 0;
+}
+.main-header .shop-setting .account .btn:focus{
+    box-shadow: none;
+}
+.main-header .shop-setting .account span{
+    color: #6a6afc;
+}
+.main-header .shop-setting .account .dropdown-menu{
+    border-radius: 2px;
+    top: 5px;
+}
+.main-header .shop-setting .account .dropdown-menu a{
+    font-size: 14px;
+    font-weight: normal;
+    color: #303030;
+}
+.main-header .shop-setting .account .dropdown-menu a:hover{
+    color: #6a6afc;
+}
+.main-header .shop-setting .account .dropdown-menu a .account-icon{
+    margin-right: 5px;
+    font-size: 15px;
 }

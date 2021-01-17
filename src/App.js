@@ -56,7 +56,9 @@ function App(props) {
           <Route path="/checkout" component={CheckoutDetails} />
           <Route path="/payment" component={Payment} />
           <Route path="/review" component={Review} />
-          <Route path="/login" component={Login} />
+          <Route path="/login" render={(props)=>(
+              <Login {...props}/>)
+            } />
           <Route path="/register" component={Register} />
           <Route path="/contacts" component={Contacts} />
           <Route path="/about" component={About} />

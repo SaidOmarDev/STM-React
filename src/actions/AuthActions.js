@@ -41,6 +41,7 @@ export function authStart() {
          .then(response =>{
             //  console.log(response);
              dispatch(authSuccess(response.data.idToken, response.data.localId))
+             
          })
          .catch(err=>{
             //  console.log(err.response.data.error);
