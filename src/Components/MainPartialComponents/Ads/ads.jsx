@@ -1,12 +1,13 @@
 import React from 'react'
+import { Col, Container, Row } from 'react-bootstrap';
 import './ads.css'
 
 const Ads = (props) => {
     return ( 
         <div className="ads-sec">
-            <div className="container">
-                <div className="row">
-                    <div className="col-md-9">
+            <Container>
+                <Row>
+                    <Col md={9}>
                         <div className="left-ad-card card">
                             <div className="ad-card-text">
                                 <p>Hurry up! Limited time offer</p>
@@ -17,8 +18,8 @@ const Ads = (props) => {
                                 <img src="./images/leftAdImg.jpg" alt=""/>
                             </div>
                         </div>
-                    </div>
-                    <div className="col-md-3">
+                    </Col>
+                    <Col md={3}>
                         <div className="right-ad-card card">
                             <img src="./images/addRightBg.jpg" alt=""/>
                             <div className="ad-card-text">
@@ -27,9 +28,9 @@ const Ads = (props) => {
                                 <a href="#" className="btn">Shop Now</a>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
+                    </Col>
+                </Row>
+            </Container>
         </div>
      );
 }

@@ -2,6 +2,10 @@ import React from 'react'
 import {Formik, Form, useField} from 'formik'
 import * as Yup from 'yup'
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { auth } from '../../../actions/AuthActions';
+import { Spinner } from 'react-bootstrap';
 
 
 const MyTextInput = ({label, ...props}) => {
@@ -59,134 +63,145 @@ const MySelect = ({ label, ...props }) => {
 
 
 const Register = (props) => {
+    const dispatch = useDispatch()
+    const [isRegister, setIsRegister] = useState(true);
+    const loading = useSelector(state=> state.auth.loading);
+
     return ( 
         <div className="login-page">
-            <div className="card login-form register">
-                <h4 className="mb-4"><strong> Register</strong></h4>
-                <Formik
-                    initialValues={{
-                        fullName: '',
-                        email: '',
-                        birthDate: '',
-                        phone: '',
-                        password: '',
-                        confirmPassword: '',
-                        acceptTerms: false,
-                        gender: '',
-                        country: ''
-                    }}
-                    validationSchema={Yup.object().shape({
-                        fullName: Yup.string().max(20, '* Must be 20 character or less').required('* required'),
-                        email: Yup.string().email('* Invalid Email address').required('* required'),
-                        phone: Yup.number().required('* required'),
-                        acceptTerms: Yup.boolean().oneOf([true], '* You must accept the terms and conditions.'),
-                        password: Yup.string().min(8, '* Must be 8 character or more').required('* required'),
-                        confirmPassword: Yup.string().oneOf([Yup.ref('password')], 'Passwords must match'),
-                        birthDate: Yup.string().required('* required'),
-                        gender: Yup.string().oneOf(["Male", "Female"], '* required'),
-                        country: Yup.string().oneOf(['egy', 'ksa', 'usa'], '* Invalid Country Name').required('* required country selection')
-                    })}
-                    onSubmit={(values, {setSubmitting}) => {
-                        setTimeout(() => {
-                            alert(JSON.stringify(values, null, 2));
-                            setSubmitting(false); 
-                            console.log(values)  
-                        }, 400)
-                    }}>
-                    <Form>
-                        <div className="row">
-                            <div className="col-md-6">
-                                <div className="form-group">
-                                    <MyTextInput 
-                                        label="Full Name"
-                                        name="fullName"
-                                        type="text"
-                                        placeholder="Said Omar Gaber"    
-                                    />
+            {!loading ? (
+                <React.Fragment>
+                    <div className="card login-form register">
+                    <h4 className="mb-4"><strong> Register</strong></h4>
+                    <Formik
+                        initialValues={{
+                            fullName: '',
+                            email: '',
+                            birthDate: '',
+                            phone: '',
+                            password: '',
+                            confirmPassword: '',
+                            acceptTerms: false,
+                            gender: '',
+                            country: ''
+                        }}
+                        validationSchema={Yup.object().shape({
+                            fullName: Yup.string().max(20, '* Must be 20 character or less').required('* required'),
+                            email: Yup.string().email('* Invalid Email address').required('* required'),
+                            phone: Yup.number().required('* required'),
+                            acceptTerms: Yup.boolean().oneOf([true], '* You must accept the terms and conditions.'),
+                            password: Yup.string().min(8, '* Must be 8 character or more').required('* required'),
+                            confirmPassword: Yup.string().oneOf([Yup.ref('password')], 'Passwords must match'),
+                            birthDate: Yup.string().required('* required'),
+                            gender: Yup.string().oneOf(["Male", "Female"], '* required'),
+                            country: Yup.string().oneOf(['egy', 'ksa', 'usa'], '* Invalid Country Name').required('* required country selection')
+                        })}
+                        onSubmit={(values, {setSubmitting}) => {
+                            setTimeout(() => {
+                                // alert(JSON.stringify(values, null, 2));
+                                setSubmitting(false); 
+                                console.log(values)  
+                                dispatch(auth(values.email, values.password, isRegister))
+                            }, 400)
+                        }}>
+                        <Form>
+                            <div className="row">
+                                <div className="col-md-6">
+                                    <div className="form-group">
+                                        <MyTextInput 
+                                            label="Full Name"
+                                            name="fullName"
+                                            type="text"
+                                            placeholder="Said Omar Gaber"    
+                                        />
+                                    </div>
+                                </div>
+                                <div className="col-md-6">
+                                    <div className="form-group">
+                                        <MyTextInput
+                                            label="Email Address"
+                                            name="email"
+                                            type="email"
+                                            placeholder="jane@formik.com"
+                                        />
+                                    </div>
+                                </div>
+                                <div className="col-12">
+                                    <div className="form-group">
+                                        <MyTextInput
+                                            label="Birthdate"
+                                            name="birthDate"
+                                            type="date"
+                                            placeholder="12/12/2020"
+                                        />
+                                    </div>
+                                </div>
+                                <div className="col-12">
+                                    <div className="form-group">
+                                        <MySelect label="Country" name="country" >
+                                            <option value="">Select a Country</option>
+                                            <option value="egy">Egypt</option>
+                                            <option value="ksa">Saudi Arabia</option>
+                                            <option value="usa">United States</option>
+                                        </MySelect>
+                                    </div>
+                                </div>
+                                <div className="col-12">
+                                    <div className="form-group">
+                                        <MyRadioButton name="gender" value="Male" checked>
+                                            <span className="custom-control-label">Male</span>
+                                        </MyRadioButton>
+                                        <MyRadioButton name="gender" value="Female">
+                                            <span className="custom-control-label">Female</span>
+                                        </MyRadioButton>
+                                        {/* {value.gender} */}
+                                    </div>
+                                </div>
+                                <div className="col-12">
+                                    <div className="form-group">
+                                        <MyTextInput
+                                            label="Phone"
+                                            name="phone"
+                                            type="tel"
+                                            placeholder="01022336655"
+                                        />
+                                    </div>
+                                </div>
+                                <div className="col-md-6">
+                                    <div className="form-group">
+                                        <MyTextInput
+                                            label="Password"
+                                            name="password"
+                                            type="password"
+                                            placeholder="Your Password"
+                                        />
+                                    </div>
+                                </div>
+                                <div className="col-md-6">
+                                    <div className="form-group">
+                                        <MyTextInput
+                                            label="Confirmed Password"
+                                            name="confirmPassword"
+                                            type="password"
+                                            placeholder="Your Confirmed Password"
+                                        />
+                                    </div>
                                 </div>
                             </div>
-                            <div className="col-md-6">
-                                <div className="form-group">
-                                    <MyTextInput
-                                        label="Email Address"
-                                        name="email"
-                                        type="email"
-                                        placeholder="jane@formik.com"
-                                    />
-                                </div>
+                            <div className="form-group">
+                                <MyCheckBox name="acceptTerms">
+                                    <div className="custom-control-label">I accept the <a href="policy.html">Terms & Policy</a></div>
+                                </MyCheckBox>
                             </div>
-                            <div className="col-12">
-                                <div className="form-group">
-                                    <MyTextInput
-                                        label="Birthdate"
-                                        name="birthDate"
-                                        type="date"
-                                        placeholder="12/12/2020"
-                                    />
-                                </div>
-                            </div>
-                            <div className="col-12">
-                                <div className="form-group">
-                                    <MySelect label="Country" name="country" >
-                                        <option value="">Select a Country</option>
-                                        <option value="egy">Egypt</option>
-                                        <option value="ksa">Saudi Arabia</option>
-                                        <option value="usa">United States</option>
-                                    </MySelect>
-                                </div>
-                            </div>
-                            <div className="col-12">
-                                <div className="form-group">
-                                    <MyRadioButton name="gender" value="Male" checked>
-                                        <span className="custom-control-label">Male</span>
-                                    </MyRadioButton>
-                                    <MyRadioButton name="gender" value="Female">
-                                        <span className="custom-control-label">Female</span>
-                                    </MyRadioButton>
-                                    {/* {value.gender} */}
-                                </div>
-                            </div>
-                            <div className="col-12">
-                                <div className="form-group">
-                                    <MyTextInput
-                                        label="Phone"
-                                        name="phone"
-                                        type="tel"
-                                        placeholder="01022336655"
-                                    />
-                                </div>
-                            </div>
-                            <div className="col-md-6">
-                                <div className="form-group">
-                                    <MyTextInput
-                                        label="Password"
-                                        name="password"
-                                        type="password"
-                                        placeholder="Your Password"
-                                    />
-                                </div>
-                            </div>
-                            <div className="col-md-6">
-                                <div className="form-group">
-                                    <MyTextInput
-                                        label="Confirmed Password"
-                                        name="confirmPassword"
-                                        type="password"
-                                        placeholder="Your Confirmed Password"
-                                    />
-                                </div>
-                            </div>
-                        </div>
-                        <div className="form-group">
-                            <MyCheckBox name="acceptTerms">
-                                <div className="custom-control-label">I accept the <a href="policy.html">Terms & Policy</a></div>
-                            </MyCheckBox>
-                        </div>
-                        <button type="submit" className="btn btn-block ">Create Account</button>
-                    </Form>
-                </Formik>
-            </div>
-            <p className="go-login text-center mt-3">Have an account? <Link to="/login"><strong>Log In</strong></Link></p>
+                            <button type="submit" className="btn btn-block ">Create Account</button>
+                        </Form>
+                    </Formik>
+                </div>
+                    <p className="go-login text-center mt-3">Have an account? <Link to="/login"><strong>Log In</strong></Link></p>
+                </React.Fragment>
+                ):
+                (<Spinner animation="border" style={{margin: '100px auto', display: 'block'}}/>)
+            }
         </div>
      );
 }

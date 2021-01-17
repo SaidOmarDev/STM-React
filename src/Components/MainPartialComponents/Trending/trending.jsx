@@ -7,6 +7,8 @@ import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css' 
 import Product from '../../SecondaryComponents/Product/product'
 import NewHead from '../../SecondaryComponents/SectionHeader/NewHead/newHead';
+import OwlCarousel from 'react-owl-carousel'
+import 'owl.carousel/dist/assets/owl.carousel.css';  
 // import SwiperCore, { Navigation, Pagination} from 'swiper';
 // import { Swiper, SwiperSlide } from 'swiper/react';
 // import 'swiper/swiper-bundle.css'

@@ -1,5 +1,5 @@
 import React from 'react'
-import Breadcrumb from 'react-bootstrap/Breadcrumb'
+import { Container, Breadcrumb } from 'react-bootstrap'
 import RateStars from '../RateStars/rate-stars'
 import {FaHome} from 'react-icons/fa'
 import './breadCrumb.css'
@@ -7,7 +7,7 @@ import './breadCrumb.css'
 const BreadCrumb = (props) => {
     return ( 
         <div className="details-header">
-            <div className="container">
+            <Container>
                 <div className="header-content">
                     <div className="pro-reviews">
                         {props.proname ? <h3>{props.proname}</h3>:<h3>{props.pagename}</h3>}
@@ -23,7 +23,7 @@ const BreadCrumb = (props) => {
                         <Breadcrumb.Item active>{props.pagename}</Breadcrumb.Item>
                     </Breadcrumb>
                 </div>
-            </div>
+            </Container>
         </div>
      );
 }

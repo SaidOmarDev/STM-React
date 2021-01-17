@@ -1,15 +1,16 @@
 import React from 'react'
 import Rating from 'react-rating'
-import { AiFillStar, AiOutlineStar} from 'react-icons/ai';
+import { Col, Row } from 'react-bootstrap';
 import RateStars from '../../SecondaryComponents/RateStars/rate-stars';
+import { AiFillStar, AiOutlineStar} from 'react-icons/ai';
 import './reviews.css'
 
 const Reviews = (props) => {
     return ( 
         <React.Fragment>
             <div className="avg-rating">
-                <div className="row">
-                    <div className="col-md-4">
+                <Row>
+                    <Col md={4}>
                         <h2>30 Reviews</h2>
                         <RateStars/>
                         <span className="overall-rating">4.1 Overall rating</span>
@@ -17,8 +18,8 @@ const Reviews = (props) => {
                             <span className="d-block">26 out of 30 (80%)</span>
                             Customers recommended this product
                         </p>
-                    </div>
-                    <div className="col-md-8">
+                    </Col>
+                    <Col md={8}>
                         <div className="star-numbers">
                             <div className="star-number">
                                 <span>5</span>
@@ -79,12 +80,12 @@ const Reviews = (props) => {
                             </div>
                             <span className="rating-number">1</span>
                         </div>
-                    </div>
-                </div>
+                    </Col>
+                </Row>
             </div><hr />
             <div className="reviews">
-                <div className="row">
-                    <div className="col-md-6">
+                <Row>
+                    <Col md={6}>
                         <div className="customer-reviews">
                             <div className="customer-info">
                                 <div className="main-cust-info">
@@ -101,8 +102,8 @@ const Reviews = (props) => {
                             </div>
                             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aspernatur, adipisci? Sunt nulla similique praesentium adipisci magnam eius ipsa quis veritatis fugiat corrupti numquam voluptatem minus, unde repellat, nisi ducimus facere.</p>
                         </div><hr/>
-                    </div>
-                    <div className="col-md-6">
+                    </Col>
+                    <Col md={6}>
                         <div className="customer-reviews">
                             <div className="customer-info">
                                 <div className="main-cust-info">
@@ -119,8 +120,8 @@ const Reviews = (props) => {
                             </div>
                             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aspernatur, adipisci? Sunt nulla similique praesentium adipisci magnam eius ipsa quis veritatis fugiat corrupti numquam voluptatem minus, unde repellat, nisi ducimus facere.</p>
                         </div><hr/>
-                    </div>
-                    <div className="col-md-6">
+                    </Col>
+                    <Col md={6}>
                         <div className="customer-reviews">
                             <div className="customer-info">
                                 <div className="main-cust-info">
@@ -137,8 +138,8 @@ const Reviews = (props) => {
                             </div>
                             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aspernatur, adipisci? Sunt nulla similique praesentium adipisci magnam eius ipsa quis veritatis fugiat corrupti numquam voluptatem minus, unde repellat, nisi ducimus facere.</p>
                         </div><hr/>
-                    </div>
-                    <div className="col-md-6">
+                    </Col>
+                    <Col md={6}>
                         <div className="customer-reviews">
                             <div className="customer-info">
                                 <div className="main-cust-info">
@@ -155,8 +156,8 @@ const Reviews = (props) => {
                             </div>
                             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aspernatur, adipisci? Sunt nulla similique praesentium adipisci magnam eius ipsa quis veritatis fugiat corrupti numquam voluptatem minus, unde repellat, nisi ducimus facere.</p>
                         </div><hr/>
-                    </div>
-                </div>
+                    </Col>
+                </Row>
 
                 <form action="">
                     <Rating 
@@ -166,20 +167,20 @@ const Reviews = (props) => {
                         onChange={(rate) => alert(rate)}
                         className="rating-form"
                     />
-                    <div className="row">
-                        <div className="form-group col-md-6">
+                    <Row>
+                        <Col md={6} className="form-group">
                             <label htmlFor="fname">Full Name</label>
                             <input type="text" className="form-control" id="fname" placeholder="Full Name"/>
-                        </div>
-                        <div className="form-group col-md-6">
+                        </Col>
+                        <Col md={6} className="form-group">
                             <label htmlFor="email">Email</label>
                             <input type="email" className="form-control" id="email" placeholder="E-mail Address"/>
-                        </div>
-                        <div className="form-group col">
+                        </Col>
+                        <Col className="form-group">
                             <label htmlFor="review-msg">Comment</label>
                             <textarea className="form-control" name="review-msg" id="review-msg" rows="10"></textarea>
-                        </div>
-                    </div>
+                        </Col>
+                    </Row>
                     <button className="btn">Post Review</button>
                 </form>
             </div>

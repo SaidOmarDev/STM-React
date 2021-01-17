@@ -3,13 +3,14 @@ import './delivery-services.css'
 import {FiTruck} from 'react-icons/fi'
 import {FaUndo} from 'react-icons/fa'
 import {BiWallet} from 'react-icons/bi'
+import { Col, Container, Row } from 'react-bootstrap'
 
 const DelivryServices = (props) => {
     return ( 
         <div className="services">
-            <div className="container">
-                <div className="row">
-                    <div className="col-md-3">
+            <Container>
+                <Row>
+                    <Col md={3}>
                         <div className="service">
                             <div className="service-icon">
                                 <FiTruck />
@@ -19,8 +20,8 @@ const DelivryServices = (props) => {
                                 <span>From 100EGP</span>
                             </div>
                         </div>
-                    </div>
-                    <div className="col-md-3">
+                    </Col>
+                    <Col md={3}>
                         <div className="service">
                             <div className="service-icon">
                                 <FaUndo />
@@ -30,8 +31,8 @@ const DelivryServices = (props) => {
                                 <span>From 100EGP</span>
                             </div>
                         </div>
-                    </div>
-                    <div className="col-md-3">
+                    </Col>
+                    <Col md={3}>
                         <div className="service">
                             <div className="service-icon">
                                 <BiWallet />
@@ -41,8 +42,8 @@ const DelivryServices = (props) => {
                                 <span>From 100EGP</span>
                             </div>
                         </div>
-                    </div>
-                    <div className="col-md-3">
+                    </Col>
+                    <Col md={3}>
                         <div className="service">
                         <div className="service-icon">
                                 <BiWallet />
@@ -52,9 +53,9 @@ const DelivryServices = (props) => {
                                 <span>From 100EGP</span>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
+                    </Col>
+                </Row>
+            </Container>
         </div>
      );
 }
