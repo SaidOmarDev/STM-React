@@ -6,6 +6,7 @@ import * as Yup from 'yup'
 import { Spinner, Toast } from 'react-bootstrap';
 import { auth } from '../../../actions/AuthActions';
 import './login.css'
+import { useEffect } from 'react';
 
 const MyTextInput = ({label, ...props}) => {
     const [field, meta] = useField(props);
@@ -36,11 +37,18 @@ const MyCheckBox = ({children, ...props}) => {
 
 const Login = (props) => {
     const [isRegister, setIsRegister] = useState(false);
-    const [show, setShow] = useState(true);
+    // const [show, setShow] = useState(true);
     const dispatch = useDispatch();
     const loading = useSelector(state=> state.auth.loading);
     const token = useSelector(state=> state.auth.token);
-    const errorMessage = useSelector(state => state.auth.error);
+    // const errorMessage = useSelector(state => state.auth.error);
+    useEffect(() => {
+        if(token){
+            console.log(props.history);
+            props.history.replace("/");
+        }
+    })
+    
 
     return ( 
         <div className="login-page">
@@ -63,12 +71,14 @@ const Login = (props) => {
                                 setTimeout(() => {
                                     // alert(JSON.stringify(values, null, 2));
                                     setSubmitting(false);
-                                    console.log(values);
+                                    // console.log(values);
                                     dispatch(auth(values.email, values.password, isRegister))
-                                    if(token){
-                                        props.history.replace("/");
-                                    }
                                 }, 400)
+                                // if(token){
+                                //     repalceHandler();
+                                //     // console.log(props.history);
+                                //     // props.history.replace("/");
+                                // }
                             }}
                         >
                             <Form>

@@ -6,7 +6,7 @@ import TopHeader from './top-header/top-header'
 const Header = (props) => {
     return ( 
         <header>
-            <TopHeader />
+            <TopHeader token={props.token}/>
             <MainHeader />
             <Menu />
         </header>

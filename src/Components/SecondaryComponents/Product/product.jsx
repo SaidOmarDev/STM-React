@@ -1,6 +1,6 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import {useDispatch} from 'react-redux'
+import { Link, useHistory } from 'react-router-dom'
+import {useDispatch, useSelector} from 'react-redux'
 import {addToCart} from '../../../actions/cartActions'
 import {addToWishlist} from '../../../actions/wishlistActions'
 
@@ -11,15 +11,23 @@ import {AiFillCheckCircle} from 'react-icons/ai'
 import './product.css'
 
 const Product = (props) => {
+    const token = useSelector(state => state.auth.token)
     const dispatch = useDispatch();
-    // useEffect(() => {
-    //     dispatch(fetchCart());
-    //   }, [dispatch]);
+    const history = useHistory();
+
     const addToCartHandler = (product)=>{
-        dispatch(addToCart(product));
+        if(token){
+            dispatch(addToCart(product));
+        }else{
+            history.push("/login");
+        }
     }
     const addToWishListHandler = (product)=>{
-        dispatch(addToWishlist(product));
+        if(token){
+            dispatch(addToWishlist(product));
+        }else{
+            history.push("/login");
+        }
     }
 
     return ( 

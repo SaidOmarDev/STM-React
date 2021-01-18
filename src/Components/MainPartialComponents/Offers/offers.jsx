@@ -1,8 +1,5 @@
-import React, { useEffect } from 'react'
-import { connect } from 'react-redux';
-import {fetchProducts} from '../../../actions/productActions'
-import {addToCart} from '../../../actions/cartActions'
-import {addToWishlist} from '../../../actions/wishlistActions'
+import React from 'react'
+import { useSelector } from 'react-redux';
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
@@ -12,6 +9,15 @@ import SectionHeader from '../../SecondaryComponents/SectionHeader/sectionHeader
 import './offers.css'
 
 const Offers = (props) => {
+    const token = useSelector(state=>state.auth.token)
+    const products = useSelector((state) => state.products.items);
+    let cart = useSelector((state) => state.cart.items);
+    let wishlist = useSelector((state) => state.wishlist.items);
+    
+    if(!token){
+        cart = [];
+        wishlist = []
+    }
     let settings = {
         dots: true,
         arrows: false,
@@ -31,15 +37,15 @@ const Offers = (props) => {
         slidesToScroll: 1
     };
 
-    useEffect(() => {
-        props.fetchProducts();
-    })
-    const addToCartHandler = (product)=>{
-        props.addToCart(product);
-    }
-    const addToWishListHandler = (product)=>{
-        props.addToWishlist(product);
-    }
+    // useEffect(() => {
+    //     props.fetchProducts();
+    // })
+    // const addToCartHandler = (product)=>{
+    //     props.addToCart(product);
+    // }
+    // const addToWishListHandler = (product)=>{
+    //     props.addToWishlist(product);
+    // }
     
     return ( 
         <div className="offers">
@@ -64,15 +70,13 @@ const Offers = (props) => {
                         <div className="offers-cards">
                             <SectionHeader />
                             <Slider {...settings} >
-                                {props.products.map(product=>(
+                                {products.map(product=>(
                                     <div key={product.id}>
                                         <Product 
                                             product={product} 
                                             addText="add to cart"
-                                            addToCart={()=>addToCartHandler(product)}
-                                            addToWishlist={()=>addToWishListHandler(product)}
-                                            inCart={props.cart.length>0 && props.cart.filter(item => item.id === product.id).length > 0 }
-                                            inWishlist={props.wishlist.length>0 && props.wishlist.filter(item => item.id === product.id).length > 0 }
+                                            inCart={cart.length>0 && cart.filter(item => item.id === product.id).length > 0 }
+                                            inWishlist={wishlist.length>0 && wishlist.filter(item => item.id === product.id).length > 0 }
                                         />
                                         {/* <Product product={item} addText="add to cart"/> */}
                                     </div>
@@ -85,12 +89,5 @@ const Offers = (props) => {
         </div>
      );
 }
-function mapStateToProps(state){
-    return {
-        products: state.products.items,
-        cart: state.cart.items,
-        wishlist: state.wishlist.items
-    }
-}  
 
-export default connect(mapStateToProps, {fetchProducts, addToCart, addToWishlist})(Offers);
+export default Offers;

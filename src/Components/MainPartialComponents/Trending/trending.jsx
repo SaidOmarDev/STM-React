@@ -1,5 +1,5 @@
 import React from 'react'
-import { connect } from 'react-redux';
+import { connect, useDispatch, useSelector } from 'react-redux';
 import {addToCart} from '../../../actions/cartActions'
 import {addToWishlist} from '../../../actions/wishlistActions'
 import Slider from 'react-slick'
@@ -15,6 +15,15 @@ import 'owl.carousel/dist/assets/owl.carousel.css';
 import './trending.css'
 
 const Trending = (props) => {
+    const token = useSelector(state=>state.auth.token)
+    const products = useSelector((state) => state.products.items);
+    let cart = useSelector((state) => state.cart.items);
+    let wishlist = useSelector((state) => state.wishlist.items);
+    
+    if(!token){
+        cart = [];
+        wishlist = []
+    }
 
     let settings = {
         dots: false,
@@ -33,26 +42,18 @@ const Trending = (props) => {
         navigation: true,
         pagination: {clickable: true}
     }
-    const addToCartHandler = (product)=>{
-        props.addToCart(product);
-    }
-    const addToWishListHandler = (product)=>{
-        props.addToWishlist(product);
-    }
     
     return ( 
         <div className="trend-section">
             <div className="container">
                 <NewHead header="Trending Products"/>
                 <Slider {...settings}>
-                    {props.products.map(product=>(
+                    {products.map(product=>(
                         <div key={product.id}>
                             <Product 
                                 product={product}
-                                addToCart={()=>addToCartHandler(product)}
-                                addToWishlist={()=>addToWishListHandler(product)}
-                                inCart={props.cart.length>0 && props.cart.filter(item => item.id === product.id).length > 0 }
-                                inWishlist={props.wishlist.length>0 && props.wishlist.filter(item => item.id === product.id).length > 0 }
+                                inCart={cart.length>0 && cart.filter(item => item.id === product.id).length > 0 }
+                                inWishlist={wishlist.length>0 && wishlist.filter(item => item.id === product.id).length > 0 }
                             />
                         </div>
                     ))}
@@ -79,14 +80,6 @@ const Trending = (props) => {
             </div>
         </div>
      );
-}
+} 
 
-function mapStateToProps(state){
-    return {
-        products: state.products.items,
-        cart: state.cart.items,
-        wishlist: state.wishlist.items
-    }
-}  
-
-export default connect(mapStateToProps, {addToCart, addToWishlist})(Trending);
+export default Trending;

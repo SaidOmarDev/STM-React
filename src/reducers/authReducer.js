@@ -29,6 +29,12 @@ export default function(state = initialState, action){
                 error: action.error,
                 loading: false
             }
+        case TYPES.LOGOUT:
+            return {
+                ...state,
+                token: null,
+                userId: null
+            }
         default:
             return state
     }

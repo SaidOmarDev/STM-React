@@ -9,10 +9,16 @@ import Pagination from '../../SecondaryComponents/Pagination/pagination'
 import './shopProducts.css'
 
 const ShopProducts = () => {
+    const token = useSelector(state=>state.auth.token)
     const filteredProducts = useSelector((state) => state.filtered.items);
     const products = useSelector((state) => state.products.items);
-    const cart = useSelector((state) => state.cart.items);
-    const wishlist = useSelector((state) => state.wishlist.items);
+    let cart = useSelector((state) => state.cart.items);
+    let wishlist = useSelector((state) => state.wishlist.items);
+
+    if(!token){
+        cart = []
+        wishlist = []
+    }
     return ( 
         <React.Fragment>
             <BreadCrumb pagename="Shop"/>

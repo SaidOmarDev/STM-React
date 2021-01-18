@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import {Switch, Route} from 'react-router-dom'
-import {useDispatch} from 'react-redux'
+import {useDispatch, useSelector} from 'react-redux'
 import {fetchProducts} from './actions/productActions'
 import {fetchCart} from './actions/cartActions'
 import { fetchWishlist } from './actions/wishlistActions'
@@ -26,12 +26,19 @@ import './App.css';
 
 function App(props) {
   const dispatch = useDispatch();
+  const token = useSelector(state => state.auth.token)
 
   useEffect(() => {
     dispatch(fetchProducts());
-    dispatch(fetchCart());
-    dispatch(fetchWishlist());
-  },[dispatch])
+  },[token, dispatch])
+
+  useEffect(() => {
+    console.log(token);
+    if(token){
+      dispatch(fetchCart());
+      dispatch(fetchWishlist());
+    }
+  },[token, dispatch])
 
   // useEffect(() => {
   // },[dispatch]);
@@ -41,7 +48,7 @@ function App(props) {
 
   return (
     <div className="">
-        <Header />
+        <Header token={token}/>
         <Switch>
           <Route path="/productDetails/:id" render={(props)=>(
             <ProductDetails

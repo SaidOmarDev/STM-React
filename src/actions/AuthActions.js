@@ -49,3 +49,10 @@ export function authStart() {
          })
     }
  }
+ export function logout(){
+     return function (dispatch){
+         dispatch({
+             type: TYPES.LOGOUT
+         })
+     }
+ }

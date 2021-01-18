@@ -43,11 +43,14 @@ const TopHeader = (props) => {
                         </div>
                     </div>
                     <div className="col-md-4">
-                        <div className="login">
-                            <AiOutlineUser className="user-icon"/>
-                            <Link to="/register" >Register</Link>
-                            <Link to="/login"> Login</Link>
-                        </div>
+                        {!props.token ? (
+                            <div className="login">
+                                <AiOutlineUser className="user-icon"/>
+                                <Link to="/register" >Register</Link>
+                                <Link to="/login"> Login</Link>
+                            </div>):
+                            null
+                        }
                     </div>
                 </div>
             </div>

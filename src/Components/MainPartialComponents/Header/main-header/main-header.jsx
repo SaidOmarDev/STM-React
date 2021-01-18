@@ -2,24 +2,39 @@ import React from 'react'
 import './main-header.css'
 import {AiOutlineShoppingCart} from 'react-icons/ai'
 import {FaRegHeart} from 'react-icons/fa'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import Search from '../../../SecondaryComponents/Search/search'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { Col, Container, Row, Dropdown } from 'react-bootstrap'
 import { BsBag } from 'react-icons/bs'
 import { FiMapPin } from 'react-icons/fi'
 import { HiOutlineUser } from 'react-icons/hi'
 import { BiLogOut } from 'react-icons/bi'
+import { logout } from '../../../../actions/AuthActions'
 // import { Dropdown } from 'bootstrap'
 
 const MainHeader = (props) => {
     const wishlist = useSelector((state) => state.wishlist.items)
+    const cart = useSelector((state) => state.cart.items)
     const token = useSelector(state => state.auth.token)
-    console.log(token);
+    const history = useHistory()
+    const dispatch = useDispatch();
+    
+    let total = 0
+    if(cart.length>0){
+        cart.map(item=> total += item.price)
+    }
+
     let classes = []
     if(!token){
         classes.push('notAuth')
     }
+
+    const logoutHandler = () => {
+        dispatch(logout());
+        history.replace('/')
+    }
+
     return ( 
         <div className="main-header">
             <Container>
@@ -32,14 +47,7 @@ const MainHeader = (props) => {
                     </Col>
                     <Col md={4}>
                         <div className={`shop-setting ${classes}`}>
-                            <div className="wishlist">
-                                <FaRegHeart className="main-icon"/>
-                                <div>
-                                    <Link to="/profile/wishlist">Wishlist</Link>
-                                    <span>{wishlist.length}</span>
-                                </div>
-                            </div>
-                            {token ? (
+                        {token ? (
                                 <div className="account">
                                     <img src="images/team2.jpg" className="main-icon" alt=""/>
                                     <div>
@@ -54,19 +62,25 @@ const MainHeader = (props) => {
                                                 <Dropdown.Item href="#/action-2"><FiMapPin className="account-icon"/> Another action</Dropdown.Item>
                                                 <Dropdown.Item href="#/action-3"><HiOutlineUser className="account-icon"/> Something else</Dropdown.Item>
                                                 <Dropdown.Divider />
-                                                <Dropdown.Item href="#/action-3"><BiLogOut className="account-icon"/> Logout</Dropdown.Item>
+                                                <Dropdown.Item href="#" onClick={logoutHandler}><BiLogOut className="account-icon"/> Logout</Dropdown.Item>
                                             </Dropdown.Menu>
                                         </Dropdown>
                                     </div>
                                 </div>
                                 ): null
                             }
-                            
+                            <div className="wishlist">
+                                <FaRegHeart className="main-icon"/>
+                                <div>
+                                    <Link to="/profile/wishlist">Wishlist</Link>
+                                    <span>{token ? wishlist.length : 0}</span>
+                                </div>
+                            </div>
                             <div className="cart">
                                 <AiOutlineShoppingCart className="main-icon"/>
                                 <div>
                                     <Link to="/shoppingCart">Cart</Link>
-                                    <span>EGP {500}</span>
+                                    <span>EGP {token ? total : 0}</span>
                                 </div>
                             </div>
                         </div>

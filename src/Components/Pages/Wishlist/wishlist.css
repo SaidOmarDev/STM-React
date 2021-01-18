@@ -19,3 +19,26 @@
 .wishlist-wrapper .panel-body .bag-icon{
     font-size: 150px;
 }
+.wishlist-wrapper .panel-body p{
+    margin: 20px 0;
+    font-size: 24px;
+    font-weight: bold;
+    color: #3131D4
+}
+.wishlist-wrapper .panel-body p.redlogin{
+    font-size: 15px;
+    color: #212141; 
+    font-weight: normal;
+}
+.wishlist-wrapper .panel-body p.redlogin span{
+    color: #3838bd;
+    font-weight: 500;
+}
+.wishlist-wrapper .panel-body .btn{
+    background-color: #7979ff;
+    color: #fff;
+    transition: all .2s ease-in-out;
+}
+.wishlist-wrapper .panel-body .btn:hover{
+    background-color: #3838bd;
+}

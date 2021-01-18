@@ -20,6 +20,23 @@
     font-weight: bold;
     color: #3131D4
 }
+.shopping-cart .panel-body p.redlogin{
+    font-size: 15px;
+    color: #212141; 
+    font-weight: normal;
+}
+.shopping-cart .panel-body p.redlogin span{
+    color: #3838bd;
+    font-weight: 500;
+}
+.shopping-cart .panel-body .btn{
+    background-color: #7979ff;
+    color: #fff;
+    transition: all .2s ease-in-out;
+}
+.shopping-cart .panel-body .btn:hover{
+    background-color: #3838bd;
+}
 .back-btn,
 .update-btn{
     color: #fff;
