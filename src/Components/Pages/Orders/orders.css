@@ -1,0 +1,26 @@
+.orders .empty-orders{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.orders .empty-orders .icon{
+    font-size: 100px;
+    color: #6565ee;
+}
+.orders .empty-orders p{
+    font-size: 14px;
+    margin: 16px 0;
+}
+.orders .empty-orders .btn{
+    background-color: #6565ee;
+    color: #fff;
+    font-size: 14px;
+    line-height: 100%;
+    padding: 12px 35px;
+    transition: all .2s ease-in-out;
+}
+.orders .empty-orders .btn:hover{
+    background-color: #32327c;
+}

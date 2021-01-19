@@ -44,10 +44,10 @@ const Login = (props) => {
     // const errorMessage = useSelector(state => state.auth.error);
     useEffect(() => {
         if(token){
-            console.log(props.history);
+            // console.log(props.history);
             props.history.replace("/");
         }
-    })
+    },[token])
     
 
     return ( 

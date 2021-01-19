@@ -14,6 +14,7 @@ import './CartProduct.css'
 const CartProduct = (props) => {
     const dispatch = useDispatch()
     const [quantity, setQuntity] = useState(props.product.quantity)
+    console.log(quantity);
     
     const incrementHandler = ()=>{
         setQuntity(prevState => prevState + 1)

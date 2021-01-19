@@ -1,12 +1,27 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import {Formik, Form, useField} from 'formik'
+import * as Yup from 'yup'
 
 import BreadCrumb from '../../SecondaryComponents/BreadCrumb/breadCrumb';
 import CartSummary from '../../MainPartialComponents/CartSummary/cartSummary'
 import OrderSteps from '../../SecondaryComponents/OrderSteps/orderSteps'
 import {FaEdit, FaAngleLeft, FaAngleRight} from 'react-icons/fa'
 import './checkoutDetails.css'
+
+const MyTextInput = ({label, ...props}) => {
+    const [field, meta] = useField(props);
+    return (
+        <>
+            <label htmlFor={props.id || props.name}>{label}</label>
+            <input className="form-control" {...field} {...props}/>
+            {meta.touched && meta.error ? (
+                <div className="error">{meta.error}</div>
+            ) : (<div className="noerror"></div>)}
+        </>
+    )
+}
 
 const CheckoutDetails = (props) => {
     const cart = useSelector((state) => state.cart.items)
@@ -34,15 +49,119 @@ const CheckoutDetails = (props) => {
                                     <Link to="/profile/settings" className="btn"><FaEdit className="checkout-icons"/> Edit profile</Link>
                                 </div>
                                 <h6>checkout details</h6>
-                                <form action="">
-                                    <div className="row">
-                                        <div className="form-group col-md-6">
-                                            <label htmlFor="fname">First Name</label>
-                                            <input type="text" className="form-control" id="fname" placeholder="First Name"/>
+                                <Formik
+                                    initialValues={{
+                                        fullName: '',
+                                        email: '',
+                                        phone: '',
+                                        city: '',
+                                        zCode: '',
+                                        address1: '',
+                                        address2: ''
+                                    }}
+                                    validationSchema={Yup.object().shape({
+                                        fullName: Yup.string().max(20, '* Must be 20 character or less').required('* required'),
+                                        email: Yup.string().email('*Invalid Email Address').required('*Required'),
+                                        phone: Yup.number().required('* required'),
+                                        city: Yup.string().required('* required'),
+                                        zCode: Yup.string().required('* required'),
+                                        address1: Yup.string().required('* required'),
+                                        address2: Yup.string()
+                                    })}
+                                    onSubmit={(values, {setSubmitting}) => {
+                                        setTimeout(() => {
+                                            alert(JSON.stringify(values, null, 2));
+                                            setSubmitting(false);
+                                            console.log(values);
+                                        }, 400)
+                                        // if(token){
+                                        //     repalceHandler();
+                                        //     // console.log(props.history);
+                                        //     // props.history.replace("/");
+                                        // }
+                                    }}
+                                >
+                                    <Form>
+                                        <div className="row">
+                                            <div className="col-md-6">
+                                                <div className="form-group">
+                                                    <MyTextInput 
+                                                        label="Full Name"
+                                                        name="fullName"
+                                                        type="text"
+                                                        placeholder="Said Omar Gaber"    
+                                                    />
+                                                </div>
+                                            </div>
+                                            <div className="col-md-6">
+                                                <div className="form-group">
+                                                    <MyTextInput
+                                                        label="Email Address"
+                                                        name="email"
+                                                        type="email"
+                                                        placeholder="jane@formik.com"
+                                                    />
+                                                </div>
+                                            </div>
+                                            <div className="col-md-6">
+                                                <div className="form-group">
+                                                    <MyTextInput
+                                                        label="Phone"
+                                                        name="phone"
+                                                        type="tel"
+                                                        placeholder="01010101010"
+                                                    />
+                                                </div>
+                                            </div>
+                                            <div className="col-md-6">
+                                                <div className="form-group">
+                                                    <MyTextInput
+                                                        label="City"
+                                                        name="city"
+                                                        type="text"
+                                                        placeholder="Minia"
+                                                    />
+                                                </div>
+                                            </div>
+                                            <div className="col-md-6">
+                                                <div className="form-group">
+                                                    <MyTextInput
+                                                        label="Z-Code"
+                                                        name="zCode"
+                                                        type="text"
+                                                        placeholder="62451"
+                                                    />
+                                                </div>
+                                            </div>
+                                            <div className="col-md-6">
+                                                <div className="form-group">
+                                                    <MyTextInput
+                                                        label="Address1"
+                                                        name="address1"
+                                                        type="text"
+                                                        placeholder="Minia Maghagh"
+                                                    />
+                                                </div>
+                                            </div>
+                                            <div className="col-md-6">
+                                                <div className="form-group">
+                                                    <MyTextInput
+                                                        label="Address2"
+                                                        name="address2"
+                                                        type="text"
+                                                        placeholder="Minia Maghagha"
+                                                    />
+                                                </div>
+                                            </div>
+                                            <button type="submit" className="btn">Checkout</button>
                                         </div>
-                                        <div className="form-group col-md-6">
-                                            <label htmlFor="lname">Last Name</label>
-                                            <input type="text" className="form-control" id="lname" placeholder="Last Name"/>
+                                    </Form>
+                                </Formik>
+                                {/* <form action="">
+                                    <div className="row">
+                                        <div className="form-group col-12">
+                                            <label htmlFor="fullname">Full Name</label>
+                                            <input type="text" className="form-control" id="fullname" placeholder="Full Name"/>
                                         </div>
                                         <div className="form-group col-md-6">
                                             <label htmlFor="email">Email</label>
@@ -69,7 +188,7 @@ const CheckoutDetails = (props) => {
                                             <input type="text" className="form-control" id="add2" placeholder="Address2"/>
                                         </div>
                                     </div>
-                                </form>
+                                </form> */}
                                 <div className="proceed row">
                                     <div className="col-md-6">
                                         <Link to="/shoppingCart" className="btn btn-block back"><FaAngleLeft className="checkout-icons"/> back to cart</Link>

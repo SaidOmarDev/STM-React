@@ -87,13 +87,25 @@
 .details .proceed .back:hover{
     background-color: #CDE3F1;
 }
-.details .proceed .go-proceed{
+.details .proceed .go-proceed,
+.details form .btn{
     color: #fff;
     background-color: #3838bd;
     box-shadow: 0 0.5rem 1.125rem -0.5rem rgba(106,106,252,0.9);
     padding: 10px 22px;
+    height: fit-content;
 }
-.details .proceed .go-proceed:hover{
+.details .proceed .go-proceed:hover,
+.details form .btn:hover{
     background-color: #232363;
     box-shadow: none;
+}
+.details .error,
+.details .noerror{
+    height: 15px;
+    font-size: 13px;
+    color: #FE696A;
+}
+.details .noerror{
+    opacity: 0;
 }

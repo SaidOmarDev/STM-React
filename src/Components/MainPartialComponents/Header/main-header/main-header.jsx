@@ -58,11 +58,11 @@ const MainHeader = (props) => {
                                             </Dropdown.Toggle>
 
                                             <Dropdown.Menu>
-                                                <Dropdown.Item href="#/action-1"><BsBag className="account-icon"/> Orders</Dropdown.Item>
-                                                <Dropdown.Item href="#/action-2"><FiMapPin className="account-icon"/> Another action</Dropdown.Item>
-                                                <Dropdown.Item href="#/action-3"><HiOutlineUser className="account-icon"/> Something else</Dropdown.Item>
+                                                <Dropdown.Item as={Link} to="/profile/orders"><BsBag className="account-icon"/> Orders</Dropdown.Item>
+                                                <Dropdown.Item as={Link} to="/profile/addresses"><FiMapPin className="account-icon"/> Addresses</Dropdown.Item>
+                                                <Dropdown.Item as={Link} to="/profile/settings"><HiOutlineUser className="account-icon"/> Profile Info</Dropdown.Item>
                                                 <Dropdown.Divider />
-                                                <Dropdown.Item href="#" onClick={logoutHandler}><BiLogOut className="account-icon"/> Logout</Dropdown.Item>
+                                                <Dropdown.Item onClick={logoutHandler}><BiLogOut className="account-icon"/> Logout</Dropdown.Item>
                                             </Dropdown.Menu>
                                         </Dropdown>
                                     </div>

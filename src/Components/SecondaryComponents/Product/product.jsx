@@ -9,6 +9,7 @@ import {FaShoppingCart, FaHeart} from 'react-icons/fa'
 import {BiHeart} from 'react-icons/bi'
 import {AiFillCheckCircle} from 'react-icons/ai'
 import './product.css'
+import { OverlayTrigger, Tooltip } from 'react-bootstrap'
 
 const Product = (props) => {
     const token = useSelector(state => state.auth.token)
@@ -38,8 +39,21 @@ const Product = (props) => {
                     <span className="status badge badge-danger">sale</span>
                 </div>
                 {props.inWishlist ? 
-                    (<span className="fav active" ><FaHeart className="fav-icon"/></span>): 
-                    (<span className="fav"  onClick={()=>addToWishListHandler(props.product)}><BiHeart className="fav-icon"/></span>)
+                    (<span className="fav active" ><FaHeart className="fav-icon"/></span>)
+                    : 
+                    (<OverlayTrigger
+                        placement='left'
+                        style={{
+                            fontSize: '13px'
+                        }}
+                        overlay={
+                          <Tooltip id='tooltip-left'>
+                            Add To Wishlist
+                          </Tooltip>
+                        }
+                      >
+                        <span className="fav"  onClick={()=>addToWishListHandler(props.product)}><BiHeart className="fav-icon"/></span>
+                    </OverlayTrigger>)
                 }
             </div>
             <div className="pro-desc">

@@ -29,15 +29,15 @@ input.form-control:focus{
     margin-right: 25px;
 }
 .main-header .shop-setting .main-icon{
-    font-size: 26px;
+    font-size: 22px;
     margin-right: 5px;
     color: #6a6afc;
 }
 .main-header .shop-setting a{
     display: flex;
     color: #303030;
-    font-size: 16px;
-    font-weight: bold;
+    font-size: 15px;
+    font-weight: 500;
     margin-bottom: -5px;
     transition: all .2s ease-in-out;
 }
@@ -65,6 +65,7 @@ input.form-control:focus{
     font-size: 13px;
     font-weight: 500;
     padding: 0;
+    margin-top: -10px;
 }
 .main-header .shop-setting .account .btn:focus{
     box-shadow: none;
@@ -80,6 +81,7 @@ input.form-control:focus{
     font-size: 14px;
     font-weight: normal;
     color: #303030;
+    margin-bottom: 0;
 }
 .main-header .shop-setting .account .dropdown-menu a:hover{
     color: #6a6afc;

@@ -1,7 +1,6 @@
 import React from 'react'
 import {IoMdClock} from 'react-icons/io'
 import {MdLocalShipping} from 'react-icons/md'
-import {BsCardChecklist} from 'react-icons/bs'
 import {FaBoxOpen, FaBox} from 'react-icons/fa'
 import './orderStatus.css'
 

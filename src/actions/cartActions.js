@@ -13,7 +13,8 @@ export function fetchCart() {
 
 export function addToCart(product) { 
     return async function (dispatch) {
-        const {data} = await axios.post('http://localhost:3001/cart', product);
+        let newProduct = {...product, quantity: 1}
+        const {data} = await axios.post('http://localhost:3001/cart', newProduct);
         dispatch({
             type: TYPES.ADD_TO_CART,
             payload: data
