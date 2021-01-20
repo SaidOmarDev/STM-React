@@ -7,8 +7,12 @@ import OrderSteps from '../../SecondaryComponents/OrderSteps/orderSteps';
 import NewProduct from '../../SecondaryComponents/Product/NewProduct/newProduct'
 import {FaAngleLeft, FaAngleRight} from 'react-icons/fa'
 import './review.css'
+import { useSelector } from 'react-redux';
 
 const Review = (props) => {
+    const cart = useSelector(state => state.cart.items)
+    let grandTotal = 0;
+    cart.map(item=> grandTotal+=item.price)
     return ( 
         <React.Fragment>
             <BreadCrumb pagename="Review"/>
@@ -21,24 +25,11 @@ const Review = (props) => {
                                 <h4 className="mb-3">Review your order</h4>
                                 <div className="products-review">
                                     <div className="row">
-                                        <div className="col-md-4">
-                                            <NewProduct proType="review"/>
-                                        </div>
-                                        <div className="col-md-4">
-                                            <NewProduct proType="review"/>
-                                        </div>
-                                        <div className="col-md-4">
-                                            <NewProduct proType="review"/>
-                                        </div>
-                                        <div className="col-md-4">
-                                            <NewProduct proType="review"/>
-                                        </div>
-                                        <div className="col-md-4">
-                                            <NewProduct proType="review"/>
-                                        </div>
-                                        <div className="col-md-4">
-                                            <NewProduct proType="review"/>
-                                        </div>
+                                        {cart.map(item => (
+                                            <div className="col-md-4" key={item.id}>
+                                                <NewProduct proType="review" product={item}/>
+                                            </div>
+                                        ))}
                                     </div>
                                 </div>
                                 <div className="shipping-address">
@@ -68,7 +59,7 @@ const Review = (props) => {
                             </div>
                         </div>
                         <div className="col-md-4">
-                            <CartSummary />
+                            <CartSummary grandTotal={grandTotal}/>
                         </div>
                     </div>
                 </div>

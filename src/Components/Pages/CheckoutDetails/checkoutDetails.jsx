@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import {Formik, Form, useField} from 'formik'
 import * as Yup from 'yup'
@@ -24,10 +24,16 @@ const MyTextInput = ({label, ...props}) => {
 }
 
 const CheckoutDetails = (props) => {
+    const history = useHistory();
     const cart = useSelector((state) => state.cart.items)
 
     let grandTotal = 0;
     cart.map(item => grandTotal += item.price * item.quantity);
+
+    const handleSubmit = (values) => {
+        alert(JSON.stringify(values, null, 2));
+        history.push('/payment')
+    }
 
     return (
         <React.Fragment>
@@ -70,9 +76,10 @@ const CheckoutDetails = (props) => {
                                     })}
                                     onSubmit={(values, {setSubmitting}) => {
                                         setTimeout(() => {
-                                            alert(JSON.stringify(values, null, 2));
+                                            // alert(JSON.stringify(values, null, 2));
+                                            handleSubmit(values);
                                             setSubmitting(false);
-                                            console.log(values);
+                                            // console.log(values);
                                         }, 400)
                                         // if(token){
                                         //     repalceHandler();
@@ -153,7 +160,14 @@ const CheckoutDetails = (props) => {
                                                     />
                                                 </div>
                                             </div>
-                                            <button type="submit" className="btn">Checkout</button>
+                                        </div>
+                                        <div className="proceed row">
+                                            <div className="col-md-6">
+                                                <Link to="/shoppingCart" className="btn btn-block back"><FaAngleLeft className="checkout-icons"/> back to cart</Link>
+                                            </div>
+                                            <div className="col-md-6">
+                                                <button type="submit" className="btn btn-block go-proceed"> proceed to payment <FaAngleRight className="checkout-icons"/></button>
+                                            </div>
                                         </div>
                                     </Form>
                                 </Formik>
@@ -189,14 +203,14 @@ const CheckoutDetails = (props) => {
                                         </div>
                                     </div>
                                 </form> */}
-                                <div className="proceed row">
+                                {/* <div className="proceed row">
                                     <div className="col-md-6">
                                         <Link to="/shoppingCart" className="btn btn-block back"><FaAngleLeft className="checkout-icons"/> back to cart</Link>
                                     </div>
                                     <div className="col-md-6">
-                                        <Link to="/payment" className="btn btn-block go-proceed"> proceed to payment <FaAngleRight className="checkout-icons"/></Link>
+                                        <Link to="/payment" type="submit" className="btn btn-block go-proceed"> proceed to payment <FaAngleRight className="checkout-icons"/></Link>
                                     </div>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                         <div className="col-md-4">

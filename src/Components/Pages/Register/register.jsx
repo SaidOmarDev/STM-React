@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { auth } from '../../../actions/AuthActions';
-import { Spinner } from 'react-bootstrap';
+import { Alert, Spinner, Toast } from 'react-bootstrap';
 
 
 const MyTextInput = ({label, ...props}) => {
@@ -65,8 +65,13 @@ const MySelect = ({ label, ...props }) => {
 const Register = (props) => {
     const dispatch = useDispatch()
     const [isRegister, setIsRegister] = useState(true);
+    const [show, setShow] = useState(true);
     const loading = useSelector(state=> state.auth.loading);
+    const error = useSelector(state=> state.auth.error)
 
+    const toggleShow = () => {
+        setShow(!show)
+    }
     return ( 
         <div className="login-page">
             {!loading ? (
@@ -202,6 +207,19 @@ const Register = (props) => {
                 ):
                 (<Spinner animation="border" style={{margin: '100px auto', display: 'block'}}/>)
             }
+            {error ? 
+                <Toast delay={3000} autohide={true} show={show} onClose={toggleShow}>
+                    <Toast.Header>
+                        <img
+                        src="holder.js/20x20?text=%20"
+                        className="rounded mr-2"
+                        alt=""
+                        />
+                        <strong className="mr-auto">Bootstrap</strong>
+                        <small>11 mins ago</small>
+                    </Toast.Header>
+                    <Toast.Body>{error.message}</Toast.Body>
+            </Toast> : null}
         </div>
      );
 }

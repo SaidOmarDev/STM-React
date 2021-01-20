@@ -4,6 +4,7 @@ import CartSummary from '../../MainPartialComponents/CartSummary/cartSummary';
 import OrderSteps from '../../SecondaryComponents/OrderSteps/orderSteps';
 import {FaCcVisa, FaCcMastercard} from 'react-icons/fa'
 import './payment.css'
+import { Link } from 'react-router-dom';
 
 const Payment = (props) => {
     return ( 
@@ -42,7 +43,7 @@ const Payment = (props) => {
                                             <input type="text" className="form-control" id="cc-cvv" placeholder="" required/>
                                         </div>
                                         <div className="col-12">
-                                            <button className="btn complete" type="submit">Continue to Complete</button>
+                                            <Link to="/review" className="btn complete">Continue to Complete</Link>
                                         </div>
                                     </div>
                                 </form>

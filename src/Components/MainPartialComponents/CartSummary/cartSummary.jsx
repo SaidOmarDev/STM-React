@@ -1,14 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-
 import OrderProduct from '../../SecondaryComponents/Product/OrderProduct/orderProduct';
 import {MdPayment} from 'react-icons/md'
 import './cartSummary.css'
 
 const CartSummary = (props) => {
     const cart = useSelector((state) => state.cart.items)
-
     return ( 
         <div className="cart-summary">
             {props.page === "checkout" ?

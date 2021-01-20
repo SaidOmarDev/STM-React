@@ -8,6 +8,11 @@
     justify-content: center;
     margin: 0;
 }
+.pagination .page-item.active .page-link{
+    background-color: #232363;
+    color: #fff;
+    border-color: #232363;
+}
 .pagination .page-link{
     color: #232363;
 }
