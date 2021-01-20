@@ -35,7 +35,7 @@ const SideBarFilter = (props) => {
                     <div className="collapse bar-content" id="first">
                         <Search/>
                         <ul className="list-unstyled">
-                            <li className=""><span className="cate-link" onClick={()=>filterHandler(props.products, "Clothes")}>View all</span><span>135</span></li>
+                            <li><span className="cate-link" onClick={()=>filterHandler(props.products, "Clothes")}>View all</span><span>135</span></li>
                             <li><span className="cate-link">subCategory</span><span>37</span></li>
                             <li><span className="cate-link">subCategory</span><span>98</span></li>
                         </ul>
