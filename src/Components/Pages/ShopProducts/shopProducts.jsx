@@ -1,7 +1,6 @@
 import React from 'react'
 import {useSelector} from 'react-redux'
 
-
 import BreadCrumb from '../../SecondaryComponents/BreadCrumb/breadCrumb'
 import SideBarFilter from '../../MainPartialComponents/SideBarFilter/sideBarFilter'
 import Product from '../../SecondaryComponents/Product/product'
@@ -77,7 +76,7 @@ const ShopProducts = () => {
                             </div>
                             <div className="cart-bottom">
                                 {/* <Pagination /> */}
-                                {currentProducts.length >= 6 ? (
+                                {products.length >= 6 ? (
                                     <Pagination 
                                         activePage={currentPage}
                                         itemsCountPerPage={6}

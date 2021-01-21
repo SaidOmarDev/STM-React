@@ -40,7 +40,7 @@ const MainHeader = (props) => {
             <Container>
                 <Row>
                     <Col sm={2}>
-                        <a href="#" className="navbar-brand">LOGO</a>
+                        <a href="#" className="navbar-brand">STM</a>
                     </Col>
                     <Col md={6}>
                         <Search mainSearch={true}/>

@@ -107,13 +107,36 @@ const SideBarFilter = (props) => {
                 </div>
             </div>
             <div className="brands">
-                <h4>Brands</h4>
+                <h4>Sizes</h4>
                 <ul className="list-unstyled">
-                    <li><a href="#">BrandName</a></li>
-                    <li><a href="#">BrandName</a></li>
-                    <li><a href="#">BrandName</a></li>
-                    <li><a href="#">BrandName</a></li>
-                    <li><a href="#">BrandName</a></li>
+                    <li>
+                        <div className="custom-control custom-checkbox mb-2">
+                            <input type="checkbox" className="custom-control-input" id="customCheck1" name="example1"/>
+                            <label className="custom-control-label" htmlFor="customCheck1">Extra Large</label>
+                            <span>(12)</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div className="custom-control custom-checkbox mb-2">
+                            <input type="checkbox" className="custom-control-input" id="customCheck2" name="example1"/>
+                            <label className="custom-control-label" htmlFor="customCheck2">Large</label>
+                            <span>(12)</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div className="custom-control custom-checkbox mb-2">
+                            <input type="checkbox" className="custom-control-input" id="customCheck3" name="example1"/>
+                            <label className="custom-control-label" htmlFor="customCheck3">Medium </label>
+                            <span>(12)</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div className="custom-control custom-checkbox mb-2">
+                            <input type="checkbox" className="custom-control-input" id="customCheck4" name="example1"/>
+                            <label className="custom-control-label" htmlFor="customCheck4">Small</label>
+                            <span>(12)</span>
+                        </div>
+                    </li>
                 </ul>
             </div>
             <div className="colors">
@@ -122,31 +145,36 @@ const SideBarFilter = (props) => {
                     <li>
                         <div className="custom-control custom-checkbox mb-2">
                             <input type="checkbox" className="custom-control-input" id="customCheck1" name="example1"/>
-                            <label className="custom-control-label" htmlFor="customCheck1">BrandName</label>
+                            <label className="custom-control-label" htmlFor="customCheck1">Blue</label>
+                            <span>(12)</span>
                         </div>
                     </li>
                     <li>
                         <div className="custom-control custom-checkbox mb-2">
                             <input type="checkbox" className="custom-control-input" id="customCheck2" name="example1"/>
-                            <label className="custom-control-label" htmlFor="customCheck2">BrandName</label>
+                            <label className="custom-control-label" htmlFor="customCheck2">Green</label>
+                            <span>(12)</span>
                         </div>
                     </li>
                     <li>
                         <div className="custom-control custom-checkbox mb-2">
                             <input type="checkbox" className="custom-control-input" id="customCheck3" name="example1"/>
-                            <label className="custom-control-label" htmlFor="customCheck3">BrandName</label>
+                            <label className="custom-control-label" htmlFor="customCheck3">Yellow </label>
+                            <span>(12)</span>
                         </div>
                     </li>
                     <li>
                         <div className="custom-control custom-checkbox mb-2">
                             <input type="checkbox" className="custom-control-input" id="customCheck4" name="example1"/>
-                            <label className="custom-control-label" htmlFor="customCheck4">BrandName</label>
+                            <label className="custom-control-label" htmlFor="customCheck4">Gray</label>
+                            <span>(12)</span>
                         </div>
                     </li>
                     <li>
                         <div className="custom-control custom-checkbox mb-2">
                             <input type="checkbox" className="custom-control-input" id="customCheck5" name="example1"/>
-                            <label className="custom-control-label" htmlFor="customCheck5">BrandName</label>
+                            <label className="custom-control-label" htmlFor="customCheck5">Sky Blue</label>
+                            <span>(12)</span>
                         </div>
                     </li>
                 </ul>

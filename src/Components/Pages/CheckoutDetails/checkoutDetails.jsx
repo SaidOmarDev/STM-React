@@ -7,7 +7,7 @@ import * as Yup from 'yup'
 import BreadCrumb from '../../SecondaryComponents/BreadCrumb/breadCrumb';
 import CartSummary from '../../MainPartialComponents/CartSummary/cartSummary'
 import OrderSteps from '../../SecondaryComponents/OrderSteps/orderSteps'
-import {FaEdit, FaAngleLeft, FaAngleRight} from 'react-icons/fa'
+import {FaAngleLeft, FaAngleRight} from 'react-icons/fa'
 import './checkoutDetails.css'
 
 const MyTextInput = ({label, ...props}) => {
@@ -44,16 +44,6 @@ const CheckoutDetails = (props) => {
                         <div className="col-md-8">
                             <OrderSteps page="checkout"/>
                             <div className="details">
-                                <div className="user">
-                                    <div className="user-prief">
-                                        <img src="./images/avatar.png" alt=""/>
-                                        <div className="user-info">
-                                            <h6>user name</h6>
-                                            <p>useremail@gmail.com</p>
-                                        </div>
-                                    </div>
-                                    <Link to="/profile/settings" className="btn"><FaEdit className="checkout-icons"/> Edit profile</Link>
-                                </div>
                                 <h6>checkout details</h6>
                                 <Formik
                                     initialValues={{
@@ -61,7 +51,6 @@ const CheckoutDetails = (props) => {
                                         email: '',
                                         phone: '',
                                         city: '',
-                                        zCode: '',
                                         address1: '',
                                         address2: ''
                                     }}
@@ -70,7 +59,6 @@ const CheckoutDetails = (props) => {
                                         email: Yup.string().email('*Invalid Email Address').required('*Required'),
                                         phone: Yup.number().required('* required'),
                                         city: Yup.string().required('* required'),
-                                        zCode: Yup.string().required('* required'),
                                         address1: Yup.string().required('* required'),
                                         address2: Yup.string()
                                     })}
@@ -130,7 +118,7 @@ const CheckoutDetails = (props) => {
                                                     />
                                                 </div>
                                             </div>
-                                            <div className="col-md-6">
+                                            {/* <div className="col-md-6">
                                                 <div className="form-group">
                                                     <MyTextInput
                                                         label="Z-Code"
@@ -139,7 +127,7 @@ const CheckoutDetails = (props) => {
                                                         placeholder="62451"
                                                     />
                                                 </div>
-                                            </div>
+                                            </div> */}
                                             <div className="col-md-6">
                                                 <div className="form-group">
                                                     <MyTextInput

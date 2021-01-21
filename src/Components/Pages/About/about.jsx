@@ -23,7 +23,7 @@ const About = (props) => {
                                     Integer ut eros lacus. Proin ut accumsan leo. 
                                     orbi vitae est eget dolor consequat aliquam eget quis dolor. 
                                     Mauris rutrum fermentum erat, at euismod lorem pharetra nec.</p>
-                                <Link to="/shopProducts" className="btn">View Products</Link>
+                                {/* <Link to="/shopProducts" className="btn">View Products</Link> */}
                             </div>
                         </div>
                         <div className="col-md-6">
@@ -36,7 +36,7 @@ const About = (props) => {
                                     Integer ut eros lacus. Proin ut accumsan leo. 
                                     orbi vitae est eget dolor consequat aliquam eget quis dolor. 
                                     Mauris rutrum fermentum erat, at euismod lorem pharetra nec.</p>
-                                <Link to="/shopProducts" className="btn">Shipping Details</Link>
+                                {/* <Link to="/shopProducts" className="btn">Shipping Details</Link> */}
                             </div>
                         </div>
                         <div className="col-md-6">
@@ -55,7 +55,7 @@ const About = (props) => {
                                     Integer ut eros lacus. Proin ut accumsan leo. 
                                     orbi vitae est eget dolor consequat aliquam eget quis dolor. 
                                     Mauris rutrum fermentum erat, at euismod lorem pharetra nec.</p>
-                                <Link to="/shopProducts" className="btn">View Products</Link>
+                                {/* <Link to="/shopProducts" className="btn">View Products</Link> */}
                             </div>
                         </div>
                         <div className="col-md-6">

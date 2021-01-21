@@ -1,4 +1,5 @@
 import React from 'react';
+import {FaAngleRight} from 'react-icons/fa'
 import OwlCarousel from 'react-owl-carousel'
 import 'owl.carousel/dist/assets/owl.carousel.css';  
 import './slider.css'
@@ -10,22 +11,32 @@ const Slider = (props) => {
             <div className="container">
                 <div className="slider-content">
                     <OwlCarousel items={1} className="owl-theme" dots>
-                        <div>
-                            <img src="./images/banner_img.png" className="" alt="..." />
-                            <h4>Hello SLider Hello SLider Hello SLider</h4>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. numquam sequi laudantium iusto debitis ullam sed atque eaque hic libero necessitatibus eveniet dolore voluptates?
-                            </p>
-                            <button className="btn">Shop Now</button>
+                        <div className="item">
+                            <div>
+                                <p>Explore our </p>
+                                <h3>Smartphones</h3>
+                                <p>&amp; Accessories collection</p>
+                                <button className="btn">Shop Now <FaAngleRight /> </button>
+                            </div>
+                            <img src="./images/slider1.jpg" className="" alt="..." />
                         </div>
-                        <div>
-                            <img src="./images/gadg-cate.jpg" className="" alt="..." />
+                        <div className="item">
+                            <div>
+                                <p>Explore our </p>
+                                <h3>Smartphones </h3>
+                                <p>&amp; Accessories collection</p>
+                                <button className="btn">Shop Now<FaAngleRight /></button>
+                            </div>
+                            <img src="./images/slider2.jpg" className="" alt="..." />
                         </div>
-                        <div>
-                            <img src="./images/deals.png" className="" alt="..." />
-                            <h4>Hello SLider Hello SLider Hello SLider</h4>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. numquam sequi laudantium iusto debitis ullam sed atque eaque hic libero necessitatibus eveniet dolore voluptates?
-                            </p>
-                            <button className="btn">Shop Now</button>
+                        <div className="item">
+                            <div>
+                                <p>Explore our </p>
+                                <h3>Smartphones</h3>
+                                <p>&amp; Accessories collection</p>
+                                <button className="btn">Shop Now <FaAngleRight /></button>
+                            </div>
+                            <img src="./images/slider3.jpg" className="" alt="..." />
                         </div>
                     </OwlCarousel>
                 </div>

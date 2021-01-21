@@ -12,10 +12,6 @@ const OrderProduct = (props) => {
                 <span>Seller</span><br/>
                 <span>ABC shop</span>
             </div>
-            <div>
-                <button className="btn">Return</button>
-                <button className="btn">Cancel Order</button>
-            </div>
         </div>
      );
 }

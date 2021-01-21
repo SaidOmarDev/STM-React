@@ -96,7 +96,7 @@ const CartProduct = (props) => {
                         {props.productType === 'wish' ?
                             <React.Fragment>
                                 <span className="fav btn" data-toggle="tooltip" data-placement="left" title="remove from wishlist" onClick={()=>removeFromWishlistHandler(props.product.id)}>
-                                    <TiDeleteOutline className="fav-icon"/>
+                                    <TiDeleteOutline className="fav-icon"/>Remove
                                 </span> 
                                 {props.inCart ? 
                                     <span className="btn ricon"><MdRemoveShoppingCart className="cart-icon"/></span>
@@ -106,7 +106,7 @@ const CartProduct = (props) => {
                             </React.Fragment> 
                             : 
                             <React.Fragment>
-                                {props.inWishlist ? 
+                                {/* {props.inWishlist ? 
                                     <span className="fav btn active">
                                         <FaHeart className="fav-icon"/>
                                     </span>
@@ -114,9 +114,9 @@ const CartProduct = (props) => {
                                     <span className="fav btn" onClick={()=>addToWishlistHandler(props.product)}>
                                         <BiHeart className="fav-icon"/>
                                     </span>
-                                }
+                                } */}
                                 
-                                <button className="btn ricon" onClick={()=>removeFromCartHandler(props.product.id)}><MdRemoveShoppingCart className="cart-icon"/></button>
+                                <button className="btn remoicon " onClick={()=>removeFromCartHandler(props.product.id)}><MdRemoveShoppingCart className="cart-icon"/> Remove From Cart</button>
                             </React.Fragment>
                         }
                         {/* <button className="btn q-view d-block"><FaEye className="view-icon"/>Quick View</button> */}

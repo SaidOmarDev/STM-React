@@ -4,8 +4,10 @@ import { Col, Row } from 'react-bootstrap';
 import RateStars from '../../SecondaryComponents/RateStars/rate-stars';
 import { AiFillStar, AiOutlineStar} from 'react-icons/ai';
 import './reviews.css'
+import { useSelector } from 'react-redux';
 
 const Reviews = (props) => {
+    const token = useSelector(state=> state.auth.token)
     return ( 
         <React.Fragment>
             <div className="avg-rating">
@@ -159,30 +161,32 @@ const Reviews = (props) => {
                     </Col>
                 </Row>
 
-                <form action="">
-                    <Rating 
-                        emptySymbol= {<AiOutlineStar className="icon" />}
-                        fullSymbol= {<AiFillStar className="icon" />}
-                        fractions={2}
-                        onChange={(rate) => alert(rate)}
-                        className="rating-form"
-                    />
-                    <Row>
-                        <Col md={6} className="form-group">
-                            <label htmlFor="fname">Full Name</label>
-                            <input type="text" className="form-control" id="fname" placeholder="Full Name"/>
-                        </Col>
-                        <Col md={6} className="form-group">
-                            <label htmlFor="email">Email</label>
-                            <input type="email" className="form-control" id="email" placeholder="E-mail Address"/>
-                        </Col>
-                        <Col className="form-group">
-                            <label htmlFor="review-msg">Comment</label>
-                            <textarea className="form-control" name="review-msg" id="review-msg" rows="10"></textarea>
-                        </Col>
-                    </Row>
-                    <button className="btn">Post Review</button>
-                </form>
+                {token ? 
+                    <form>
+                        <Rating 
+                            emptySymbol= {<AiOutlineStar className="icon" />}
+                            fullSymbol= {<AiFillStar className="icon" />}
+                            fractions={2}
+                            onChange={(rate) => alert(rate)}
+                            className="rating-form"
+                        />
+                        <Row>
+                            {/* <Col md={6} className="form-group">
+                                <label htmlFor="fname">Full Name</label>
+                                <input type="text" className="form-control" id="fname" placeholder="Full Name"/>
+                            </Col>
+                            <Col md={6} className="form-group">
+                                <label htmlFor="email">Email</label>
+                                <input type="email" className="form-control" id="email" placeholder="E-mail Address"/>
+                            </Col> */}
+                            <Col className="form-group">
+                                <label htmlFor="review-msg">Comment</label>
+                                <textarea className="form-control" name="review-msg" id="review-msg" rows="10"></textarea>
+                            </Col>
+                        </Row>
+                        <button className="btn">Post Review</button>
+                    </form>: null
+                }
             </div>
         </React.Fragment>
      );

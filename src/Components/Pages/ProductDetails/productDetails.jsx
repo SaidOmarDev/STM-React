@@ -34,12 +34,14 @@ const ProductDetails = (props) => {
                                 <div>
                                     <span>Category:</span>
                                     <span>Color:</span>
-                                    <span>Matrial:</span>
+                                    <span>Size:</span>
+                                    <span>Brand:</span>
                                 </div>
                                 <div className="spec-value">
                                     <span>{product.category}</span>
                                     <span>Blue</span>
-                                    <span>metal</span>
+                                    <span>MD</span>
+                                    <span>lacost</span>
                                 </div>
                             </div>
                             <div className="share">
@@ -54,7 +56,7 @@ const ProductDetails = (props) => {
                                     <button className="btn"><FaHeart className="icon"/>Add To WishList</button>
                                 </div>
                             </div>
-                            <div className="payment">
+                            {/* <div className="payment">
                                 <h6>100% SECURE PAYMENT</h6>
                                 <div className="payment-icons">
                                     <img src="/images/american-express.png" alt=""/>
@@ -63,7 +65,7 @@ const ProductDetails = (props) => {
                                     <img src="/images/paypal.png" alt=""/>
                                     <img src="/images/visa.png" alt=""/>
                                 </div>
-                            </div>
+                            </div> */}
                         </Col>
                         <Col md={4}>
                             <div className="card">
@@ -74,36 +76,60 @@ const ProductDetails = (props) => {
                                     </span>
                                     <RateStars />
                                 </div>
-                                {/* <div className="color">
+                                <div className="color">
                                     <h6>Color: </h6>
                                     <div className="custom-control custom-option custom-control-inline">
-                                        <input type="radio" className="custom-control-input" id="color1"/>
+                                        <input type="radio" name="color" className="custom-control-input" id="color1"/>
                                         <label htmlFor="color1" className="custom-option-label rounded-circle">
                                             <span className="custom-option-color rounded-circle" style={{backgroundColor: "#f25540"}}></span>
                                         </label>
                                     </div>
                                     <div className="custom-control custom-option custom-control-inline">
-                                        <input type="radio" className="custom-control-input" id="color2"/>
+                                        <input type="radio" name="color" className="custom-control-input" id="color2"/>
                                         <label htmlFor="color2" className="custom-option-label rounded-circle">
                                             <span className="custom-option-color rounded-circle" style={{backgroundColor: "#65805b"}}></span>
                                         </label>
                                     </div>
                                     <div className="custom-control custom-option custom-control-inline">
-                                        <input type="radio" className="custom-control-input" id="color3"/>
+                                        <input type="radio" name="color" className="custom-control-input" id="color3"/>
                                         <label htmlFor="color3" className="custom-option-label rounded-circle">
                                             <span className="custom-option-color rounded-circle" style={{backgroundColor: "#f5f5f5"}}></span>
                                         </label>
                                     </div>
                                     <div className="custom-control custom-option custom-control-inline">
-                                        <input type="radio" className="custom-control-input" id="color4"/>
+                                        <input type="radio" name="color" className="custom-control-input" id="color4"/>
                                         <label htmlFor="color4" className="custom-option-label rounded-circle">
                                             <span className="custom-option-color rounded-circle" style={{backgroundColor: "#333"}}></span>
                                         </label>
                                     </div>
-                                </div> */}
-                                {/* <div className="size">
+                                </div>
+                                <div className="size">
                                     <h6>Selected Size: </h6>
-                                </div> */}
+                                    <div className="custom-control custom-option custom-control-inline">
+                                        <input type="radio" name="size" className="custom-control-input" id="xl"/>
+                                        <label htmlFor="xl" className="custom-option-label">
+                                            <span className="custom-option-size">XL</span>
+                                        </label>
+                                    </div>
+                                    <div className="custom-control custom-option custom-control-inline">
+                                        <input type="radio" name="size" className="custom-control-input" id="lg"/>
+                                        <label htmlFor="lg" className="custom-option-label">
+                                            <span className="custom-option-size">LG</span>
+                                        </label>
+                                    </div>
+                                    <div className="custom-control custom-option custom-control-inline">
+                                        <input type="radio" name="size" className="custom-control-input" id="md"/>
+                                        <label htmlFor="md" className="custom-option-label">
+                                            <span className="custom-option-size">MD</span>
+                                        </label>
+                                    </div>
+                                    <div className="custom-control custom-option custom-control-inline">
+                                        <input type="radio" name="size" className="custom-control-input" id="sm"/>
+                                        <label htmlFor="sm" className="custom-option-label">
+                                            <span className="custom-option-size">SM</span>
+                                        </label>
+                                    </div>
+                                </div>
                                 <Quantity quantity={product.quantity} id={product.id}/>
                                 <div className="add-btn">
                                     <button className="btn add-cart"><FaShoppingCart className="cart-icon"/>Add To Cart</button>
@@ -112,10 +138,10 @@ const ProductDetails = (props) => {
                             </div>
                         </Col>
                     </Row>
-                    <Tabs defaultActiveKey="description">
-                        <Tab eventKey="description" title="Description">
+                    <Tabs defaultActiveKey="reviews">
+                        {/* <Tab eventKey="description" title="Description">
                             <Description />
-                        </Tab>
+                        </Tab> */}
                         <Tab eventKey="reviews" title="Reviews">
                             <Reviews />
                         </Tab>
