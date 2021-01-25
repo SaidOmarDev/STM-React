@@ -10,7 +10,7 @@ const Slider = (props) => {
         <div className="slider">
             <div className="container">
                 <div className="slider-content">
-                    <OwlCarousel items={1} className="owl-theme" dots>
+                    <OwlCarousel items={1} className="owl-theme" dots rows={2}>
                         <div className="item">
                             <div>
                                 <p>Explore our </p>

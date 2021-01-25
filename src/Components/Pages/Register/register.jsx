@@ -88,7 +88,7 @@ const Register = (props) => {
                             confirmPassword: '',
                             acceptTerms: false,
                             gender: '',
-                            country: ''
+                            city: ''
                         }}
                         validationSchema={Yup.object().shape({
                             fullName: Yup.string().max(20, '* Must be 20 character or less').required('* required'),
@@ -99,7 +99,7 @@ const Register = (props) => {
                             confirmPassword: Yup.string().oneOf([Yup.ref('password')], 'Passwords must match'),
                             birthDate: Yup.string().required('* required'),
                             gender: Yup.string().oneOf(["Male", "Female"], '* required'),
-                            country: Yup.string().oneOf(['egy', 'ksa', 'usa'], '* Invalid Country Name').required('* required country selection')
+                            city: Yup.string().oneOf(['cairo', 'giza', 'minia'], '* Invalid Country Name').required('* required country selection')
                         })}
                         onSubmit={(values, {setSubmitting}) => {
                             setTimeout(() => {
@@ -143,11 +143,11 @@ const Register = (props) => {
                                 </div>
                                 <div className="col-12">
                                     <div className="form-group">
-                                        <MySelect label="Country" name="country" >
-                                            <option value="">Select a Country</option>
-                                            <option value="egy">Egypt</option>
-                                            <option value="ksa">Saudi Arabia</option>
-                                            <option value="usa">United States</option>
+                                        <MySelect label="City" name="city" >
+                                            <option value="">Select a city</option>
+                                            <option value="ciro">Cairo</option>
+                                            <option value="giza">Giza</option>
+                                            <option value="minia">Minia</option>
                                         </MySelect>
                                     </div>
                                 </div>

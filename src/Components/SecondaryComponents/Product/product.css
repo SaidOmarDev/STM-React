@@ -168,3 +168,11 @@
     background-color: #e3e9ef;
   }
   /* End product card styles */
+  .elip-text{
+    overflow: hidden;
+}
+.line-clamp{
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}

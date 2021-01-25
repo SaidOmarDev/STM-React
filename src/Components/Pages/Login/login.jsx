@@ -72,7 +72,7 @@ const Login = (props) => {
                                     // alert(JSON.stringify(values, null, 2));
                                     setSubmitting(false);
                                     // console.log(values);
-                                    dispatch(auth(values.email, values.password, isRegister))
+                                    dispatch(auth())
                                 }, 400)
                                 // if(token){
                                 //     repalceHandler();

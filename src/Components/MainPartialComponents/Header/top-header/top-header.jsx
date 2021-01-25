@@ -4,8 +4,12 @@ import { Link } from 'react-router-dom'
 import {AiOutlineUser} from 'react-icons/ai'
 import {BiEnvelope, BiPhone} from 'react-icons/bi'
 import './top-header.css'
+import { Dropdown, DropdownButton } from 'react-bootstrap'
 
 const TopHeader = (props) => {
+    const handleLang = (e)=>{
+        console.log(e);
+    }
     return ( 
         <div className="topHeader">
             <div className="container">
@@ -13,7 +17,15 @@ const TopHeader = (props) => {
                     <div className="col-md-4">
                         <div className="left">
                             <div className="lang">
-                                <div className="dropdown">
+                                <DropdownButton id="dropdown-basic-button" title="" onSelect={handleLang}>
+                                    <Dropdown.Item eventKey='en'>
+                                        <img src="/images/eng.png" alt="English"/>Eng
+                                    </Dropdown.Item>
+                                    <Dropdown.Item eventKey="ar">
+                                        <img src="/images/ar.png" alt="English"/>عربي
+                                    </Dropdown.Item>
+                                </DropdownButton>
+                                {/* <div className="dropdown">
                                     <a href="#" className="dropdown-toggle" data-toggle="dropdown">
                                         <img src="/images/eng.png" alt="English"/>
                                         Eng
@@ -28,7 +40,7 @@ const TopHeader = (props) => {
                                             عربي
                                         </li>
                                     </ul>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     </div>

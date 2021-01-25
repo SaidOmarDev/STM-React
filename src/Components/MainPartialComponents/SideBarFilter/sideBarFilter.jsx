@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {useDispatch} from 'react-redux'
+import {useDispatch, useSelector} from 'react-redux'
 import {filterProducts} from '../../../actions/filterActions'
 
 import Search from '../../SecondaryComponents/Search/search';
@@ -10,6 +10,8 @@ import './sideBarFilter.css'
 
 
 const SideBarFilter = (props) => {
+    const categories = useSelector(state => state.filtered.category)
+    console.log(categories);
     const [priceRange, setPriceRange] = useState([ 0, 0]);
     const dispatch = useDispatch();
     
@@ -28,7 +30,22 @@ const SideBarFilter = (props) => {
         <div className="cart-summary shop-sidebar">
             <div className="categories">
                 <h4>Categories</h4>
-                <div className="content-bar">
+                {categories.map(category => (
+                    <div className="content-bar" key={category.id}>
+                    <div className="head-bar" data-toggle="collapse" data-target={`#${category.name}`}>
+                        <h3>{category.name}<FaAngleDown className="angle-icon"/></h3>
+                    </div>
+                    <div className="collapse bar-content" id={category.name}>
+                        <Search/>
+                        <ul className="list-unstyled">
+                            <li><span className="cate-link" onClick={()=>filterHandler(props.products, category.name)}>View all</span><span>135</span></li>
+                            <li><span className="cate-link">subCategory</span><span>37</span></li>
+                            <li><span className="cate-link">subCategory</span><span>98</span></li>
+                        </ul>
+                    </div>
+                </div>
+                ))}
+                {/* <div className="content-bar">
                     <div className="head-bar" data-toggle="collapse" data-target="#first">
                         <h3>Clothes<FaAngleDown className="angle-icon"/></h3>
                     </div>
@@ -79,7 +96,7 @@ const SideBarFilter = (props) => {
                             <li><a href="#">subCategory</a><span>98</span></li>
                         </ul>
                     </div>
-                </div>
+                </div> */}
             </div>
             <div className="price-range">
                 <h4>Price range</h4>

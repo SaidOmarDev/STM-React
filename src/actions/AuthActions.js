@@ -8,12 +8,12 @@ export function authStart() {
         })
     }
  }
- export function authSuccess(token, userId) { 
+ export function authSuccess(token, phone) { 
     return function (dispatch) { 
         dispatch({
             type: TYPES.AUTH_SUCCESS,
             idToken: token,
-            userId: userId
+            phone: phone
         })
     }
  }
@@ -25,27 +25,28 @@ export function authStart() {
         })
     }
  }
- export function auth(email, password, isRegister) { 
+ export function auth() { 
      return function (dispatch) { 
          dispatch(authStart())
-         let url = 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyAVN68TYqHIuqc7pNW7G08VVer7Mjk8wCE'
-         if(!isRegister){
-            url = 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyAVN68TYqHIuqc7pNW7G08VVer7Mjk8wCE'
-         }
+        //  let url = 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyAVN68TYqHIuqc7pNW7G08VVer7Mjk8wCE'
+        //  if(!isRegister){
+        //     url = 'http://stm.4soft-eg.com/api/login'
+        //  }
          const authData = {
-             email: email,
-             password: password,
-             returnSecureToken: true
+             phone: '01030222791',
+             password: '123456789',
+             lang: 'en'
          }
-        axios.post(url, authData)
+        axios.post('http://stm.4soft-eg.com/api/login', authData)
          .then(response =>{
-            //  console.log(response);
-             dispatch(authSuccess(response.data.idToken, response.data.localId))
+             console.log(response);
+             console.log(response.data.driver.apiToken+' , '+ response.data.driver.phone);
+             dispatch(authSuccess(response.data.driver.apiToken, response.data.driver.phone))
              
          })
          .catch(err=>{
             //  console.log(err.response.data.error);
-             dispatch(authFail(err.response.data.error))
+             dispatch(authFail(err))
          })
     }
  }
