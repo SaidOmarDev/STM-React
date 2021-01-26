@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import {Switch, Route} from 'react-router-dom'
 import {useDispatch, useSelector} from 'react-redux'
 import {fetchProducts} from './actions/productActions'
+import { fetchCategories } from './actions/filterActions'
 import {fetchCart} from './actions/cartActions'
 import { fetchWishlist } from './actions/wishlistActions'
 
@@ -30,10 +31,10 @@ function App(props) {
 
   useEffect(() => {
     dispatch(fetchProducts());
+    dispatch(fetchCategories());
   },[token, dispatch])
 
   useEffect(() => {
-    console.log(token);
     if(token){
       dispatch(fetchCart());
       dispatch(fetchWishlist());

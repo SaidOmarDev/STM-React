@@ -3,8 +3,7 @@ import TYPES from './types'
 
 const initialState = {
     items: [],
-    // filteredItems: [],
-    // categories: []
+    category: []
 };
 
 export default function(state = initialState, action) { 
@@ -18,6 +17,11 @@ export default function(state = initialState, action) {
                 ...state,
                 items: filteredProducts
             };
+        case TYPES.FETCH_CATEGORIES:
+            return {
+                ...state,
+                category: action.payload
+            }
         default:
             return state;
     }

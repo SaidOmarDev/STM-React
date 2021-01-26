@@ -17,22 +17,25 @@
 }
 
 .offers .offers-cards button.slick-arrow{
-    position: relative;
-    display: flex;
-    width: 100%;
+    position: absolute;
+    top: -40px;
+    width: 28px;
+    height: 28px;
 }
 .offers .offers-cards button.slick-arrow::before{
     position: absolute;
     top: 0;
-    right: 0;
     margin-top: 0;
     font-size: 28px;
     margin: 5px;
-    color: #666666;
+    color: #6a6afc;
     transition: all 200ms ease;
 }
+.offers .offers-cards .slick-arrow.slick-next{
+    right: 30px;
+}
 .offers .offers-cards .slick-arrow.slick-prev{
-    right: 20px;
+    right: 70px;
 }
 .slick-dots li{
     padding: 0;

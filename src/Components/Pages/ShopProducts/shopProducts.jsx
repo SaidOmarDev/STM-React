@@ -76,7 +76,7 @@ const ShopProducts = () => {
                             </div>
                             <div className="cart-bottom">
                                 {/* <Pagination /> */}
-                                {products.length >= 6 ? (
+                                {products.length > 6 ? (
                                     <Pagination 
                                         activePage={currentPage}
                                         itemsCountPerPage={6}

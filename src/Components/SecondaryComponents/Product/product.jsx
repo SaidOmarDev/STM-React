@@ -59,7 +59,7 @@ const Product = (props) => {
             <div className="pro-desc">
                 <div className="pro-info">
                     <span className="categ">{props.product.category}</span>
-                    <Link to={`/productDetails/${props.product.id}`}><h4 className="pro-name">{props.product.name}</h4></Link>
+                    <Link to={`/productDetails/${props.product.id}`}><h4 className="pro-name line-clamp elip-text">{props.product.name}</h4></Link>
                     <div>
                         <span className="price">
                             <span className="aft-dis">EGP {props.product.price}</span>

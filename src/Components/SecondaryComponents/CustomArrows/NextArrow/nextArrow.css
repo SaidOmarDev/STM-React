@@ -1,0 +1,31 @@
+.arrow-btn.btn{
+    position: absolute;
+    top: -50px;
+    width: 30px;
+    height: 30px;
+    background-color: #f34770;
+    color: #fff;
+    border-color: #f34770;
+    border-radius: 50%;
+    transition: all .3s ease-in-out;
+}
+.arrow-btn.btn:hover{
+    background-color: #6a6afc;
+    border-color: #6a6afc;
+}
+.arrow-btn.btn:focus{
+    background-color: #6a6afc;
+    border-color: #6a6afc;
+}
+.arrow-btn.btn.next{
+    right: 0;
+}
+.arrow-btn.btn.prev{
+    right: 50px;
+}
+.arrow-btn.btn .arrow-icon{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

@@ -16,5 +16,19 @@ export function fetchProducts() {
             type: TYPES.FETCH_PRODUCTS,
             payload: data
         })
+        // await axios.post('http://stm.4soft-eg.com/api/getProducts', {
+        //     api_token: 'rjdClHuZg7dVRXsmOzrdVgQfJEiOriI7E5hdLFoT1j2AJij38FKqlhnOQmdhgc0U',
+        //     category_id: 3,
+        //     lang: 'en',
+        //     page: 1
+        // }).then(response => {
+        //     console.log(response);
+        //     dispatch({
+        //         type: TYPES.FETCH_PRODUCTS,
+        //         payload: response.data.product
+        //     })
+        // }).catch(err => {
+        //     console.log(err);
+        // })
     }
  }

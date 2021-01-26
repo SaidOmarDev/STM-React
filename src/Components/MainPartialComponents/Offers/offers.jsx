@@ -6,6 +6,8 @@ import 'slick-carousel/slick/slick-theme.css'
 import Deals from './Deals/deals'
 import Product from '../../SecondaryComponents/Product/product'
 import SectionHeader from '../../SecondaryComponents/SectionHeader/sectionHeader'
+import PrevArrow from '../../SecondaryComponents/CustomArrows/PrevArrow/prevArrow'
+import NextArrow from '../../SecondaryComponents/CustomArrows/NextArrow/nextArrow'
 import './offers.css'
 
 const Offers = (props) => {
@@ -19,14 +21,16 @@ const Offers = (props) => {
         wishlist = []
     }
     let settings = {
-        dots: true,
-        arrows: false,
+        dots: false,
+        arrows: true,
         infinite: true,
         speed: 500,
         slidesToShow: 3,
-        slidesToScroll: 1,
+        slidesToScroll: 3,
         rows: 2,
-        slidesPerRow: 1
+        slidesPerRow: 1,
+        nextArrow: <NextArrow />,
+        prevArrow: <PrevArrow />,
     };
     let options = {
         dots: false,

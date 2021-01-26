@@ -1,3 +1,4 @@
+import axios from 'axios';
 import TYPES from '../reducers/types'
 // import axios from 'axios'
 
@@ -11,5 +12,20 @@ export function filterProducts(products, category) {
                 category: category
             }
         })
+    }
+ }
+ export function fetchCategories() { 
+    return async function (dispatch) { 
+        await axios.post('http://stm.4soft-eg.com/api/getCategories', {
+            api_token: 'rjdClHuZg7dVRXsmOzrdVgQfJEiOriI7E5hdLFoT1j2AJij38FKqlhnOQmdhgc0U',
+            lang: 'en'
+        }).then(response => {
+            console.log(response);
+            dispatch({
+                type: TYPES.FETCH_CATEGORIES,
+                payload: response.data.category
+            })
+        }
+        )
     }
  }
