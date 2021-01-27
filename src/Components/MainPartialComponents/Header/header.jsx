@@ -7,7 +7,7 @@ const Header = (props) => {
     return ( 
         <header>
             <TopHeader token={props.token}/>
-            <MainHeader />
+            <MainHeader token={props.token}/>
             <Menu />
         </header>
      );

@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import {Switch, Route} from 'react-router-dom'
 import {useDispatch, useSelector} from 'react-redux'
 import {fetchProducts} from './actions/productActions'
@@ -27,14 +27,17 @@ import './App.css';
 
 function App(props) {
   const dispatch = useDispatch();
-  const token = useSelector(state => state.auth.token)
+  // const token = useSelector(state => state.auth.token);
+  const [token, settoken] = useState(localStorage.getItem('apiToken'))
 
+  useEffect(() => {
+    console.log(token);
+    settoken(localStorage.getItem('apiToken'))
+  }, [token])
+  
   useEffect(() => {
     dispatch(fetchProducts());
     dispatch(fetchCategories());
-  },[token, dispatch])
-
-  useEffect(() => {
     if(token){
       dispatch(fetchCart());
       dispatch(fetchWishlist());
@@ -65,7 +68,7 @@ function App(props) {
           <Route path="/payment" component={Payment} />
           <Route path="/review" component={Review} />
           <Route path="/login" render={(props)=>(
-              <Login {...props}/>)
+              <Login {...props} token={token}/>)
             } />
           <Route path="/register" component={Register} />
           <Route path="/contacts" component={Contacts} />

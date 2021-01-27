@@ -3,27 +3,27 @@
     top: -50px;
     width: 30px;
     height: 30px;
-    background-color: #f34770;
-    color: #fff;
-    border-color: #f34770;
+    background-color: transparent;
+    color: #6a6afc;
+    border-color: transparent;
     border-radius: 50%;
     transition: all .3s ease-in-out;
 }
 .arrow-btn.btn:hover{
-    background-color: #6a6afc;
-    border-color: #6a6afc;
+    color: #f34770;
 }
 .arrow-btn.btn:focus{
-    background-color: #6a6afc;
-    border-color: #6a6afc;
+    background-color: transparent;
+    border-color: transparent;
 }
 .arrow-btn.btn.next{
     right: 0;
 }
 .arrow-btn.btn.prev{
-    right: 50px;
+    right: 30px;
 }
 .arrow-btn.btn .arrow-icon{
+    font-size: 28px;
     position: absolute;
     top: 50%;
     left: 50%;

@@ -40,8 +40,9 @@ const Login = (props) => {
     // const [show, setShow] = useState(true);
     const dispatch = useDispatch();
     const loading = useSelector(state=> state.auth.loading);
-    const token = useSelector(state=> state.auth.token);
+    // const token = useSelector(state=> state.auth.token);
     // const errorMessage = useSelector(state => state.auth.error);
+    const token = localStorage.getItem('apiToken')
     useEffect(() => {
         if(token){
             // console.log(props.history);
@@ -72,7 +73,7 @@ const Login = (props) => {
                                     // alert(JSON.stringify(values, null, 2));
                                     setSubmitting(false);
                                     // console.log(values);
-                                    dispatch(auth())
+                                    dispatch(auth(values.email, values.password, isRegister))
                                 }, 400)
                                 // if(token){
                                 //     repalceHandler();
