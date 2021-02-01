@@ -2,6 +2,7 @@ import TYPES from './types'
 
 const initialState = {
     token: null,
+    userid: null,
     phone: null,
     error: null,
     loading: false
@@ -19,6 +20,7 @@ export default function(state = initialState, action){
             return {
                 ...state,
                 token: action.idToken,
+                // userid: action.userid,
                 phone: action.phone,
                 error: null,
                 loading: false

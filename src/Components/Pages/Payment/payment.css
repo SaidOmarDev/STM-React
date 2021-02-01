@@ -26,3 +26,31 @@
     background-color: #232363;
     box-shadow: none;
 }
+.billing-info .nav{
+    border-bottom: 1px solid #eee;
+    margin: 50px 0 30px;
+}
+.billing-info .nav .nav-item.nav-link{
+    color: #232363;
+    font-weight: 500;
+    padding: 5px 15px;  
+}
+.billing-info .nav .nav-item.nav-link.active{
+    background-color: #232363;
+    color: #fff;
+}
+.billing-info .tab-content h4{
+    margin: 20px auto;
+    color: #3838bd;
+    width: max-content;
+    font-weight: bold;
+}
+.billing-info .error,
+.billing-info .noerror{
+    height: 15px;
+    font-size: 13px;
+    color: #FE696A;
+}
+.billing-info .noerror{
+    opacity: 0;
+}

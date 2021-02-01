@@ -22,7 +22,7 @@ const MainHeader = (props) => {
     
     let total = 0
     if(cart.length>0){
-        cart.map(item=> total += item.price)
+        cart.map(item => total += item.price)
     }
 
     let classes = []

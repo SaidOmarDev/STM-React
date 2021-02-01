@@ -11,13 +11,32 @@ export function fetchCart() {
     }
  }
 
+ export function addStart() { 
+    return async function (dispatch) {
+        dispatch({
+            type: TYPES.ADD_START
+        })
+    }
+ }
+ export function addSuccess(product) {
+     return function (dispatch) {
+         dispatch({
+             type: TYPES.ADD_SUCCESS,
+             product: product
+         })
+     }
+ }
 export function addToCart(product) { 
     return async function (dispatch) {
+        dispatch(addStart())
         let newProduct = {...product, quantity: 1}
-        const {data} = await axios.post('http://localhost:3001/cart', newProduct);
-        dispatch({
-            type: TYPES.ADD_TO_CART,
-            payload: data
+        await axios.post('http://localhost:3001/cart', newProduct)
+        .then(response => {
+            console.log(response);
+            dispatch(addSuccess(response.data))
+        })
+        .catch(err => {
+            console.log(err);
         })
     }
  }

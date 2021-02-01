@@ -56,16 +56,6 @@ const ProductDetails = (props) => {
                                     <button className="btn"><FaHeart className="icon"/>Add To WishList</button>
                                 </div>
                             </div>
-                            {/* <div className="payment">
-                                <h6>100% SECURE PAYMENT</h6>
-                                <div className="payment-icons">
-                                    <img src="/images/american-express.png" alt=""/>
-                                    <img src="/images/discover.png" alt=""/>
-                                    <img src="/images/mastercard.png" alt=""/>
-                                    <img src="/images/paypal.png" alt=""/>
-                                    <img src="/images/visa.png" alt=""/>
-                                </div>
-                            </div> */}
                         </Col>
                         <Col md={4}>
                             <div className="card">
@@ -139,9 +129,6 @@ const ProductDetails = (props) => {
                         </Col>
                     </Row>
                     <Tabs defaultActiveKey="reviews">
-                        {/* <Tab eventKey="description" title="Description">
-                            <Description />
-                        </Tab> */}
                         <Tab eventKey="reviews" title="Reviews">
                             <Reviews />
                         </Tab>

@@ -1,7 +1,9 @@
 import TYPES from './types'
 
 const initialState = {
-    items: []
+    items: [],
+    loading: false,
+    added: false
 };
 
 export default function(state = initialState, action) { 
@@ -11,10 +13,17 @@ export default function(state = initialState, action) {
                 ...state,
                 items: action.payload
             };
-        case TYPES.ADD_TO_CART:
+        case TYPES.ADD_START:
             return {
                 ...state,
-                items: [...state.items, action.payload]
+                loading: true
+            }
+        case TYPES.ADD_SUCCESS:
+            return {
+                ...state,
+                items: [...state.items, action.product],
+                added: true,
+                loading: false
             };
         case TYPES.REMOVE_FROM_CART:
             return {

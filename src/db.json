@@ -7,7 +7,7 @@
       "image": "/images/pro4.jpg",
       "shortDesc": "Nulla facilisi. Curabitur at lacus ac velit ornare lobortis.",
       "description": "Cras sagittis. Praesent nec nisl a purus blandit viverra. Ut leo. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Fusce a quam.",
-      "category": "Clothes"
+      "category": "أدوات_نظافة"
     },
     {
       "id": "2",
@@ -93,23 +93,13 @@
   ],
   "cart": [
     {
-      "id": "2",
-      "name": "Bag",
-      "price": 255,
-      "image": "/images/pro1.jpg",
+      "id": "3",
+      "name": "Chair",
+      "price": 5552,
+      "image": "/images/pro2.jpg",
       "shortDesc": "Nulla facilisi. Curabitur at lacus ac velit ornare lobortis.",
       "description": "Cras sagittis. Praesent nec nisl a purus blandit viverra. Ut leo. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Fusce a quam.",
-      "category": "Gadgets",
-      "quantity": 2
-    },
-    {
-      "id": "4",
-      "name": "Phone",
-      "price": 5223,
-      "image": "/images/pro3.jpg",
-      "shortDesc": "Nulla facilisi. Curabitur at lacus ac velit ornare lobortis.",
-      "description": "Cras sagittis. Praesent nec nisl a purus blandit viverra. Ut leo. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Fusce a quam.",
-      "category": "Electronics",
+      "category": "Furniture",
       "quantity": 1
     },
     {
@@ -120,7 +110,27 @@
       "shortDesc": "Nulla facilisi. Curabitur at lacus ac velit ornare lobortis.",
       "description": "Cras sagittis. Praesent nec nisl a purus blandit viverra. Ut leo. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Fusce a quam.",
       "category": "Clothes",
-      "quantity": null
+      "quantity": 1
+    },
+    {
+      "id": "6",
+      "name": "Phone",
+      "price": 5525,
+      "image": "/images/pro3.jpg",
+      "shortDesc": "Nulla facilisi. Curabitur at lacus ac velit ornare lobortis.",
+      "description": "Cras sagittis. Praesent nec nisl a purus blandit viverra. Ut leo. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Fusce a quam.",
+      "category": "Electronics",
+      "quantity": 1
+    },
+    {
+      "id": "5",
+      "name": "Chair",
+      "price": 1252,
+      "image": "/images/pro2.jpg",
+      "shortDesc": "Nulla facilisi. Curabitur at lacus ac velit ornare lobortis.",
+      "description": "Cras sagittis. Praesent nec nisl a purus blandit viverra. Ut leo. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Fusce a quam.",
+      "category": "Furniture",
+      "quantity": 1
     }
   ],
   "wishlist": [

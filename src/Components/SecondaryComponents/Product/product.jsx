@@ -9,10 +9,11 @@ import {FaShoppingCart, FaHeart} from 'react-icons/fa'
 import {BiHeart} from 'react-icons/bi'
 import {AiFillCheckCircle} from 'react-icons/ai'
 import './product.css'
-import { OverlayTrigger, Tooltip } from 'react-bootstrap'
+import { OverlayTrigger, Spinner, Tooltip } from 'react-bootstrap'
 
 const Product = (props) => {
     const token = useSelector(state => state.auth.token)
+    const loading = useSelector(state => state.cart.loading)
     const dispatch = useDispatch();
     const history = useHistory();
 
@@ -33,6 +34,11 @@ const Product = (props) => {
 
     return ( 
         <div className="product card">
+            {loading ? 
+                <div className="spinner">
+                    <Spinner animation="border"/>
+                </div> : null
+            }
             <div className="pro-img">
                 <Link to={`/productDetails/${props.product.id}`}><img src={props.product.image} alt="product" /></Link>
                 <div className="badges">

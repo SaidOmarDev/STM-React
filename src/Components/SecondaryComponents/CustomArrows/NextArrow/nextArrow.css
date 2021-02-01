@@ -13,8 +13,8 @@
     color: #f34770;
 }
 .arrow-btn.btn:focus{
-    background-color: #6a6afc;
-    border-color: #6a6afc;
+    background-color: transparent;
+    border-color: transparent;
 }
 .arrow-btn.btn.next{
     right: 0;

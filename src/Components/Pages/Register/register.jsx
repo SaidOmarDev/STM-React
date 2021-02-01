@@ -96,8 +96,8 @@ const Register = (props) => {
                             phone: Yup.number().required('* required'),
                             acceptTerms: Yup.boolean().oneOf([true], '* You must accept the terms and conditions.'),
                             password: Yup.string().min(8, '* Must be 8 character or more').required('* required'),
-                            confirmPassword: Yup.string().oneOf([Yup.ref('password')], 'Passwords must match'),
-                            birthDate: Yup.string().required('* required'),
+                            confirmPassword: Yup.string().oneOf([Yup.ref('password')], 'Passwords must match').required('*required'),
+                            birthDate: Yup.date().required('* required'),
                             gender: Yup.string().oneOf(["Male", "Female"], '* required'),
                             city: Yup.string().oneOf(['cairo', 'giza', 'minia'], '* Invalid Country Name').required('* required country selection')
                         })}
@@ -106,7 +106,7 @@ const Register = (props) => {
                                 // alert(JSON.stringify(values, null, 2));
                                 setSubmitting(false); 
                                 console.log(values)  
-                                dispatch(auth(values.email, values.password, isRegister))
+                                dispatch(auth(values, isRegister))
                             }, 400)
                         }}>
                         <Form>
@@ -145,7 +145,7 @@ const Register = (props) => {
                                     <div className="form-group">
                                         <MySelect label="City" name="city" >
                                             <option value="">Select a city</option>
-                                            <option value="ciro">Cairo</option>
+                                            <option value="cairo">Cairo</option>
                                             <option value="giza">Giza</option>
                                             <option value="minia">Minia</option>
                                         </MySelect>

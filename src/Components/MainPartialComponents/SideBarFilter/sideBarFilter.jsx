@@ -11,7 +11,6 @@ import './sideBarFilter.css'
 
 const SideBarFilter = (props) => {
     const categories = useSelector(state => state.filtered.category)
-    console.log(categories);
     const [priceRange, setPriceRange] = useState([ 0, 0]);
     const dispatch = useDispatch();
     
