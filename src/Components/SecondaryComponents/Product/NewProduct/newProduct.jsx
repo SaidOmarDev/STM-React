@@ -1,9 +1,26 @@
 import React from 'react';
 import RateStars from '../../RateStars/rate-stars'
 import {BiHeart} from 'react-icons/bi'
+import { FaHeart } from 'react-icons/fa';
 import './newProduct.css'
+import { useDispatch, useSelector } from 'react-redux';
+import { Link, useHistory } from 'react-router-dom';
+import { addToWishlist } from '../../../../actions/wishlistActions';
 
 const NewProduct = (props) => {
+    const token = useSelector(state => state.auth.token)
+    const loading = useSelector(state => state.cart.loading)
+    const dispatch = useDispatch();
+    const history = useHistory();
+    
+    const addToWishListHandler = (product)=>{
+        if(token){
+            dispatch(addToWishlist(product));
+        }else{
+            history.push("/login");
+        }
+    }
+
     return ( 
         <div className="new-product">
             {props.proType === 'review' ? null :  
@@ -11,21 +28,22 @@ const NewProduct = (props) => {
                     <div className="badges">
                         <span className="status badge badge-primary">New</span>
                     </div>
-                    <span className="fav" data-toggle="tooltip" data-placement="left" title="add to wishlist"><BiHeart className="fav-icon"/></span>
+                    {props.inWishlist ? (<span className="fav active" ><FaHeart className="fav-icon"/></span>) : (<span className="fav"  onClick={()=>addToWishListHandler(props.product)}><BiHeart className="fav-icon"/></span>)}
+                    
                 </>
             }
             <div className="card">
                 <div className="pro-img">
-                    <a href="#"><img src="./images/deals.png" alt="product" /></a>
+                    <Link to={`/productDetails/${props.product.id}`}><img src={props.product.image} alt="product" /></Link>
                 </div>
                 <div className="pro-desc">
                     <div className="pro-info">
-                        <span className="categ">Cake Tools</span>
-                        <a href="#"><h4 className="pro-name">Product Name</h4></a>
+                        <span className="categ">{props.product.category}</span>
+                        <Link to={`/productDetails/${props.product.id}`}><h4 className="pro-name line-clamp elip-text">{props.product.name}</h4></Link>
                         <div>
                             {props.proType === 'review' ? null : <RateStars />}
                             <span className="price">
-                                <span className="aft-dis">$9.9</span>
+                                <span className="aft-dis">EGP {props.product.price}</span>
                                 {props.proType === 'review' ? null : <span className="bef-dis">$12.5</span>}
                             </span>
                         </div>

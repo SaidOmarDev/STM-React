@@ -52,7 +52,7 @@ const Contacts = (props) => {
                                 <h3>Send a Message</h3>
                                 <form>
                                     <div className="row">
-                                        <div className="col-md-6">
+                                        {/* <div className="col-md-6">
                                             <div className="form-group">
                                                 <input type="text" className="form-control" placeholder="Your Name"/>
                                             </div>
@@ -65,6 +65,16 @@ const Contacts = (props) => {
                                         <div className="col-md-6">
                                             <div className="form-group">
                                                 <input type="number" className="form-control" placeholder="Your Phone Number"/>
+                                            </div>
+                                        </div> */}
+                                        <div className="col-md-6">
+                                            <div className="form-group">
+                                                <select name="type" id="type">
+                                                    <option value="">Select Message Type</option>
+                                                    <option value="complaint">Complaint</option>
+                                                    <option value="suggestion">Suggestion</option>
+                                                    <option value="report">Report</option>
+                                                </select>
                                             </div>
                                         </div>
                                         <div className="col-md-6">

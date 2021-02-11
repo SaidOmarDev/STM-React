@@ -39,13 +39,13 @@ const MainHeader = (props) => {
         <div className="main-header">
             <Container>
                 <Row>
-                    <Col sm={2}>
+                    <Col md={2}>
                         <a href="#" className="navbar-brand">STM</a>
                     </Col>
-                    <Col md={6}>
+                    <Col lg={6} md={5}>
                         <Search mainSearch={true}/>
                     </Col>
-                    <Col md={4}>
+                    <Col lg={4} md={5}>
                         <div className={`shop-setting ${classes}`}>
                         {token ? (
                                 <div className="account">

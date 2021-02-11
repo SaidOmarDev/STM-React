@@ -12,7 +12,7 @@ const Footer = (props) => {
             <div className="main-footer">
                 <Container>
                     <Row>
-                        <Col md={3}>
+                        <Col lg={3} md={4} sm={6}>
                             <h4>Contact Info</h4>
                             <div className="info">
                                 <div><AiOutlinePhone className="icon"/><span>(+02) 01033293899</span></div>
@@ -26,7 +26,7 @@ const Footer = (props) => {
                                 <a href="#"><FaInstagram /></a>
                             </div>
                         </Col>
-                        <Col md={3}>
+                        <Col lg={3} md={4} sm={6}>
                             <h4>My Account</h4>
                             <div className="account-links">
                                 <a href="#">Sign In</a>
@@ -35,7 +35,7 @@ const Footer = (props) => {
                                 <a href="">Track My Order</a>
                             </div>
                         </Col>
-                        <Col md={3}>
+                        <Col lg={3} md={4} sm={6}>
                             <h4>Customer Services</h4>
                             <div className="account-links">
                                 <a href="#">Payment Methods</a>
@@ -46,7 +46,7 @@ const Footer = (props) => {
                                 <a href="">Privacy Policy</a>
                             </div>
                         </Col>
-                        <Col md={3}>
+                        <Col lg={3} md={4} sm={6}>
                             <h4>Company Name</h4>
                             <div className="newsletter">
                                 <p>Get an only new update from this newsletter​</p>

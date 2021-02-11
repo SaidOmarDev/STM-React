@@ -27,13 +27,36 @@ const Trending = (props) => {
         slidesToShow: 4,
         slidesToScroll: 1,
         rows: 2,
-        slidesPerRow: 1
+        slidesPerRow: 1,
+        responsive: [
+            {
+              breakpoint: 992,
+              settings: {
+                slidesToShow: 3,
+                slidesToScroll: 3
+              }
+            },
+            {
+              breakpoint: 600,
+              settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2
+              }
+            },
+            {
+              breakpoint: 400,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+              }
+            }
+          ]
     };
     
     return ( 
         <div className="trend-section">
             <div className="container">
-                <NewHead header="Trending Products"/>
+                <NewHead header="Most Viewed"/>
                 <Slider {...settings}>
                     {products.map(product=>(
                         <div key={product.id}>

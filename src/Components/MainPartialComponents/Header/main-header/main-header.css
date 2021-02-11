@@ -90,3 +90,17 @@ input.form-control:focus{
     margin-right: 5px;
     font-size: 15px;
 }
+@media (max-width: 767px){
+    .main-header .navbar-brand{
+        width: 100%;
+        text-align: center;
+    }
+    .main-header .shop-setting,
+    .main-header .shop-setting.notAuth{
+        justify-content: center;
+        margin-top: 25px;
+    }
+    .main-header .shop-setting .wishlist{
+        margin: 0 25px;
+    }
+}

@@ -2,8 +2,7 @@ import TYPES from './types'
 
 const initialState = {
     items: [],
-    loading: false,
-    added: false
+    loading: false
 };
 
 export default function(state = initialState, action) { 
@@ -22,7 +21,6 @@ export default function(state = initialState, action) {
             return {
                 ...state,
                 items: [...state.items, action.product],
-                added: true,
                 loading: false
             };
         case TYPES.REMOVE_FROM_CART:

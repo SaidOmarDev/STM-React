@@ -70,7 +70,7 @@ function App(props) {
           <Route path="/register" component={Register} />
           <Route path="/contacts" component={Contacts} />
           <Route path="/about" component={About} />
-          <Route path="/" component={Home}/>
+          <Route path="/" exact component={Home}/>
         </Switch>
         <Footer />
     </div>

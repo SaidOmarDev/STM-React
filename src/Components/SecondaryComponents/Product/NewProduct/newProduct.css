@@ -1,7 +1,7 @@
 .new-product{
     padding: 20px;
     background-image: linear-gradient( to right, #d1d1ff, #fff);
-    margin-bottom: 20px;
+    margin: 5px;
     border: 1px solid #d1d1ff;
     position: relative;
 }
@@ -45,6 +45,7 @@
     left: 5px;
     display: flex;
     flex-direction: column;
+    z-index: 1;
 }
 .new-product .badges .status{
     color: white;

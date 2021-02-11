@@ -1,20 +1,22 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 
-import { Tabs, Tab, Container, Row, Col } from 'react-bootstrap'
+import { Tabs, Tab, Container, Row, Col, Card } from 'react-bootstrap'
 import BreadCrumb from '../../SecondaryComponents/BreadCrumb/breadCrumb'
 import ImageGallery from '../../MainPartialComponents/ImageGallery/imageGallery'
 import RateStars from '../../SecondaryComponents/RateStars/rate-stars'
 import Reviews from '../../MainPartialComponents/Reviews/reviews'
-import Description from '../../MainPartialComponents/Description/description'
 import Quantity from '../../SecondaryComponents/Quantity/quantity'
 import {FaFacebookF, FaTwitter, FaYoutube, FaInstagram, FaHeart, FaShoppingCart} from 'react-icons/fa'
 import './productDetails.css'
 
 const ProductDetails = (props) => {
-    const products = useSelector(state => state.products.items) 
+    const products = useSelector(state => state.products.items)
+    const cart = useSelector(state => state.cart.items)
     const product = products.find(p=>p.id === props.match.params.id)
-    console.log(product)
+    const proInCart = cart.find(pro => pro.id === product.id)
+    const inCart = cart.filter(pro => pro.id === product.id).length > 0;
+    
     return ( 
         <React.Fragment>
             <BreadCrumb pagename="productDetails" proname={product.name}/>
@@ -58,7 +60,7 @@ const ProductDetails = (props) => {
                             </div>
                         </Col>
                         <Col md={4}>
-                            <div className="card">
+                            <Card>
                                 <div className="d-flex justify-content-between">
                                     <span className="price">
                                         <span className="aft-dis">EGP {product.price}</span>
@@ -120,12 +122,14 @@ const ProductDetails = (props) => {
                                         </label>
                                     </div>
                                 </div>
-                                <Quantity quantity={product.quantity} id={product.id}/>
+                                {inCart ? 
+                                    <Quantity quantity={proInCart.quantity} id={product.id}/>: null
+                                }
                                 <div className="add-btn">
-                                    <button className="btn add-cart"><FaShoppingCart className="cart-icon"/>Add To Cart</button>
+                                    {!inCart ? <button className="btn add-cart"><FaShoppingCart className="cart-icon"/>Add To Cart</button>: null}
                                     <button className="btn add-cart">Buy Now</button>
                                 </div>
-                            </div>
+                            </Card>
                         </Col>
                     </Row>
                     <Tabs defaultActiveKey="reviews">

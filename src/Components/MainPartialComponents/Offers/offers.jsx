@@ -27,10 +27,34 @@ const Offers = (props) => {
         speed: 500,
         slidesToShow: 3,
         slidesToScroll: 3,
+        swipeToSlide: false,
         rows: 2,
         slidesPerRow: 1,
         nextArrow: <NextArrow />,
         prevArrow: <PrevArrow />,
+        responsive: [
+            {
+              breakpoint: 992,
+              settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2
+              }
+            },
+            {
+              breakpoint: 600,
+              settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2
+              }
+            },
+            {
+              breakpoint: 400,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+              }
+            }
+          ]
     };
     let options = {
         dots: false,

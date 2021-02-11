@@ -1,25 +1,23 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import {useSelector} from 'react-redux'
 
 import BreadCrumb from '../../SecondaryComponents/BreadCrumb/breadCrumb'
 import SideBarFilter from '../../MainPartialComponents/SideBarFilter/sideBarFilter'
 import Product from '../../SecondaryComponents/Product/product'
 // import Pagination from '../../SecondaryComponents/Pagination/pagination'
-import Pagination from "react-js-pagination";
+import Pagination from "react-js-pagination"
 import './shopProducts.css'
-import { useState } from 'react'
-import { useEffect } from 'react'
 
 const ShopProducts = () => {
     const [currentPage,setCurrentPage] = useState(1)
     const [lastIndex,setLastIndex] = useState(6)
     const [firstIndex,setFirstIndex] = useState(0)
     const token = useSelector(state=>state.auth.token)
-    const filteredProducts = useSelector((state) => state.filtered.items);
-    const products = useSelector((state) => state.products.items);
+    const filteredProducts = useSelector((state) => state.filtered.items)
+    const products = useSelector((state) => state.products.items)
     let currentProducts = products.slice(firstIndex, lastIndex)
-    let cart = useSelector((state) => state.cart.items);
-    let wishlist = useSelector((state) => state.wishlist.items);
+    let cart = useSelector((state) => state.cart.items)
+    let wishlist = useSelector((state) => state.wishlist.items)
 
     if(!token){
         cart = []
@@ -31,7 +29,7 @@ const ShopProducts = () => {
     },[currentPage])
 
     useEffect(()=>{
-        setFirstIndex( lastIndex - 6)
+        setFirstIndex(lastIndex - 6)
     },[lastIndex])
 
     const handleChangePage = (pageNumber) => {
@@ -75,7 +73,6 @@ const ShopProducts = () => {
 
                             </div>
                             <div className="cart-bottom">
-                                {/* <Pagination /> */}
                                 {products.length > 6 ? (
                                     <Pagination 
                                         activePage={currentPage}

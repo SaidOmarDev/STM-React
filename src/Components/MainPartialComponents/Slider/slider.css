@@ -47,3 +47,18 @@
     width: 25px;
     background-color: #232363;
 }
+@media (max-width: 767.99px){
+    .slider .slider-content .item{
+        flex-direction: column-reverse;
+    }
+    .slider .slider-content .item>div{
+        padding: 0;
+        margin-top: 25px;
+    }
+    .slider .slider-content .item .btn{
+        margin: 15px 0 15px;
+    }
+    .slider .slider-content .item img{
+        margin: 0 auto;
+    }
+}

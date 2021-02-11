@@ -10,7 +10,7 @@ const DelivryServices = (props) => {
         <div className="services">
             <Container>
                 <Row>
-                    <Col md={3}>
+                    <Col lg={3} md={4} sm={6}>
                         <div className="service">
                             <div className="service-icon">
                                 <FiTruck />
@@ -21,7 +21,7 @@ const DelivryServices = (props) => {
                             </div>
                         </div>
                     </Col>
-                    <Col md={3}>
+                    <Col lg={3} md={4} sm={6}>
                         <div className="service">
                             <div className="service-icon">
                                 <FaUndo />
@@ -32,7 +32,7 @@ const DelivryServices = (props) => {
                             </div>
                         </div>
                     </Col>
-                    <Col md={3}>
+                    <Col lg={3} md={4} sm={6}>
                         <div className="service">
                             <div className="service-icon">
                                 <BiWallet />
@@ -43,7 +43,7 @@ const DelivryServices = (props) => {
                             </div>
                         </div>
                     </Col>
-                    <Col md={3}>
+                    <Col lg={3} md={4} sm={6}>
                         <div className="service">
                         <div className="service-icon">
                                 <BiWallet />

@@ -12,6 +12,10 @@ export default function(state = initialState, action) {
                 ...state,
                 items: action.payload
             };
+        case TYPES.PRODUCT_DETAILS:
+            return {
+                ...state
+            }
         default:
             return state;
     }

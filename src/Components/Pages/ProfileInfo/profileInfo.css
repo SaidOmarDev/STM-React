@@ -8,7 +8,12 @@
 }
 .profile-data .wishlist-header .btn{
     color: #fff;
-    background-color: #f34770;
+    border-color: #de2234;
+    background-color: #de2234;
+}
+.profile-data .wishlist-header .btn:focus{
+    border-color: #de2234;
+    background-color: #de2234;
 }
 .profile-data .profile-info .user-prief {
     display: flex;
@@ -24,7 +29,9 @@
     border: 3px solid #fff;
     margin-right: 10px;
 }
-.profile-data .profile-info .user-prief .user-info .btn {
+.profile-data .profile-info form .user-prief .user-info .file.btn {
+    position: relative;
+    overflow: hidden;
     box-shadow: 0 0.5rem 1.125rem -0.5rem rgba(0,0,0,0.15);
     padding: .425rem 1rem;
     font-size: .8125rem;
@@ -32,19 +39,39 @@
     border-radius: .1875rem;
     color: #4b566b;
     background-color: #fff;
+    border-color: transparent;
     margin-bottom: 10px;
     transition: all .2 ease-in-out;
 }
-.profile-data .profile-info .user-prief .user-info .btn:hover{
+.profile-data .profile-info form .user-prief .user-info .file input {
+    position: absolute;
+    font-size: 50px;
+    opacity: 0;
+    right: 0;
+    top: 0;
+    z-index: 0;
+}
+.profile-data .profile-info form .user-prief .user-info .file.btn:hover{
     box-shadow: none;
+}
+.profile-data .profile-info form input,
+.profile-data .profile-info form label{
+    color: #4b566b;
+    font-size: 14px;
 }
 .profile-data .profile-info form .btn {
     background-color: #3434d3;
+    border-color: #3434d3;
     color: white;
     font-weight: 500;
     font-size: 14px;
     box-shadow: 0 0.5rem 1.125rem -0.5rem rgba(106,106,252,0.9);
     float: right;
+}
+.profile-data .profile-info form .btn:focus{
+    background-color: #3434d3;
+    border-color: #3434d3;
+    outline: none;
 }
 .profile-data .profile-info form .btn:hover{
     box-shadow: none;

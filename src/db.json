@@ -93,24 +93,24 @@
   ],
   "cart": [
     {
-      "id": "3",
-      "name": "Chair",
-      "price": 5552,
-      "image": "/images/pro2.jpg",
+      "id": "2",
+      "name": "Bag",
+      "price": 255,
+      "image": "/images/pro1.jpg",
       "shortDesc": "Nulla facilisi. Curabitur at lacus ac velit ornare lobortis.",
       "description": "Cras sagittis. Praesent nec nisl a purus blandit viverra. Ut leo. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Fusce a quam.",
-      "category": "Furniture",
+      "category": "Gadgets",
       "quantity": 1
     },
     {
-      "id": "1",
-      "name": "Dress",
-      "price": 500,
-      "image": "/images/pro4.jpg",
+      "id": "4",
+      "name": "Phone",
+      "price": 5223,
+      "image": "/images/pro3.jpg",
       "shortDesc": "Nulla facilisi. Curabitur at lacus ac velit ornare lobortis.",
       "description": "Cras sagittis. Praesent nec nisl a purus blandit viverra. Ut leo. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Fusce a quam.",
-      "category": "Clothes",
-      "quantity": 1
+      "category": "Electronics",
+      "quantity": 0
     },
     {
       "id": "6",
@@ -130,7 +130,7 @@
       "shortDesc": "Nulla facilisi. Curabitur at lacus ac velit ornare lobortis.",
       "description": "Cras sagittis. Praesent nec nisl a purus blandit viverra. Ut leo. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Fusce a quam.",
       "category": "Furniture",
-      "quantity": 1
+      "quantity": 2
     }
   ],
   "wishlist": [
@@ -151,6 +151,15 @@
       "shortDesc": "Nulla facilisi. Curabitur at lacus ac velit ornare lobortis.",
       "description": "Cras sagittis. Praesent nec nisl a purus blandit viverra. Ut leo. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Fusce a quam.",
       "category": "Furniture"
+    },
+    {
+      "id": "6",
+      "name": "Phone",
+      "price": 5525,
+      "image": "/images/pro3.jpg",
+      "shortDesc": "Nulla facilisi. Curabitur at lacus ac velit ornare lobortis.",
+      "description": "Cras sagittis. Praesent nec nisl a purus blandit viverra. Ut leo. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Fusce a quam.",
+      "category": "Electronics"
     }
   ]
 }

@@ -1,6 +1,5 @@
 import axios from 'axios';
-import TYPES from '../reducers/types'
-// import axios from 'axios'
+import TYPES from '../reducers/types';
 
 export function filterProducts(products, category) { 
     return async function (dispatch) { 
@@ -13,8 +12,8 @@ export function filterProducts(products, category) {
             }
         })
     }
- }
- export function fetchCategories() { 
+}
+export function fetchCategories() { 
     return async function (dispatch) { 
         await axios.post('http://stm.4soft-eg.com/api/getCategories', {
             api_token: 'rjdClHuZg7dVRXsmOzrdVgQfJEiOriI7E5hdLFoT1j2AJij38FKqlhnOQmdhgc0U',
@@ -25,7 +24,6 @@ export function filterProducts(products, category) {
                 type: TYPES.FETCH_CATEGORIES,
                 payload: response.data.category
             })
-        }
-        )
+        })
     }
- }
+}

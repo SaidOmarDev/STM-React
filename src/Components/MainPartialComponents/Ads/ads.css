@@ -2,13 +2,18 @@
     padding-bottom: 100px;
     color: #373f50;
 }
+.ads-sec .row>div{
+    margin-bottom: 20px;
+}
 .ads-sec .left-ad-card{
     background-color: #f6f9fc !important;
     flex-direction: row;
     justify-content: space-between;
     border-color: transparent;
+    height: 100%;
 }
-.ads-sec .left-ad-card .ad-card-text{
+.ads-sec .left-ad-card .ad-card-text,
+.ads-sec .right-ad-card .ad-card-text{
     padding: 20px;
 }
 .ads-sec .left-ad-card .ad-card-text p{
@@ -18,6 +23,14 @@
 .ads-sec .left-ad-card .ad-card-text h2{
     font-size: 28px;
     margin-bottom: 25px;
+}
+.ads-sec .left-ad-card .ad-card-img{
+    display: flex;
+    align-items: center;
+}
+.ads-sec .left-ad-card .ad-card-img img{
+    width: 100%;
+    height: 100%;
 }
 .ads-sec .left-ad-card .ad-card-text .btn,
 .ads-sec .right-ad-card .ad-card-text .btn{
@@ -55,7 +68,7 @@
 }
 .ads-sec .right-ad-card img{
     width: 100%;
-    height: 226px;
+    height: 100%;
     position: absolute;
     top: 0;
     left: 0;

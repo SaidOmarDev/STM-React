@@ -32,3 +32,12 @@ export function fetchProducts() {
         // })
     }
  }
+ export function productDetails(apiToken = '', productId, lang){
+     return async function(dispatch){
+        const {data} = await axios.post('');
+        dispatch({
+            type: TYPES.PRODUCT_DETAILS,
+            payload: data
+        })
+     }
+ }

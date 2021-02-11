@@ -1,5 +1,5 @@
 import React from 'react'
-import { Col, Container, Row } from 'react-bootstrap';
+import { Card, Col, Container, Row } from 'react-bootstrap';
 import './ads.css'
 
 const Ads = (props) => {
@@ -8,7 +8,7 @@ const Ads = (props) => {
             <Container>
                 <Row>
                     <Col md={9}>
-                        <div className="left-ad-card card">
+                        <Card className="left-ad-card">
                             <div className="ad-card-text">
                                 <p>Hurry up! Limited time offer</p>
                                 <h2>Converse All Star on Sale</h2>
@@ -17,17 +17,17 @@ const Ads = (props) => {
                             <div className="ad-card-img">
                                 <img src="./images/leftAdImg.jpg" alt=""/>
                             </div>
-                        </div>
+                        </Card>
                     </Col>
                     <Col md={3}>
-                        <div className="right-ad-card card">
+                        <Card className="right-ad-card">
                             <img src="./images/addRightBg.jpg" alt=""/>
                             <div className="ad-card-text">
                                 <h2>Converse All Star on Sale</h2>
                                 <p>Hurry up! Limited time offer</p>
                                 <a href="#" className="btn">Shop Now</a>
                             </div>
-                        </div>
+                        </Card>
                     </Col>
                 </Row>
             </Container>

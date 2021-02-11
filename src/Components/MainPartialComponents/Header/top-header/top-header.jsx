@@ -1,23 +1,37 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-
+import { useDispatch, useSelector } from 'react-redux'
+import { changeLang } from '../../../../actions/langActions'
+import { Col, Container, Dropdown, DropdownButton, Row } from 'react-bootstrap'
 import {AiOutlineUser} from 'react-icons/ai'
 import {BiEnvelope, BiPhone} from 'react-icons/bi'
 import './top-header.css'
-import { Dropdown, DropdownButton } from 'react-bootstrap'
 
 const TopHeader = (props) => {
+    const [lang, setLang] = useState('Eng')
+    const changedLang = useSelector(state => state.lang.lang)
+    const token = useSelector(state => state.auth.token)
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+        if(changedLang === 'en'){
+            setLang('Eng')
+        }else{
+            setLang('عربي')
+        }
+    }, [changedLang])
     const handleLang = (e)=>{
-        console.log(e);
+        dispatch(changeLang(token, e))
     }
+
     return ( 
         <div className="topHeader">
-            <div className="container">
-                <div className="row">
-                    <div className="col-md-4">
+            <Container>
+                <Row>
+                    <Col md={2} sm={4}>
                         <div className="left">
                             <div className="lang">
-                                <DropdownButton id="dropdown-basic-button" title="" onSelect={handleLang}>
+                                <DropdownButton id="dropdown-basic-button" title={lang} onSelect={handleLang}>
                                     <Dropdown.Item eventKey='en'>
                                         <img src="/images/eng.png" alt="English"/>Eng
                                     </Dropdown.Item>
@@ -25,26 +39,10 @@ const TopHeader = (props) => {
                                         <img src="/images/ar.png" alt="English"/>عربي
                                     </Dropdown.Item>
                                 </DropdownButton>
-                                {/* <div className="dropdown">
-                                    <a href="#" className="dropdown-toggle" data-toggle="dropdown">
-                                        <img src="/images/eng.png" alt="English"/>
-                                        Eng
-                                    </a>
-                                    <ul className="dropdown-menu">
-                                        <li className="dropdown-item">
-                                            <img src="/images/eng.png" alt="English"/>
-                                            Eng
-                                        </li>
-                                        <li className="dropdown-item">
-                                            <img src="/images/ar.png" alt="English"/>
-                                            عربي
-                                        </li>
-                                    </ul>
-                                </div> */}
                             </div>
                         </div>
-                    </div>
-                    <div className="col-md-4">
+                    </Col>
+                    <Col md={6} sm={8}>
                         <div className="right">
                             <div className="phone">
                                 <span><BiPhone className="top-icon"/>Call: 01020122011</span>
@@ -53,8 +51,8 @@ const TopHeader = (props) => {
                                 <span><BiEnvelope className="top-icon"/>Email: SaidOmar@gmail.com</span>
                             </div>
                         </div>
-                    </div>
-                    <div className="col-md-4">
+                    </Col>
+                    <Col md={4}>
                         {!props.token ? (
                             <div className="login">
                                 <AiOutlineUser className="user-icon"/>
@@ -63,9 +61,9 @@ const TopHeader = (props) => {
                             </div>):
                             null
                         }
-                    </div>
-                </div>
-            </div>
+                    </Col>
+                </Row>
+            </Container>
         </div>
      );
 }
