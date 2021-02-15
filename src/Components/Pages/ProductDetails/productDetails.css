@@ -74,6 +74,10 @@
 .pro-details .card{
     padding: 20px;
 }
+.pro-details .card .price{
+    display: flex;
+    align-items: flex-end;
+}
 .pro-details .card .price .aft-dis{
     margin-right: 5px;
     color: #696ED0;
@@ -164,7 +168,6 @@
     margin-right: 5px;
     font-size: 18px;
 }
-
 .pro-details .nav{
     border-bottom: 1px solid #eee;
     margin: 50px 0 30px;
@@ -177,4 +180,36 @@
 .pro-details .nav .nav-item.nav-link.active{
     background-color: #232363;
     color: #fff;
+}
+
+
+/**RTL**/
+body[dir="rtl"] .pro-details .spec .spec-value span{
+    margin-left: 0;
+    margin-right: 15px;
+}
+body[dir="rtl"] .pro-details .share a{
+    margin-right: 0;
+    margin-left: 20px;
+}
+body[dir="rtl"] .pro-details .share .btn{
+    border-right: 1px solid #ccc;
+    border-left: none;
+}
+body[dir="rtl"] .pro-details .share .btn .icon,
+body[dir="rtl"] .pro-details .custom-control{
+    margin-right: 0;
+    margin-left: 10px;
+}
+body[dir='rtl'] .pro-details .payment img,
+body[dir="rtl"] .pro-details .card .price .aft-dis,
+body[dir="rtl"] .add-btn .add-cart .cart-icon{
+    margin-left: 5px;
+    margin-right: 0;
+}
+body[dir="rtl"] .pro-details .payment img:last-child{
+    margin-left: 0;
+}
+body[dir="rtl"] .pro-details .share .btn{
+    padding: 0 15px 0 0;
 }

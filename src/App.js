@@ -28,6 +28,7 @@ import './App.css';
 function App(props) {
   const dispatch = useDispatch();
   const token = useSelector(state => state.auth.token)
+  const lang = useSelector(state => state.lang.lang)
 
   useEffect(() => {
     dispatch(fetchProducts());
@@ -44,8 +45,13 @@ function App(props) {
   // useEffect(() => {
   // },[dispatch]);
 
-  // useEffect(() => {
-  // },[dispatch]);
+  useEffect(() => {
+    if(lang === 'ar'){
+      document.getElementsByTagName('body')[0].setAttribute("dir", "rtl")
+    }else{
+      document.getElementsByTagName('body')[0].setAttribute("dir", "ltr")
+    }
+  },[lang]);
 
   return (
     <div className="">

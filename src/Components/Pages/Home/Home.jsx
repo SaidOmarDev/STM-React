@@ -5,7 +5,7 @@ import Ads from '../../MainPartialComponents/Ads/ads'
 import DelivryServices from '../../MainPartialComponents/Delivery-Services/delivery-services'
 import NewProducts from '../../MainPartialComponents/NewProducts/newProducts'
 import Offers from '../../MainPartialComponents/Offers/offers'
-import Slider from '../../MainPartialComponents/Slider/slider'
+import Adsslider from '../../MainPartialComponents/Slider/slider'
 import Trending from '../../MainPartialComponents/Trending/trending'
 
 const Home = (props) => {
@@ -14,7 +14,7 @@ const Home = (props) => {
     // })
     return ( 
         <div className="home">
-            <Slider />
+            <Adsslider />
             <DelivryServices />
             <Offers />
             <Trending />

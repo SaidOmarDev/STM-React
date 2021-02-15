@@ -49,6 +49,9 @@
     color: #373f50;
     margin-bottom: 1rem;
 }
+.menu .cate-list .category-list .sub-cate{
+    padding: 0;
+}
 .menu .cate-list .category-list .sub-cate a{
     color: #4b566b;
     font-size: .875rem;
@@ -63,6 +66,7 @@
 }
 .menu .navbar{
     padding: 0;
+    margin-left: auto;
 }
 .menu .navbar .navbar-nav .nav-link{
     margin-right: 25px;
@@ -79,4 +83,19 @@
 .menu .navbar .navbar-nav .nav-link:hover{
     color: #6a6afc;
     border-color: #6a6afc;
+}
+
+
+/**RTL**/
+body[dir="rtl"] .menu .navbar{
+    margin-left: 0;
+    margin-right: auto;
+}
+body[dir="rtl"] .menu .main-category .bar-icon{
+    margin-right: 0;
+    margin-left: 15px;
+}
+body[dir="rtl"] .menu .navbar .navbar-nav .nav-link{
+    margin-right: 0;
+    margin-left: 25px;
 }

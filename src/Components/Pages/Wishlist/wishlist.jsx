@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import {useSelector} from 'react-redux'
 
 import {HiOutlineShoppingBag} from 'react-icons/hi'
@@ -6,12 +7,12 @@ import Pagination from '../../SecondaryComponents/Pagination/pagination'
 import CartProduct from '../../SecondaryComponents/Product/CartProduct/cartProduct'
 import ProfileSidebar from '../../Profile/ProfileSidebar/profileSideBar'
 import './wishlist.css'
-import { Link } from 'react-router-dom'
 
 const Wishlist = (props) => {
-    const wishlist = useSelector((state) => state.wishlist.items);
-    const cart = useSelector((state) => state.cart.items);
+    const wishlist = useSelector((state) => state.wishlist.items)
+    const cart = useSelector((state) => state.cart.items)
     const token = useSelector(state => state.auth.token)
+    console.log(cart.length);
 
     return ( 
         <div className="wishlist-wrapper">

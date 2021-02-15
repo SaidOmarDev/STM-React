@@ -37,16 +37,16 @@
 .offers .offers-cards .slick-arrow.slick-prev{
     right: 70px;
 }
-.slick-dots li{
+.offers .slick-dots li{
     padding: 0;
     margin: 0;
 }
-.slick-dots li.slick-active button:before{
+.offers .slick-dots li.slick-active button:before{
     font-size: 18px;
     color: #232363;
     opacity: 1;
 }
-.slick-dots li button:before{
+.offers .slick-dots li button:before{
     color: #9898ff;
     font-size: 12px;
     transition: all .2s ease-in-out;
@@ -72,3 +72,11 @@
     right: 10px;
 }
 .slick-list, .slick-track { touch-action: none; }
+
+
+
+/**RTL**/
+body[dir="rtl"] .deals-card .title {
+    left: auto;
+    right: 40px;
+}

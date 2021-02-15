@@ -70,3 +70,17 @@
     float: right;
     color: #7d879c;
 }
+
+
+/**RTL**/
+body[dir="rtl"] .profile-sidebar .cart-summary .user-prief img{
+    margin-left: 10px;
+    margin-right: 0;
+}
+body[dir="rtl"] .profile-sidebar .cart-summary ul li a .profile-icons{
+    margin-right: 0;
+    margin-left: .5rem;
+}
+body[dir="rtl"] .profile-sidebar .cart-summary ul li a span{
+    float: left;
+}

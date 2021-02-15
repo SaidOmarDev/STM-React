@@ -9,12 +9,14 @@ import SectionHeader from '../../SecondaryComponents/SectionHeader/sectionHeader
 import PrevArrow from '../../SecondaryComponents/CustomArrows/PrevArrow/prevArrow'
 import NextArrow from '../../SecondaryComponents/CustomArrows/NextArrow/nextArrow'
 import './offers.css'
+import { Row, Col, Container } from 'react-bootstrap';
 
 const Offers = (props) => {
     const token = useSelector(state=>state.auth.token)
     const products = useSelector((state) => state.products.items);
     let cart = useSelector((state) => state.cart.items);
     let wishlist = useSelector((state) => state.wishlist.items);
+    const lang = useSelector(state => state.lang.lang)
     
     if(!token){
         cart = [];
@@ -59,12 +61,22 @@ const Offers = (props) => {
     let options = {
         dots: false,
         infinite: true,
-        autoplay:true,
-        speed: 500,
+        // autoplay:true,
+        speed: 1500,
         slidesToShow: 1,
         slidesToScroll: 1
     };
 
+    if(lang === 'ar'){
+        options.rtl = true;
+        settings.rtl = true;
+        let sliders = document.getElementsByClassName('slick-slider')
+        console.log(sliders);
+        // sliders.map(slider => console.log(slider))
+    }else{
+        options.rtl = false;
+        settings.rtl = false;
+    }
     // useEffect(() => {
     //     props.fetchProducts();
     // })
@@ -77,9 +89,9 @@ const Offers = (props) => {
     
     return ( 
         <div className="offers">
-            <div className="container">
-                <div className="row">
-                    <div className="col-md-4">
+            <Container>
+                <Row>
+                    <Col md={4}>
                         <div className="deals-card card">
                             <div className="title">
                                 Deals of the Week
@@ -93,8 +105,8 @@ const Offers = (props) => {
                                 </div>
                             </Slider>
                         </div>
-                    </div>
-                    <div className="col-md-8">
+                    </Col>
+                    <Col md={8}>
                         <div className="offers-cards">
                             <SectionHeader />
                             <Slider {...settings} >
@@ -111,9 +123,9 @@ const Offers = (props) => {
                                 ))}
                             </Slider>
                         </div>
-                    </div>
-                </div>
-            </div>
+                    </Col>
+                </Row>
+            </Container>
         </div>
      );
 }

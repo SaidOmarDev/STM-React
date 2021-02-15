@@ -20,6 +20,7 @@ const TopHeader = (props) => {
             setLang('عربي')
         }
     }, [changedLang])
+    
     const handleLang = (e)=>{
         dispatch(changeLang(token, e))
     }

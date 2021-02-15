@@ -12,6 +12,7 @@ input.form-control:focus{
 .main-header .navbar-brand{
     color: #6a6afc;
     font-weight: bold;
+    margin: 0;
 }
 .main-header .shop-setting{
     display: flex;
@@ -103,4 +104,14 @@ input.form-control:focus{
     .main-header .shop-setting .wishlist{
         margin: 0 25px;
     }
+}
+
+body[dir="rtl"] .main-header .shop-setting.notAuth .wishlist{
+    margin-right: 0;
+    margin-left: 25px;
+}
+body[dir="rtl"] .main-header .shop-setting .main-icon,
+body[dir="rtl"] .main-header .shop-setting .account .dropdown-menu a .account-icon{
+    margin-right: 0;
+    margin-left: 5px;
 }

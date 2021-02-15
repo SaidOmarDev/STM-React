@@ -77,3 +77,13 @@
     box-shadow: none;
     background-color: 232363;
 }
+
+
+/**RTL**/
+body[dir="rtl"] .profile-data .profile-info .user-prief img {
+    margin-left: 10px;
+    margin-right: 0;
+}
+body[dir="rtl"] .profile-data .profile-info form .btn{
+    float: left;
+}

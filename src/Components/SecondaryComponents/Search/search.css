@@ -43,3 +43,13 @@
 .shop-sidebar .search .input-group .search-icon{
     font-size: 18px;
 }
+
+/**RTL**/
+body[dir="rtl"] .search .input-group .search-icon{
+    right: auto;
+    left: 15px;
+}
+body[dir="rtl"] .search .input-group .input-group-prepend{
+    border-right: none;
+    border-left: 1px solid #ccc;
+}

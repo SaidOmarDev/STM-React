@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { auth } from '../../../actions/AuthActions';
-import { Alert, Spinner, Toast } from 'react-bootstrap';
+import { Alert, Row, Col, Spinner, Toast } from 'react-bootstrap';
 
 
 const MyTextInput = ({label, ...props}) => {
@@ -53,7 +53,7 @@ const MySelect = ({ label, ...props }) => {
     return (
       <div>
         <label htmlFor={props.id || props.name}>{label}</label>
-        <select className="custom-select form-control" {...field} {...props} />
+        <select className="form-control" {...field} {...props} />
         {meta.touched && meta.error ? (
           <div className="error">{meta.error}</div>
         ) : (<div className="noerror"></div>)}
@@ -110,8 +110,8 @@ const Register = (props) => {
                             }, 400)
                         }}>
                         <Form>
-                            <div className="row">
-                                <div className="col-md-6">
+                            <Row>
+                                <Col md={6}>
                                     <div className="form-group">
                                         <MyTextInput 
                                             label="Full Name"
@@ -120,8 +120,8 @@ const Register = (props) => {
                                             placeholder="Said Omar Gaber"    
                                         />
                                     </div>
-                                </div>
-                                <div className="col-md-6">
+                                </Col>
+                                <Col md={6}>
                                     <div className="form-group">
                                         <MyTextInput
                                             label="Email Address"
@@ -130,8 +130,8 @@ const Register = (props) => {
                                             placeholder="jane@formik.com"
                                         />
                                     </div>
-                                </div>
-                                <div className="col-12">
+                                </Col>
+                                <Col xs={12}>
                                     <div className="form-group">
                                         <MyTextInput
                                             label="Birthdate"
@@ -140,8 +140,8 @@ const Register = (props) => {
                                             placeholder="12/12/2020"
                                         />
                                     </div>
-                                </div>
-                                <div className="col-12">
+                                </Col>
+                                <Col xs={12}>
                                     <div className="form-group">
                                         <MySelect label="City" name="city" >
                                             <option value="">Select a city</option>
@@ -150,8 +150,8 @@ const Register = (props) => {
                                             <option value="minia">Minia</option>
                                         </MySelect>
                                     </div>
-                                </div>
-                                <div className="col-12">
+                                </Col>
+                                <Col xs={12}>
                                     <div className="form-group">
                                         <MyRadioButton name="gender" value="Male" checked>
                                             <span className="custom-control-label">Male</span>
@@ -161,8 +161,8 @@ const Register = (props) => {
                                         </MyRadioButton>
                                         {/* {value.gender} */}
                                     </div>
-                                </div>
-                                <div className="col-12">
+                                </Col>
+                                <Col xs={12}>
                                     <div className="form-group">
                                         <MyTextInput
                                             label="Phone"
@@ -171,8 +171,8 @@ const Register = (props) => {
                                             placeholder="01022336655"
                                         />
                                     </div>
-                                </div>
-                                <div className="col-md-6">
+                                </Col>
+                                <Col md={6}>
                                     <div className="form-group">
                                         <MyTextInput
                                             label="Password"
@@ -181,8 +181,8 @@ const Register = (props) => {
                                             placeholder="Your Password"
                                         />
                                     </div>
-                                </div>
-                                <div className="col-md-6">
+                                </Col>
+                                <Col md={6}>
                                     <div className="form-group">
                                         <MyTextInput
                                             label="Confirmed Password"
@@ -191,8 +191,8 @@ const Register = (props) => {
                                             placeholder="Your Confirmed Password"
                                         />
                                     </div>
-                                </div>
-                            </div>
+                                </Col>
+                            </Row>
                             <div className="form-group">
                                 <MyCheckBox name="acceptTerms">
                                     <div className="custom-control-label">I accept the <a href="policy.html">Terms & Policy</a></div>

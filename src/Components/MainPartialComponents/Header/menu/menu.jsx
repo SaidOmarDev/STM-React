@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Container } from 'react-bootstrap';
 import {FaBars} from 'react-icons/fa'
 import { Link, NavLink } from 'react-router-dom';
 import './menu.css'
@@ -15,7 +16,7 @@ const Menu = (props) => {
     }
     return ( 
         <div className="menu">
-            <div className="container">
+            <Container>
                 <div className="menu-content">
                     <div 
                         className="categories" 
@@ -118,7 +119,7 @@ const Menu = (props) => {
                             </div>
                         </div>
                     </div>
-                    <nav className="navbar navbar-expand-lg navbar-light ml-auto">
+                    <nav className="navbar navbar-expand-lg navbar-light">
                         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                             <span className="navbar-toggler-icon"></span>
                         </button>
@@ -133,7 +134,7 @@ const Menu = (props) => {
                         </div>
                     </nav>
                 </div>
-            </div>
+            </Container>
         </div>
      );
 }

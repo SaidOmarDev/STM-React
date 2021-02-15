@@ -54,3 +54,9 @@
 .billing-info .noerror{
     opacity: 0;
 }
+
+
+/**RTL**/
+body[dir="rtl"] .billing-info .btn.complete{
+    float: left;
+}

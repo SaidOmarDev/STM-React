@@ -109,3 +109,13 @@
 .details .noerror{
     opacity: 0;
 }
+
+
+/**RTL**/
+body[dir="rtl"] .details .user-prief img{
+    margin-left: 10px;
+    margin-right: 0;
+}
+body[dir="rtl"] .details .proceed .checkout-icons{
+    transform: rotate(180deg);
+}

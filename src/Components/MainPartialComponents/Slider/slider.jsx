@@ -1,48 +1,73 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import {FaAngleRight} from 'react-icons/fa'
-import OwlCarousel from 'react-owl-carousel'
-import 'owl.carousel/dist/assets/owl.carousel.css';  
+import { Container } from 'react-bootstrap';
+import Slider from 'react-slick'
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
 import './slider.css'
 
-const Slider = (props) => {
-    
+const Adsslider = (props) => {
+    const lang = useSelector(state=> state.lang.lang)
+    const opt = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        rtl: false
+    };
+    if(lang === 'ar'){
+        opt.rtl = true
+        // document.getElementsByClassName('slick-slider').setAttribute('dir', 'rtl')
+        console.log(opt);
+    }else{
+        opt.rtl = false
+        console.log(opt);
+    }
     return ( 
         <div className="slider">
-            <div className="container">
+            <Container>
                 <div className="slider-content">
-                    <OwlCarousel items={1} className="owl-theme" dots rows={2}>
-                        <div className="item">
-                            <div>
-                                <p>Explore our </p>
-                                <h3>Smartphones</h3>
-                                <p>&amp; Accessories collection</p>
-                                <button className="btn">Shop Now <FaAngleRight /> </button>
+                    <Slider {...opt}>
+                        <div>
+                            <div className="item">
+                                <div>
+                                    <p>Explore our </p>
+                                    <h3>Smartphones</h3>
+                                    <p>&amp; Accessories collection</p>
+                                    <button className="btn">Shop Now <FaAngleRight className="leftIcon" /></button>
+                                </div>
+                                <img src="./images/slider1.jpg" className="" alt="..." />
                             </div>
-                            <img src="./images/slider1.jpg" className="" alt="..." />
                         </div>
-                        <div className="item">
-                            <div>
-                                <p>Explore our </p>
-                                <h3>Smartphones </h3>
-                                <p>&amp; Accessories collection</p>
-                                <button className="btn">Shop Now<FaAngleRight /></button>
+                        <div>
+                            <div className="item">
+                                <div>
+                                    <p>Explore our </p>
+                                    <h3>Smartphones </h3>
+                                    <p>&amp; Accessories collection</p>
+                                    <button className="btn">Shop Now<FaAngleRight /></button>
+                                </div>
+                                <img src="./images/slider2.jpg" className="" alt="..." />
                             </div>
-                            <img src="./images/slider2.jpg" className="" alt="..." />
                         </div>
-                        <div className="item">
-                            <div>
-                                <p>Explore our </p>
-                                <h3>Smartphones</h3>
-                                <p>&amp; Accessories collection</p>
-                                <button className="btn">Shop Now <FaAngleRight /></button>
+                        <div>
+                            <div className="item">
+                                <div>
+                                    <p>Explore our </p>
+                                    <h3>Smartphones</h3>
+                                    <p>&amp; Accessories collection</p>
+                                    <button className="btn">Shop Now <FaAngleRight /></button>
+                                </div>
+                                <img src="./images/slider3.jpg" className="" alt="..." />
                             </div>
-                            <img src="./images/slider3.jpg" className="" alt="..." />
                         </div>
-                    </OwlCarousel>
+                    </Slider>
                 </div>
-            </div>
+            </Container>
         </div>
      );
 }
  
-export default Slider;
+export default Adsslider;

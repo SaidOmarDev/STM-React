@@ -1,7 +1,6 @@
-
 .shop-sidebar h4{
     color: #373f50;
-    text-align: left;
+    text-align: initial;
 }
 .shop-sidebar .categories,
 .price-range,
@@ -129,6 +128,9 @@
     border-color: #232363;
     background-color: #232363;
 }
+.shop-sidebar .list-unstyled{
+    padding: 0;
+}
 /**************/
 .rc-slider{
     margin-bottom: 15px;
@@ -166,3 +168,34 @@
     display: none;
 }
 /*************/
+
+
+/**RTL**/
+body[dir="rtl"] .shop-sidebar .categories .content-bar .head-bar h3 .angle-icon{
+    left: 0;
+    right: auto;
+}
+body[dir="rtl"] .shop-sidebar .categories .content-bar .bar-content ul li{
+    padding-left: 0;
+    padding-right: .75rem;
+}
+body[dir="rtl"] .price-range .input-group-wrapper .input-group:first-child{
+    margin-right: 0;
+    margin-left: 10px;
+}
+body[dir="rtl"] .shop-sidebar .custom-checkbox span{
+    left: 0;
+    right: auto;
+}
+body[dir="rtl"] .shop-sidebar .custom-control-label::before,
+body[dir="rtl"] .shop-sidebar .custom-control-label::after,
+body[dir="rtl"] .login-form .custom-control-label::before,
+body[dir="rtl"] .login-form .custom-control-label::after{
+    right: -1.5rem;
+    left: 0;
+}
+body[dir="rtl"] .shop-sidebar .custom-control,
+body[dir="rtl"] .login-form .custom-control{
+    padding-right: 1.5rem;
+    padding-left: 0;
+}

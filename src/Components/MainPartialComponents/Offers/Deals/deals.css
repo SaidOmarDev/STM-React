@@ -102,3 +102,12 @@
     color: rgba(0,0,0,0.5);
     text-transform: uppercase;
 }
+
+
+/**RTL**/
+body[dir="rtl"] .deals-container .deals-content .category,
+body[dir="rtl"] .deals-container .deals-content .pro-name,
+body[dir="rtl"] .deals-container .deals-content .available .ava-head,
+body[dir="rtl"] .deals-container .deals-content .available .ava-progress .progress{
+    flex-direction: row-reverse;
+}

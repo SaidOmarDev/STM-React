@@ -38,3 +38,18 @@
      font-size: 14px;
      margin-left: 5px;
 }
+
+
+/**RTL**/
+body[dir="rtl"] .details-header .rating-nums{
+    margin-right: 5px;
+    margin-left: 0;
+}
+body[dir="rtl"] .breadcrumb-item + .breadcrumb-item{
+    padding-right: 0.5rem;
+    padding-left: 0;
+}
+body[dir="rtl"] .breadcrumb-item + .breadcrumb-item::before{
+    padding-right: 0;
+    padding-left: 0.5rem;
+}

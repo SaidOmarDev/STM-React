@@ -61,3 +61,11 @@
 .order-steps .step-item:not(.current):hover{
     color: #6a6afc;
 }
+
+
+
+/**RTL**/
+body[dir="rtl"] .order-steps .step-item .step-label .step-icons{
+    margin-left: .425rem;
+    margin-right: 0;
+}

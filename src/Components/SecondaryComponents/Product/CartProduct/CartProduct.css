@@ -87,3 +87,15 @@
   .cart-product.card .fav.active:hover{
     cursor: default;
   }
+
+
+
+/**RTL**/
+body[dir="rtl"] .cart-product .pro-info .price .aft-dis{
+  margin-right: 0;
+  margin-left: 5px;
+}
+body[dir="rtl"] .cart-product.card .fav,
+body[dir="rtl"] .cart-product.card .ricon{
+  margin: 10px 0 0 5px;
+}

@@ -74,3 +74,9 @@
     left: 0;
     z-index: -1;
 }
+
+
+/**RTL**/
+body[dir="rtl"] .ads-sec .left-ad-card .ad-card-img img{
+    transform: rotateY(180deg);
+}

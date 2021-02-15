@@ -31,11 +31,9 @@
     color: #373f50;
     float: right;
 }
-
 .cart-summary .coupon{
     border: 1px solid #e3e9ef;
     border-radius: 5px;
-   
 }
 .cart-summary .coupon .acco-header{
     padding: 1rem;
@@ -80,4 +78,10 @@
     color: #fff;
     background-color: #232363;
     box-shadow: none;
+}
+
+
+/**RTL**/
+body[dir="rtl"] .cart-summary .cost p span{
+    float: left;
 }

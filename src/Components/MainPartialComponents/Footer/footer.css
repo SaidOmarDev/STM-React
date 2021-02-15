@@ -94,3 +94,24 @@ footer .copy .payment img{
 footer .copy .payment img:last-child{
     margin-right: 0;
 }
+
+
+/**RTL**/
+body[dir="rtl"] footer .main-footer .info .icon{
+    margin-left: 10px;
+    margin-right: 0;
+}
+body[dir="rtl"] footer .social a{
+    margin-right: 0;
+    margin-left: 20px;
+}
+body[dir="rtl"] footer .social a:last-child{
+    margin-left: 0;
+}
+body[dir="rtl"] footer .copy .payment img{
+    margin-left: 10px;
+    margin-right: 0;
+}
+body[dir="rtl"] footer .copy .payment img:last-child{
+    margin-left: 0;
+}

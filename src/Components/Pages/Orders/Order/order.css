@@ -10,6 +10,7 @@
 }
 .order .card .card-header p{
     margin-bottom: 0;
+    display: flex;
 }
 .order .card .card-header p span{
     margin-right: 15px;
@@ -57,4 +58,15 @@
 }
 .order .card .card-body .order-product .price{
     font-weight: 700;
+}
+
+
+/**RTL**/
+body[dir="rtl"] .order .card .card-header p span{
+    margin-right: 0;
+    margin-left: 15px;
+}
+body[dir="rtl"] .order .card .card-body .order-product .btn{
+    margin-right: 5px;
+    margin-left: 0;
 }

@@ -88,3 +88,31 @@
         margin: 3px 0;
     }
 }
+
+
+/**RTL**/
+body[dir="rtl"] .topHeader .right>div .fas,
+body[dir="rtl"] .topHeader .right .top-icon,
+body[dir="rtl"] .topHeader .left img,
+body[dir="rtl"] .topHeader .login .user-icon{
+    margin-right: 0;
+    margin-left: 5px;
+}
+body[dir="rtl"] .topHeader .right .email{
+    padding-right: 0;
+    border-right: none;
+    padding-left: 10px;
+    border-left: 1px solid #7a7a7a;
+}
+body[dir="rtl"] .topHeader .right .phone{
+    margin-right: 0;
+    padding-left: 0;
+    border-left: none;
+    margin-left: 15px;
+    padding-right: 10px;
+    border-right: 1px solid #7a7a7a;
+}
+body[dir="rtl"] .topHeader .login a:first-of-type{
+    border-left: 1px solid #7a7a7a;
+    border-right: none;
+}

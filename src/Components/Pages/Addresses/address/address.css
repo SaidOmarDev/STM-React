@@ -29,3 +29,11 @@
     background-color: #adadff;
     cursor: unset;
 }
+
+
+/**RTL**/
+body[dir="rtl"] .address .card .btn,
+body[dir="rtl"] .address .card .btn .default-icon{
+    margin-left: 5px;
+    margin-right: 0;
+}

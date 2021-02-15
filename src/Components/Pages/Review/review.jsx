@@ -49,10 +49,10 @@ const Review = (props) => {
                                 <div className="proceed">
                                     <div className="row">
                                         <div className="col-md-6">
-                                            <Link to="/payment" className="btn btn-block back"><FaAngleLeft /> back to payment</Link>
+                                            <Link to="/payment" className="btn btn-block back"><FaAngleLeft className="checkout-icons"/> back to payment</Link>
                                         </div>
                                         <div className="col-md-6">
-                                            <Link to="/" className="btn btn-block go-proceed"> complete order <FaAngleRight /></Link>
+                                            <Link to="/" className="btn btn-block go-proceed"> complete order <FaAngleRight className="checkout-icons"/></Link>
                                         </div>
                                     </div>
                                 </div>

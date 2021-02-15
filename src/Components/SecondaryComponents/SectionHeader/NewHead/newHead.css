@@ -20,9 +20,14 @@
     background-color: #4e54c8;
     color: #fff;
 }
-.head button:hover{
-    color: #FE696A !important;
+.head .btn .angle-right{
+    margin-left: 5px;
 }
-.head button .angle-right{
-    margin-left: 10px;
+
+
+/**ٌRTL**/
+body[dir="rtl"] .head .btn .angle-right{
+    margin-left: 0;
+    margin-right: 5px;
+    transform: rotate(180deg);
 }

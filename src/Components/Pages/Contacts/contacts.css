@@ -7,10 +7,12 @@
 .contacts .contacts-details .card,
 .contacts .send-message.card{
     height: 100%;
-    text-align: center;
     padding: 20px;
     box-shadow: 0 0.3rem 1.525rem -0.375rem rgba(0,0,0,0.1);
     border: none;
+}
+.contacts .contacts-details .card{
+    text-align: center;
 }
 .contacts .contact-icons{
     font-size: 25px;
@@ -28,7 +30,6 @@
 .contacts .send-message h3{
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
-    text-align: left;
     color: #373f50;
 }
 .contacts .send-message .form-control{
@@ -36,6 +37,7 @@
     border: 1px solid #dae1e7;
     font-size: .9375rem;
     padding: .625rem 1rem;
+    height: auto;
 }
 .contacts .send-message .form-control::placeholder{
     color: #a4aeb8;
@@ -52,4 +54,19 @@
 }
 .contacts .send-message .btn:hover{
     background-color: #232363;
+}
+.send-message .error,
+.send-message .noerror{
+    height: 15px;
+    font-size: 13px;
+    color: #FE696A;
+}
+.send-message .noerror{
+    opacity: 0;
+}
+
+
+/**RTL**/
+body[dir="rtl"] .contacts .send-message .btn{
+    float: right;
 }

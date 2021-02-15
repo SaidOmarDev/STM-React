@@ -7,6 +7,7 @@ import filterReducer from './filterReducer'
 import authReducer from './authReducer'
 import langReducer from './langReducer'
 import orderReducer from './orderReducer'
+import contactReducer from './contactReducer'
 
 const rootReducer = combineReducers({
     products: productReducer,
@@ -15,6 +16,7 @@ const rootReducer = combineReducers({
     filtered: filterReducer,
     auth: authReducer,
     lang: langReducer,
-    order: orderReducer
+    order: orderReducer,
+    contact: contactReducer
 });
 export default rootReducer;

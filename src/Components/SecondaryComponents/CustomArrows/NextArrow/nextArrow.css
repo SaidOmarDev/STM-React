@@ -30,3 +30,14 @@
     transform: translate(-50%, -50%);
 
 }
+
+
+/**RTL**/
+body[dir="rtl"] .arrow-btn.btn.prev{
+    left: 0;
+    right: auto;
+}
+body[dir="rtl"] .arrow-btn.btn.next{
+    left: 35px;
+    right: 0;
+}

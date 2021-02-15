@@ -5,7 +5,6 @@ import {addToCart, removeFromCart, updateCartQuantity} from '../../../../actions
 import {removeFromWishlist, addToWishlist} from '../../../../actions/wishlistActions'
 
 import RateStars from '../../RateStars/rate-stars'
-import {BiHeart} from 'react-icons/bi'
 import {MdRemoveShoppingCart} from 'react-icons/md'
 import {FaShoppingCart, FaHeart} from 'react-icons/fa'
 import {TiDeleteOutline} from 'react-icons/ti'
@@ -14,7 +13,6 @@ import './CartProduct.css'
 const CartProduct = (props) => {
     const dispatch = useDispatch()
     const [quantity, setQuntity] = useState(props.product.quantity)
-    console.log(quantity);
     
     const incrementHandler = ()=>{
         setQuntity(prevState => prevState + 1)
@@ -24,11 +22,13 @@ const CartProduct = (props) => {
     }
 
     useEffect(()=>{
-        dispatch(updateCartQuantity(props.product.id,quantity))
+        if(props.inCart){
+            dispatch(updateCartQuantity(props.product.id,quantity))
+        }
     },[quantity, dispatch])
 
-    const addToCartHandler = (itemId)=>{
-        dispatch(addToCart(itemId));
+    const addToCartHandler = (item)=>{
+        dispatch(addToCart(item));
     }
 
     const removeFromCartHandler = (itemId)=>{
@@ -37,6 +37,7 @@ const CartProduct = (props) => {
     const removeFromWishlistHandler = (itemId)=>{
         dispatch(removeFromWishlist(itemId));
     }
+
     return ( 
         <div className="cart-product card">
             <div className="pro-img">
@@ -96,7 +97,8 @@ const CartProduct = (props) => {
                                     <TiDeleteOutline className="fav-icon"/>Remove
                                 </span> 
                                 {props.inCart ? 
-                                    <span className="btn ricon"><MdRemoveShoppingCart className="cart-icon"/></span>
+                                    // <span className="btn ricon"><MdRemoveShoppingCart className="cart-icon"/></span>
+                                    null
                                     :
                                     <button className="btn ricon" onClick={()=>addToCartHandler(props.product)}><FaShoppingCart className="cart-icon"/></button>
                                 }

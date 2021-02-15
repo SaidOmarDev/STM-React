@@ -62,3 +62,11 @@
     color: #6a6afc;
     pointer-events: none;
 }
+
+
+
+/**RTL**/
+body[dir="rtl"] .order-status .step-item .step-label .step-icons{
+    margin-left: .425rem;
+    margin-right: 0;
+}

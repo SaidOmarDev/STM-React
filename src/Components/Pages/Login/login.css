@@ -80,3 +80,13 @@
 .login-form .noerror{
     opacity: 0;
 }
+
+
+/**ٌRTL**/
+body[dir="rtl"] .login-form .forget{
+    float: left;
+}
+body[dir="rtl"] .login-form .custom-control-inline{
+    margin-left: 1rem;
+    margin-right: 0;
+}

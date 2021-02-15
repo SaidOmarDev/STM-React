@@ -52,3 +52,9 @@
     background-color: #232363;
     box-shadow: none;
 }
+
+
+/**RTL**/
+body[dir="rtl"] .review .proceed .checkout-icons{
+    transform: rotate(180deg);
+}
