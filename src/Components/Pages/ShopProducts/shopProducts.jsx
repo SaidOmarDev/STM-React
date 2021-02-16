@@ -12,7 +12,7 @@ const ShopProducts = () => {
     const [currentPage,setCurrentPage] = useState(1)
     const [lastIndex,setLastIndex] = useState(6)
     const [firstIndex,setFirstIndex] = useState(0)
-    const token = useSelector(state=>state.auth.token)
+    const token = localStorage.getItem('apiToken')
     const filteredProducts = useSelector((state) => state.filtered.items)
     const products = useSelector((state) => state.products.items)
     let currentProducts = products.slice(firstIndex, lastIndex)

@@ -1,7 +1,7 @@
 import TYPES from './types'
 
 const initialState = {
-    token: null,
+    token: localStorage.getItem('apiToken'),
     userid: null,
     phone: null,
     error: null,
@@ -20,8 +20,8 @@ export default function(state = initialState, action){
             return {
                 ...state,
                 token: action.idToken,
-                // userid: action.userid,
-                phone: action.phone,
+                userid: action.userid,
+                // phone: action.phone,
                 error: null,
                 loading: false
             }

@@ -125,6 +125,8 @@
     transition: all .1s ease-in-out;
   }
   .product.card .cart-view .add-cart{
+    display: flex;
+    justify-content: center;
     background-color: #6a6afc;
     color: white;
     font-weight: 500;
@@ -133,6 +135,8 @@
     box-shadow: 0 0.5rem 1.125rem -0.5rem rgba(106,106,252,0.9);
   }
   .product.card .cart-view .added-cart{
+    display: flex;
+    justify-content: center;
     background-color: #6a6afc;
     color: white;
     font-weight: 500;
@@ -210,4 +214,13 @@ body[dir="rtl"] .product.card .cart-view .q-view .view-icon,
 body[dir="rtl"] .product.card .cart-view .add-cart .cart-icon{
   margin-right: 0;
   margin-left: 5px;
+}
+body[dir="rtl"] .product.card .pro-desc{
+  text-align: right;
+}
+body[dir="rtl"] .slick-slide .product.card .pro-info>div,
+body[dir="rtl"] .slick-slide .product.card .pro-info .price,
+body[dir="rtl"] .slick-slide .product.card .cart-view .add-cart,
+body[dir="rtl"] .slick-slide .product.card .cart-view .added-cart{
+  flex-direction: row-reverse;
 }

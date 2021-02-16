@@ -76,8 +76,8 @@ const Product = (props) => {
                 </div>
                 <div className="cart-view">
                     {props.inCart ? 
-                        <Link to="/shoppingCart" className="btn d-block added-cart"><FaShoppingCart className="cart-icon"/>View Cart <AiFillCheckCircle className="added-icon"/></Link> : 
-                        <button className="btn add-cart d-block" onClick={()=>addToCartHandler(props.product)}><FaShoppingCart className="cart-icon"/>{props.addText}</button>
+                        <Link to="/shoppingCart" className="btn added-cart"><FaShoppingCart className="cart-icon"/>View Cart <AiFillCheckCircle className="added-icon"/></Link> : 
+                        <button className="btn add-cart" onClick={()=>addToCartHandler(props.product)}><FaShoppingCart className="cart-icon"/>{props.addText}</button>
                     }
                     {/* <button className="btn q-view d-block"><FaEye className="view-icon"/>Quick View</button> */}
                 </div>

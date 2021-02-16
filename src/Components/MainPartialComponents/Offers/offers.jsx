@@ -12,7 +12,7 @@ import './offers.css'
 import { Row, Col, Container } from 'react-bootstrap';
 
 const Offers = (props) => {
-    const token = useSelector(state=>state.auth.token)
+    const token = localStorage.getItem('apiToken')
     const products = useSelector((state) => state.products.items);
     let cart = useSelector((state) => state.cart.items);
     let wishlist = useSelector((state) => state.wishlist.items);
@@ -61,7 +61,7 @@ const Offers = (props) => {
     let options = {
         dots: false,
         infinite: true,
-        // autoplay:true,
+        autoplay:true,
         speed: 1500,
         slidesToShow: 1,
         slidesToScroll: 1

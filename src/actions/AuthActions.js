@@ -41,8 +41,8 @@ export function authStart() {
         .then(response =>{
             console.log(response);
             // console.log(response.data.driver.apiToken+' , '+ response.data.driver.phone);
+            localStorage.setItem('apiToken', response.data.idToken)
             dispatch(authSuccess(response.data.idToken, response.data.localId))
-            
         })
         .catch(err=>{
             console.log(err.response.data.error);
@@ -83,6 +83,7 @@ export function authStart() {
  }
  export function logout(){
      return function (dispatch){
+         localStorage.removeItem('apiToken')
          dispatch({
              type: TYPES.LOGOUT
          })

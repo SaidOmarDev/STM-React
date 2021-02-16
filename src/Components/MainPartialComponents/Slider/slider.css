@@ -12,6 +12,9 @@
     color: #232363;
     font-weight: normal;
     margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 .slider .slider-content .item h3{
     font-weight: bold;
@@ -60,6 +63,7 @@
 }
 .slider .slider-content .slick-dots{
     width: max-content;
+    display: flex;
 }
 @media (max-width: 767.99px){
     .slider .slider-content .item{
@@ -80,8 +84,13 @@
 
 /**RTL**/
 body[dir="rtl"] .slider .leftIcon{
-    transform: rotate(180deg);
+    /* transform: rotate(180deg); */
 }
 body[dir="rtl"] .slider .slider-content .item{
     flex-direction: row-reverse;
+    text-align: right;
+}
+body[dir="rtl"] .slider .slider-content .slick-dots{
+    flex-direction: row-reverse;
+    right: 0;
 }

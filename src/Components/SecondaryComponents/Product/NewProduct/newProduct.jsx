@@ -8,7 +8,7 @@ import { Link, useHistory } from 'react-router-dom';
 import { addToWishlist } from '../../../../actions/wishlistActions';
 
 const NewProduct = (props) => {
-    const token = useSelector(state => state.auth.token)
+    const token = localStorage.getItem('apiToken')
     const loading = useSelector(state => state.cart.loading)
     const dispatch = useDispatch();
     const history = useHistory();

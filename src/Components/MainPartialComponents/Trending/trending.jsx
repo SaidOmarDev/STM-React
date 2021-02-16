@@ -8,7 +8,7 @@ import NewHead from '../../SecondaryComponents/SectionHeader/NewHead/newHead';
 import './trending.css'
 
 const Trending = (props) => {
-    const token = useSelector(state=>state.auth.token)
+    const token = localStorage.getItem('apiToken')
     const products = useSelector((state) => state.products.items);
     let cart = useSelector((state) => state.cart.items);
     let wishlist = useSelector((state) => state.wishlist.items);

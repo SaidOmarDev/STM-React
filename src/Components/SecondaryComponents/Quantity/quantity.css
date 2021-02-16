@@ -10,3 +10,25 @@
 .quantity .input-group-text:hover{
     background-color: #eee;
 }
+
+/**RTL**/
+body[dir="rtl"] .quantity .input-group-prepend{
+    margin-right: 0;
+    margin-left: -1px;
+}
+body[dir="rtl"] .quantity .input-group-append{
+    margin-right: -1px;
+    margin-left: 0;
+}
+body[dir="rtl"] .input-group > .input-group-prepend > .input-group-text{
+    border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+body[dir="rtl"] .input-group > .input-group-append > .input-group-text{
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+}

@@ -7,7 +7,7 @@ import {FaBoxOpen} from 'react-icons/fa'
 import './orders.css'
 
 const Orders = (props) => {
-    const token = useSelector(state => state.auth.token)
+    const token = localStorage.getItem('apiToken')
 
     return ( 
         <div className="orders pt-5 pb-5">

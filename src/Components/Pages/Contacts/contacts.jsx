@@ -49,7 +49,7 @@ const MySelect = ({ label, ...props }) => {
 
 const Contacts = (props) => {
     const dispatch = useDispatch()
-    const token = useSelector(state => state.auth.token)
+    const token = localStorage.getItem('apiToken')
     return ( 
         <React.Fragment>
             <BreadCrumb pagename="Contact Info"/>

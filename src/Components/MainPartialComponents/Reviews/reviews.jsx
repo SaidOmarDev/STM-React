@@ -7,7 +7,7 @@ import './reviews.css'
 import { useSelector } from 'react-redux';
 
 const Reviews = (props) => {
-    const token = useSelector(state=> state.auth.token)
+    const token = localStorage.getItem('apiToken')
     return ( 
         <React.Fragment>
             <div className="avg-rating">

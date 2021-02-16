@@ -16,7 +16,7 @@ import { logout } from '../../../../actions/AuthActions'
 const MainHeader = (props) => {
     const wishlist = useSelector((state) => state.wishlist.items)
     const cart = useSelector((state) => state.cart.items)
-    const token = useSelector(state => state.auth.token)
+    // const token = useSelector(state => state.auth.token)
     const history = useHistory()
     const dispatch = useDispatch();
     
@@ -26,7 +26,7 @@ const MainHeader = (props) => {
     }
 
     let classes = []
-    if(!token){
+    if(!props.token){
         classes.push('notAuth')
     }
 
@@ -47,7 +47,7 @@ const MainHeader = (props) => {
                     </Col>
                     <Col lg={4} md={5}>
                         <div className={`shop-setting ${classes}`}>
-                        {token ? (
+                        {props.token ? (
                                 <div className="account">
                                     <img src="images/team2.jpg" className="main-icon" alt=""/>
                                     <div>
@@ -73,14 +73,14 @@ const MainHeader = (props) => {
                                 <FaRegHeart className="main-icon"/>
                                 <div>
                                     <Link to="/profile/wishlist">Wishlist</Link>
-                                    <span>{token ? wishlist.length : 0}</span>
+                                    <span>{props.token ? wishlist.length : 0}</span>
                                 </div>
                             </div>
                             <div className="cart">
                                 <AiOutlineShoppingCart className="main-icon"/>
                                 <div>
                                     <Link to="/shoppingCart">Cart</Link>
-                                    <span>EGP {token ? total : 0}</span>
+                                    <span>EGP {total}</span>
                                 </div>
                             </div>
                         </div>

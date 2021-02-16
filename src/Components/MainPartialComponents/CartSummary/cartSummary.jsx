@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import OrderProduct from '../../SecondaryComponents/Product/OrderProduct/orderProduct';
 import {MdPayment} from 'react-icons/md'
@@ -7,6 +7,17 @@ import './cartSummary.css'
 
 const CartSummary = (props) => {
     const cart = useSelector((state) => state.cart.items)
+    const token = useSelector((state) => state.auth.token)
+    const history = useHistory()
+
+    const handleToCheckout = () => {
+        if(token){
+            history.push('/checkout')
+        }else{
+            history.push('/login')
+        }
+    }
+
     return ( 
         <div className="cart-summary">
             {props.page === "checkout" ?
@@ -43,7 +54,7 @@ const CartSummary = (props) => {
                         <a href="#" className="btn btn-block">Apply Coupon</a>
                     </div>
                 </div>
-                <Link to="/checkout" className="btn btn-block proceed-check"><MdPayment/> Proceed to checkout</Link>
+                <button className="btn btn-block proceed-check" onClick={handleToCheckout}><MdPayment/> Proceed to checkout</button>
                 </>
                 :
                 null

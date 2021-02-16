@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react'
+import { ProgressBar } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import './deals.css';
 
 const Deals = (props) => {
@@ -7,11 +9,11 @@ const Deals = (props) => {
             <img className="img" src="/images/deals.png"/>
             <div className="deals-content">
                 <div className="category">     
-                    <a href="#"><h6>HeadPhones</h6></a>
+                    <h6>HeadPhones</h6>
                     <span>500EGP</span>
                 </div>
                 <div className="pro-name">
-                    <h5>Samsung</h5>
+                    <Link to="/productDetails/1" ><h5>Samsung</h5></Link>
                     <span>350EGP</span>
                 </div>
                 <div className="available">
@@ -20,9 +22,7 @@ const Deals = (props) => {
                         <h6>Already sold: <span>15</span></h6>
                     </div>
                     <div className="ava-progress">
-                        <div className="progress">
-                            <div className="progress-bar w-25" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
+                        <ProgressBar now={33} />
                     </div>
                 </div>
                 {/* <div className="end-time">

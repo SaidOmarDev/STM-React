@@ -1,7 +1,7 @@
 import TYPES from './types'
 
 const initialState = {
-    lang: 'en'
+    lang: localStorage.getItem('lang')
 }
 
 export default function (state = initialState, action){

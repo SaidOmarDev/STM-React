@@ -10,7 +10,7 @@ import './top-header.css'
 const TopHeader = (props) => {
     const [lang, setLang] = useState('Eng')
     const changedLang = useSelector(state => state.lang.lang)
-    const token = useSelector(state => state.auth.token)
+    // const token = useSelector(state => state.auth.token)
     const dispatch = useDispatch()
 
     useEffect(() => {
@@ -22,7 +22,7 @@ const TopHeader = (props) => {
     }, [changedLang])
     
     const handleLang = (e)=>{
-        dispatch(changeLang(token, e))
+        dispatch(changeLang(props.token, e))
     }
 
     return ( 

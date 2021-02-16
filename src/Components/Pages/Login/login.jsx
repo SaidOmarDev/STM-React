@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import {Formik, Form, useField} from 'formik'
 import * as Yup from 'yup'
 import { Spinner, Toast } from 'react-bootstrap';
@@ -37,7 +37,7 @@ const MyCheckBox = ({children, ...props}) => {
 
 const Login = (props) => {
     const [isRegister, setIsRegister] = useState(false);
-    // const [show, setShow] = useState(true);
+    const history = useHistory()
     const dispatch = useDispatch();
     const loading = useSelector(state=> state.auth.loading);
     const token = useSelector(state=> state.auth.token);
@@ -45,7 +45,7 @@ const Login = (props) => {
     useEffect(() => {
         if(token){
             // console.log(props.history);
-            props.history.replace("/");
+            history.goBack();
         }
     },[token])
     

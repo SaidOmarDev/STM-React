@@ -27,23 +27,15 @@ import './App.css';
 
 function App(props) {
   const dispatch = useDispatch();
-  const token = useSelector(state => state.auth.token)
+  const token = useSelector((state) => state.auth.token)
   const lang = useSelector(state => state.lang.lang)
 
   useEffect(() => {
     dispatch(fetchProducts());
     dispatch(fetchCategories());
+    dispatch(fetchCart());
+    dispatch(fetchWishlist());
   },[token, dispatch])
-
-  useEffect(() => {
-    if(token){
-      dispatch(fetchCart());
-      dispatch(fetchWishlist());
-    }
-  },[token, dispatch])
-
-  // useEffect(() => {
-  // },[dispatch]);
 
   useEffect(() => {
     if(lang === 'ar'){
