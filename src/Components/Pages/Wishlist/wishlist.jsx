@@ -7,6 +7,7 @@ import Pagination from '../../SecondaryComponents/Pagination/pagination'
 import CartProduct from '../../SecondaryComponents/Product/CartProduct/cartProduct'
 import ProfileSidebar from '../../Profile/ProfileSidebar/profileSideBar'
 import './wishlist.css'
+import { Col, Container, Row } from 'react-bootstrap'
 
 const Wishlist = (props) => {
     const wishlist = useSelector((state) => state.wishlist.items)
@@ -16,29 +17,29 @@ const Wishlist = (props) => {
 
     return ( 
         <div className="wishlist-wrapper">
-            <div className="container">
-                <div className="row">
+            <Container>
+                <Row>
                     {token ? 
-                        <div className="col-md-4">
+                        <Col md={4}>
                             <ProfileSidebar />
-                        </div>: null
+                        </Col>: null
                     }
-                    <div className="col-md-8">
+                    <Col md={8}>
                         {token ? 
                             <React.Fragment>
                                 {wishlist.length>0? (
                                     <React.Fragment>
-                                        <div className="row">
+                                        <Row>
                                             {wishlist.map(product =>(
-                                                <div className="col-md-4" key={product.id}>
+                                                <Col lg={4} sm={6} key={product.id}>
                                                     <CartProduct 
                                                         productType="wish"
                                                         product={product}   
                                                         inCart={cart.length > 0 && cart.filter(item => item.id === product.id).length > 0 }
                                                     />
-                                                </div>
+                                                </Col>
                                             ))}
-                                        </div>
+                                        </Row>
                                         <div className="cart-bottom">
                                             <Pagination />
                                         </div>
@@ -58,9 +59,9 @@ const Wishlist = (props) => {
                                 <Link to="/" className="btn">Start Shopping</Link>
                             </div>
                         }
-                    </div>
-                </div>
-            </div>
+                    </Col>
+                </Row>
+            </Container>
         </div>
      );
 }

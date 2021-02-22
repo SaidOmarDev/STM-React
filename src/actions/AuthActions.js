@@ -26,7 +26,7 @@ export function authStart() {
     }
  }
  export function auth(values, isRegister) { 
-     return function (dispatch) { 
+     return async function (dispatch) { 
          dispatch(authStart())
          let url = 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyAVN68TYqHIuqc7pNW7G08VVer7Mjk8wCE'
          if(!isRegister){
@@ -37,7 +37,7 @@ export function authStart() {
             password: values.password,
             returnSecureToken: true
         }
-       axios.post(url, authData)
+       await axios.post(url, authData)
         .then(response =>{
             console.log(response);
             // console.log(response.data.driver.apiToken+' , '+ response.data.driver.phone);
@@ -45,8 +45,8 @@ export function authStart() {
             dispatch(authSuccess(response.data.idToken, response.data.localId))
         })
         .catch(err=>{
-            console.log(err.response.data.error);
-            dispatch(authFail(err))
+            console.log(err.response.data.error.message);
+            dispatch(authFail(err.response.data.error.message))
         })
         // let url ='';
         // let authData = {}

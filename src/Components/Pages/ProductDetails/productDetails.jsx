@@ -23,10 +23,10 @@ const ProductDetails = (props) => {
             <div className="pro-details">
                 <Container>
                     <Row>
-                        <Col md={4}>
+                        <Col lg={4} md={6}>
                             <ImageGallery image={product.image}/>
                         </Col>
-                        <Col md={4}>
+                        <Col lg={4} md={6}>
                             <h4>{product.name}</h4>
                             <div className="brief-details">
                                 <h6>Product Details</h6>
@@ -59,7 +59,7 @@ const ProductDetails = (props) => {
                                 </div>
                             </div>
                         </Col>
-                        <Col md={4}>
+                        <Col lg={4} md={6}>
                             <Card>
                                 <div className="d-flex justify-content-between">
                                     <span className="price">

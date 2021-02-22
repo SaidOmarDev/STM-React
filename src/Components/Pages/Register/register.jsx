@@ -6,6 +6,7 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { auth } from '../../../actions/AuthActions';
 import { Alert, Row, Col, Spinner, Toast } from 'react-bootstrap';
+import AlertToast from '../../SecondaryComponents/AlertToast/alertToast';
 
 
 const MyTextInput = ({label, ...props}) => {
@@ -208,18 +209,7 @@ const Register = (props) => {
                 (<Spinner animation="border" style={{margin: '100px auto', display: 'block'}}/>)
             }
             {error ? 
-                <Toast delay={3000} autohide={true} show={show} onClose={toggleShow}>
-                    <Toast.Header>
-                        <img
-                        src="holder.js/20x20?text=%20"
-                        className="rounded mr-2"
-                        alt=""
-                        />
-                        <strong className="mr-auto">Bootstrap</strong>
-                        <small>11 mins ago</small>
-                    </Toast.Header>
-                    <Toast.Body>{error.message}</Toast.Body>
-            </Toast> : null}
+                <AlertToast type="bg-danger" content={error} show={true}/>: null}
         </div>
      );
 }

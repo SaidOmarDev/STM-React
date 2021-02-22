@@ -1,12 +1,12 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
+import { auth } from '../../../actions/AuthActions';
 import {Formik, Form, useField} from 'formik'
 import * as Yup from 'yup'
 import { Spinner, Toast } from 'react-bootstrap';
-import { auth } from '../../../actions/AuthActions';
+import AlertToast from '../../SecondaryComponents/AlertToast/alertToast';
 import './login.css'
-import { useEffect } from 'react';
 
 const MyTextInput = ({label, ...props}) => {
     const [field, meta] = useField(props);
@@ -41,79 +41,82 @@ const Login = (props) => {
     const dispatch = useDispatch();
     const loading = useSelector(state=> state.auth.loading);
     const token = useSelector(state=> state.auth.token);
-    // const errorMessage = useSelector(state => state.auth.error);
+    const errorMessage = useSelector(state => state.auth.error);
     useEffect(() => {
         if(token){
-            // console.log(props.history);
-            history.goBack();
+            history.goBack()
+            // props.history.replace('/');
         }
     },[token])
-    
+    console.log(errorMessage);
 
     return ( 
-        <div className="login-page">
-            {!loading ? (
-                <React.Fragment>
-                    <div className="card login-form">
-                        <h4>Login</h4>
-                        <Formik
-                            initialValues={{
-                                email:'',
-                                password:'',
-                                rememberMe: false
-                            }}
-                            validationSchema={Yup.object().shape({
-                                email: Yup.string().email('*Invalid Email Address').required('*Required'),
-                                password: Yup.string().required('*required'),
-                                rememberMe: Yup.boolean()
-                            })}
-                            onSubmit={(values, {setSubmitting}) => {
-                                setTimeout(() => {
-                                    // alert(JSON.stringify(values, null, 2));
-                                    setSubmitting(false);
-                                    // console.log(values);
-                                    dispatch(auth(values, isRegister))
-                                }, 400)
-                                // if(token){
-                                //     repalceHandler();
-                                //     // console.log(props.history);
-                                //     // props.history.replace("/");
-                                // }
-                            }}
-                        >
-                            <Form>
-                                <div className="form-group">
-                                    <MyTextInput
-                                        label="Email Address"
-                                        name="email"
-                                        type="email"
-                                        placeholder="jane@formik.com"
-                                    />
-                                </div>
-                                <div className="form-group">
-                                    <MyTextInput
-                                        label="Password"
-                                        name="password"
-                                        type="password"
-                                        placeholder="Your Password"
-                                    />
-                                </div>
-                                <div className="form-group">
-                                    <MyCheckBox name="rememberMe">
-                                        <div className="custom-control-label">Remember Me</div>
-                                    </MyCheckBox>
-                                    <a href="forget.html" className="forget">Forget your password?</a>
-                                </div>
-                                <button type="submit" className="btn btn-block ">Login</button>
-                            </Form>
-                        </Formik>
-                    </div>
-                    <p className="go-login text-center mt-3">Don't have an account?<Link to="/register"><strong> Register Now</strong></Link></p>
-                </React.Fragment>
-                ):
-                (<Spinner animation="border" style={{margin: '100px auto', display: 'block'}}/>)
-            }
-        </div>
+        <React.Fragment>
+            {errorMessage ? <AlertToast type="bg-danger" content={errorMessage} show={true}/> : null}
+            <div className="login-page">
+                {!loading && !token ? (
+                    <React.Fragment>
+                        <div className="card login-form">
+                            <h4>Login</h4>
+                            <Formik
+                                initialValues={{
+                                    email:'',
+                                    password:'',
+                                    rememberMe: false
+                                }}
+                                validationSchema={Yup.object().shape({
+                                    email: Yup.string().email('*Invalid Email Address').required('*Required'),
+                                    password: Yup.string().required('*required'),
+                                    rememberMe: Yup.boolean()
+                                })}
+                                onSubmit={(values, {setSubmitting}) => {
+                                    setTimeout(() => {
+                                        // alert(JSON.stringify(values, null, 2));
+                                        setSubmitting(false);
+                                        // console.log(values);
+                                        dispatch(auth(values, isRegister))
+                                    }, 400)
+                                    // if(token){
+                                    //     repalceHandler();
+                                    //     // console.log(props.history);
+                                    //     // props.history.replace("/");
+                                    // }
+                                }}
+                            >
+                                <Form>
+                                    <div className="form-group">
+                                        <MyTextInput
+                                            label="Email Address"
+                                            name="email"
+                                            type="email"
+                                            placeholder="jane@formik.com"
+                                        />
+                                    </div>
+                                    <div className="form-group">
+                                        <MyTextInput
+                                            label="Password"
+                                            name="password"
+                                            type="password"
+                                            placeholder="Your Password"
+                                        />
+                                    </div>
+                                    <div className="form-group">
+                                        <MyCheckBox name="rememberMe">
+                                            <div className="custom-control-label">Remember Me</div>
+                                        </MyCheckBox>
+                                        <a href="forget.html" className="forget">Forget your password?</a>
+                                    </div>
+                                    <button type="submit" className="btn btn-block ">Login</button>
+                                </Form>
+                            </Formik>
+                        </div>
+                        <p className="go-login text-center mt-3">Don't have an account?<Link to="/register"><strong> Register Now</strong></Link></p>
+                    </React.Fragment>
+                    ):
+                    (<Spinner animation="border" style={{margin: '100px auto', display: 'block'}}/>)
+                }
+            </div>
+        </React.Fragment>
      );
 }
  

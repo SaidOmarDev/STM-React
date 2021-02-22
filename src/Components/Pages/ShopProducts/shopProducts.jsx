@@ -7,6 +7,7 @@ import Product from '../../SecondaryComponents/Product/product'
 // import Pagination from '../../SecondaryComponents/Pagination/pagination'
 import Pagination from "react-js-pagination"
 import './shopProducts.css'
+import { Col, Container, Row } from 'react-bootstrap'
 
 const ShopProducts = () => {
     const [currentPage,setCurrentPage] = useState(1)
@@ -40,38 +41,38 @@ const ShopProducts = () => {
         <React.Fragment>
             <BreadCrumb pagename="Shop"/>
             <div className="shop">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-md-4">
+                <Container>
+                    <Row>
+                        <Col md={4}>
                             <SideBarFilter products={products}/>
-                        </div>
-                        <div className="col-md-8" style={{position: "relative"}}>
-                            <div className="row">
+                        </Col>
+                        <Col md={8} style={{position: "relative"}}>
+                            <Row>
                                 {filteredProducts.length>0 ? 
                                     filteredProducts.map(product=>(
-                                        <div className="col-md-4" key={product.id}>
+                                        <Col xl={4} sm={6} key={product.id}>
                                             <Product
                                                 addText="Add To Cart"
                                                 product={product}
                                                 inCart={cart.length > 0 && cart.filter(item => item.id === product.id).length > 0 }
                                                 inWishlist={wishlist.length>0 && wishlist.filter(item => item.id === product.id).length > 0 }
                                             />
-                                        </div>
+                                        </Col>
                                     ))
                                     :
                                     currentProducts.map(product=>(
-                                        <div className="col-md-4" key={product.id}>
+                                        <Col xl={4} sm={6} key={product.id}>
                                             <Product
                                                 addText="Add To Cart"
                                                 product={product}
                                                 inCart={cart.length > 0 && cart.filter(item => item.id === product.id).length > 0 }
                                                 inWishlist={wishlist.length>0 && wishlist.filter(item => item.id === product.id).length > 0 }
                                             />
-                                        </div>
+                                        </Col>
                                     ))
                                 }
 
-                            </div>
+                            </Row>
                             <div className="cart-bottom">
                                 {products.length > 6 ? (
                                     <Pagination 
@@ -86,9 +87,9 @@ const ShopProducts = () => {
                                     ): null
                                 }
                             </div>
-                        </div>
-                    </div>
-                </div>
+                        </Col>
+                    </Row>
+                </Container>
             </div>
         </React.Fragment>
      );

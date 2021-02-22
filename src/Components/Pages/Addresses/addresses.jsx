@@ -4,7 +4,7 @@ import {MdAdd} from 'react-icons/md'
 import Address from './address/address'
 import './addresses.css'
 import { useState } from 'react'
-import { Button, Modal } from 'react-bootstrap'
+import { Button, Col, Container, Modal, Row } from 'react-bootstrap'
 
 const Addresses = (props) => {
     const [show, setShow] = useState(false)
@@ -17,19 +17,19 @@ const Addresses = (props) => {
     }
     return ( 
         <div className="addresses pt-5 pb-5">
-            <div className="container">
-                <div className="row">
-                    <div className="col-md-4">
+            <Container>
+                <Row>
+                    <Col md={4}>
                         <ProfileSidebar />
-                    </div>
-                    <div className="col-md-8">
+                    </Col>
+                    <Col md={8}>
                         <button className="btn add-new" onClick={handleShow}><MdAdd />Add new Address</button>
-                        <div className="row">
-                            <div className="col-md-6"><Address default="active"/></div>
-                            <div className="col-md-6"><Address /></div>
-                            <div className="col-md-6"><Address /></div>
-                        </div>
-                    </div>
+                        <Row>
+                            <Col sm={6}><Address default="active"/></Col>
+                            <Col sm={6}><Address /></Col>
+                            <Col sm={6}><Address /></Col>
+                        </Row>
+                    </Col>
                     <Modal show={show} onHide={handleClose}>
                         <Modal.Header closeButton>
                             <Modal.Title>Modal heading</Modal.Title>
@@ -46,8 +46,8 @@ const Addresses = (props) => {
                             </Button>
                         </Modal.Footer>
                     </Modal>
-                </div>
-            </div>
+                </Row>
+            </Container>
         </div>
      );
 }

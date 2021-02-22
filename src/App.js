@@ -1,5 +1,5 @@
-import { useEffect } from 'react';
-import {Switch, Route} from 'react-router-dom'
+import { useState, useEffect } from 'react';
+import {Switch, Route, Redirect, useLocation} from 'react-router-dom'
 import {useDispatch, useSelector} from 'react-redux'
 import {fetchProducts} from './actions/productActions'
 import { fetchCategories } from './actions/filterActions'
@@ -23,12 +23,14 @@ import Login from './Components/Pages/Login/login';
 import Register from './Components/Pages/Register/register';
 import Contacts from './Components/Pages/Contacts/contacts';
 import About from './Components/Pages/About/about';
+import ToTopButton from './Components/SecondaryComponents/ToTopButton/toTopButton';
 import './App.css';
 
 function App(props) {
   const dispatch = useDispatch();
   const token = useSelector((state) => state.auth.token)
   const lang = useSelector(state => state.lang.lang)
+  const {pathname} = useLocation()
 
   useEffect(() => {
     dispatch(fetchProducts());
@@ -44,7 +46,11 @@ function App(props) {
       document.getElementsByTagName('body')[0].setAttribute("dir", "ltr")
     }
   },[lang]);
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [pathname])
 
+  
   return (
     <div className="">
         <Header token={token}/>
@@ -69,7 +75,9 @@ function App(props) {
           <Route path="/contacts" component={Contacts} />
           <Route path="/about" component={About} />
           <Route path="/" exact component={Home}/>
+          <Redirect to="/"/>
         </Switch>
+        <ToTopButton />
         <Footer />
     </div>
   );

@@ -1,0 +1,19 @@
+.topButton{
+    position: fixed;
+    bottom: 30px;
+    right: 20px;
+    font-size: 22px;
+    padding: 5px;
+    display: none;
+}
+.topButton.btn-primary{
+    background-color: #6a6afc;
+    border-color: #6a6afc;
+}
+.topButton.btn-primary:hover{
+    background-color: #4242c5;
+}
+body[dir="rtl"] .topButton{
+    right: auto;
+    left: 20px;
+}

@@ -73,7 +73,14 @@
 }
 .slick-list, .slick-track { touch-action: none; }
 
-
+@media (max-width: 767px){
+    .offers{
+        padding: 0;
+    }
+    .deals-card{
+        margin-bottom: 50px;
+    }
+}
 
 /**RTL**/
 body[dir="rtl"] .deals-card .title {

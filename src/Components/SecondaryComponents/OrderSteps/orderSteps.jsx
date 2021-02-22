@@ -11,46 +11,52 @@ const OrderSteps = (props) => {
         checkclasses.push('current')
     }else if(props.page === "payment"){
         payclasses.push("current");
+        payclasses.push("active");
         checkclasses.push("active")
     }else if(props.page === "review"){
         reviewclasses.push("current");
+        reviewclasses.push("active");
         checkclasses.push("active");
         payclasses.push("active")
     }
+
+    const handleActive = (e)=>{
+        console.log(e.target);
+    }
     return ( 
         <div className="order-steps">
-            <NavLink to="/shoppingCart" className="step-item active">
+            <div className="step-item active" onClick={handleActive}>
                 <div className="step-progress">
                     <div className="step-count">1</div>
                 </div>
                 <div className="step-label">
                     <FaShoppingCart className="step-icons"/>Cart
                 </div>
-            </NavLink>
-            <NavLink to="/checkout" className={`step-item ${checkclasses}`}>
+            </div>
+            <div className={`step-item ${checkclasses.join(' ')}`}>
                 <div className="step-progress">
                     <div className="step-count">2</div>
                 </div>
                 <div className="step-label">
                     <FaRegUserCircle className="step-icons"/>Your details
                 </div>
-            </NavLink>
-            <NavLink to="/payment" exact className={`step-item ${payclasses}`}>
+            </div>
+            <div className={`step-item ${payclasses.join(' ')}`}>
                 <div className="step-progress">
                     <div className="step-count">3</div>
                 </div>
                 <div className="step-label">
                     <FaCreditCard className="step-icons"/>Payment
                 </div>
-            </NavLink>
-            <NavLink to="/review" exact className={`step-item ${reviewclasses}`}>
+            </div>
+            <div className={`step-item ${reviewclasses.join(' ')}`}>
                 <div className="step-progress">
                     <div className="step-count">4</div>
                 </div>
                 <div className="step-label">
                     <FaCheckCircle className="step-icons"/>Review
                 </div>
-            </NavLink>
+            </div>
         </div>
      );
 }

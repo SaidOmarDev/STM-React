@@ -36,10 +36,13 @@
     text-decoration: none;
 }
 .topHeader .left .dropdown-toggle{
-    background-color: transparent;
+    background-color: #6a6afc;
     border-color: #6a6afc;
     color: #f7f7f7;
     font-size: 12px;
+    border-radius: 2px;
+    font-weight: 700;
+    padding: 3px 12px;
 }
 .topHeader .left .dropdown-toggle:focus{
     box-shadow: none;
@@ -81,6 +84,12 @@
 @media (max-width: 991px){
     .topHeader .right{
         font-size: 10px;
+    }
+}
+@media (max-width: 767px){
+    .topHeader .login{
+        justify-content: center;
+        margin-top: 5px;
     }
 }
 @media (max-width: 575px){

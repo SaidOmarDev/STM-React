@@ -1,0 +1,10 @@
+.toast{
+    position: absolute;
+    top: 250px;
+    right: 25px;
+    color: #fff;
+}
+.toast .toastIcon{
+    margin-right: 8px;
+    font-size: 22px;
+}

@@ -70,7 +70,21 @@
     float: right;
     color: #7d879c;
 }
-
+@media (max-width: 991px){
+    .profile-sidebar .cart-summary .user-prief{
+        flex-direction: column;
+        text-align: center;
+    }
+    .profile-sidebar .cart-summary .user-prief img{
+        margin-bottom: 10px;
+    }
+}
+@media (max-width: 767px){
+    .profile-sidebar .cart-summary{
+        max-width: 100%;
+        margin-bottom: 50px;
+    }
+}
 
 /**RTL**/
 body[dir="rtl"] .profile-sidebar .cart-summary .user-prief img{
