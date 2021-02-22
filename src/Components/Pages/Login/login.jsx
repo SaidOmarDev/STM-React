@@ -6,6 +6,7 @@ import {Formik, Form, useField} from 'formik'
 import * as Yup from 'yup'
 import { Spinner, Toast } from 'react-bootstrap';
 import AlertToast from '../../SecondaryComponents/AlertToast/alertToast';
+import { BsEyeSlashFill, BsEyeFill } from 'react-icons/bs';
 import './login.css'
 
 const MyTextInput = ({label, ...props}) => {
@@ -13,6 +14,17 @@ const MyTextInput = ({label, ...props}) => {
     return (
         <>
             <label htmlFor={props.id || props.name}>{label}</label>
+            <input className="form-control" {...field} {...props}/>
+            {meta.touched && meta.error ? (
+                <div className="error">{meta.error}</div>
+            ) : (<div className="noerror"></div>)}
+        </>
+    );
+};
+const MyTextInputWithAppend = ({...props}) => {
+    const [field, meta] = useField(props);
+    return (
+        <>
             <input className="form-control" {...field} {...props}/>
             {meta.touched && meta.error ? (
                 <div className="error">{meta.error}</div>
@@ -37,6 +49,7 @@ const MyCheckBox = ({children, ...props}) => {
 
 const Login = (props) => {
     const [isRegister, setIsRegister] = useState(false);
+    const [showPassword, setShowPassword] = useState(false)
     const history = useHistory()
     const dispatch = useDispatch();
     const loading = useSelector(state=> state.auth.loading);
@@ -48,7 +61,9 @@ const Login = (props) => {
             // props.history.replace('/');
         }
     },[token])
-    console.log(errorMessage);
+    const showPasswordHandler = () => {
+        setShowPassword(!showPassword)
+    }
 
     return ( 
         <React.Fragment>
@@ -93,12 +108,20 @@ const Login = (props) => {
                                         />
                                     </div>
                                     <div className="form-group">
-                                        <MyTextInput
-                                            label="Password"
-                                            name="password"
-                                            type="password"
-                                            placeholder="Your Password"
-                                        />
+                                        <label htmlFor="password">Password</label>
+                                        <div className="input-group">
+                                            <MyTextInputWithAppend
+                                                label="Password"
+                                                name="password"
+                                                type={showPassword ? "text" : "password"}
+                                                placeholder="Your Password"
+                                            />
+                                            <div className="input-group-append">
+                                                <span className="input-group-text" onClick={showPasswordHandler}>
+                                                    { showPassword ? <BsEyeFill /> : <BsEyeSlashFill />}
+                                                </span>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div className="form-group">
                                         <MyCheckBox name="rememberMe">

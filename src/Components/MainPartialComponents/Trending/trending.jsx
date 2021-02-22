@@ -14,7 +14,6 @@ const Trending = (props) => {
     let wishlist = useSelector((state) => state.wishlist.items);
     
     if(!token){
-        cart = [];
         wishlist = []
     }
 

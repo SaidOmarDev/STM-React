@@ -80,6 +80,10 @@
 .login-form .noerror{
     opacity: 0;
 }
+.login-form .input-group-text{
+    background-color: transparent;
+    border-left-width: 0;
+}
 
 
 /**ٌRTL**/

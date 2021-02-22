@@ -19,7 +19,6 @@ const Offers = (props) => {
     const lang = useSelector(state => state.lang.lang)
     
     if(!token){
-        cart = [];
         wishlist = []
     }
     let settings = {

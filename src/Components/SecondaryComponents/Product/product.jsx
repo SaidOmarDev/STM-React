@@ -13,6 +13,7 @@ import { OverlayTrigger, Spinner, Toast, Tooltip } from 'react-bootstrap'
 import AlertToast from '../AlertToast/alertToast'
 
 const Product = (props) => {
+    const [proId, setProId] = useState('')
     const token = useSelector(state => state.auth.token)
     const loading = useSelector(state => state.cart.loading)
     const dispatch = useDispatch();
@@ -25,9 +26,9 @@ const Product = (props) => {
         // }else{
         //     history.push("/login");
         // }
-        const added = dispatch(addToCart(product));
+        dispatch(addToCart(product));
         setAlert(true)
-        console.log(added);
+        setProId(product.id)
     }
     const addToWishListHandler = (product)=>{
         if(token){
@@ -39,11 +40,11 @@ const Product = (props) => {
 
     return ( 
         <React.Fragment>
-            {/* {showAlert ? 
-                <AlertToast /> : null  
+            {/* {showAlert && (props.product.id === proId) && !loading ? 
+                <AlertToast type="bg-success" content="Product added to cart successfully"/> : null  
             } */}
             <div className="product card">
-                {loading ? 
+                {loading && (props.product.id === proId) ? 
                     <div className="spinner">
                         <Spinner animation="border"/>
                     </div> : null

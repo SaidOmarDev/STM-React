@@ -9,23 +9,23 @@ export function fetchCart() {
             payload: data
         })
     }
- }
+}
 
- export function addStart() { 
+export function addStart() { 
     return async function (dispatch) {
         dispatch({
             type: TYPES.ADD_START
         })
     }
- }
- export function addSuccess(product) {
-     return function (dispatch) {
-         dispatch({
-             type: TYPES.ADD_SUCCESS,
-             product: product
-         })
-     }
- }
+}
+export function addSuccess(product) {
+    return function (dispatch) {
+        dispatch({
+            type: TYPES.ADD_SUCCESS,
+            product: product
+        })
+    }
+}
 export function addToCart(product) { 
     return async function (dispatch) {
         dispatch(addStart())
@@ -39,29 +39,29 @@ export function addToCart(product) {
             console.log(err);
         })
     }
- }
+}
 
- export function removeFromCart(productId) {
-     return async function(dispatch){
+export function removeFromCart(productId) {
+    return async function(dispatch){
         const {data} = await axios.delete('http://localhost:3001/cart/'+ productId);
         dispatch({
             type: TYPES.REMOVE_FROM_CART,
             payload: productId
         })
-     }
+    }
      
- }
+}
 
- export function updateCartQuantity(productId, quantity) {
+export function updateCartQuantity(productId, quantity) {
     return async function(dispatch){
         const {data} = await axios.patch('http://localhost:3001/cart/'+ productId, {"quantity": quantity})
-       dispatch({
-           type: TYPES.UPDATE_CART_QUANTITY,
-           payload: {
-               data,
-               productId
-           }
-       })
+        dispatch({
+            type: TYPES.UPDATE_CART_QUANTITY,
+            payload: {
+                data,
+                productId
+            }
+        })
     }
     
 }

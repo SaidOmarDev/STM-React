@@ -21,7 +21,6 @@ const ShopProducts = () => {
     let wishlist = useSelector((state) => state.wishlist.items)
 
     if(!token){
-        cart = []
         wishlist = []
     }
 

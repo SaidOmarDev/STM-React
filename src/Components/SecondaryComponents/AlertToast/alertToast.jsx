@@ -12,7 +12,7 @@ const AlertToast = (props) => {
     //     setShow(false)
     // }
     return ( 
-        <Toast onClose={() => setShow(false)} show={showToast} delay={4000} autohide className={props.type}>
+        <Toast onClose={() => setShow(false)} show={showToast} delay={4000}  className={props.type}>
             {/* <Toast.Header>
                 <img src="holder.js/20x20?text=%20" className="rounded mr-2" alt="" />
                 <strong className="mr-auto">Bootstrap</strong>
