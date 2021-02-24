@@ -11,7 +11,7 @@ export function fetchProducts() {
         //         payload: data
         //     })
         // )
-        const {data} = await axios.get('http://localhost:3001/products');
+        const {data} = await axios.get('https://stm-react-default-rtdb.firebaseio.com/products.json');
         dispatch({
             type: TYPES.FETCH_PRODUCTS,
             payload: data

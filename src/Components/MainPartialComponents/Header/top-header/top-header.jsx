@@ -29,7 +29,7 @@ const TopHeader = (props) => {
         <div className="topHeader">
             <Container>
                 <Row>
-                    <Col md={2} sm={4}>
+                    <Col md={2} xs={4}>
                         <div className="left">
                             <div className="lang">
                                 <DropdownButton id="dropdown-basic-button" title={lang} onSelect={handleLang}>
@@ -43,7 +43,7 @@ const TopHeader = (props) => {
                             </div>
                         </div>
                     </Col>
-                    <Col md={6} sm={8}>
+                    <Col md={6} sm={8} className="rightCol">
                         <div className="right">
                             <div className="phone">
                                 <span><BiPhone className="top-icon"/>Call: 01020122011</span>
@@ -53,7 +53,7 @@ const TopHeader = (props) => {
                             </div>
                         </div>
                     </Col>
-                    <Col md={4}>
+                    <Col md={4} xs={8}>
                         {!props.token ? (
                             <div className="login">
                                 <AiOutlineUser className="user-icon"/>

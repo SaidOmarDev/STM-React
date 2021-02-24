@@ -13,11 +13,6 @@ const AlertToast = (props) => {
     // }
     return ( 
         <Toast onClose={() => setShow(false)} show={showToast} delay={4000}  className={props.type}>
-            {/* <Toast.Header>
-                <img src="holder.js/20x20?text=%20" className="rounded mr-2" alt="" />
-                <strong className="mr-auto">Bootstrap</strong>
-                <small>just now</small>
-            </Toast.Header> */}
             <Toast.Body>{props.type === 'bg-danger' ? (<CgDanger className="toastIcon"/>) : null}{props.content}</Toast.Body>
         </Toast>
      );

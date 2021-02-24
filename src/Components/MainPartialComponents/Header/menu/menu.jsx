@@ -3,9 +3,11 @@ import { Container } from 'react-bootstrap';
 import {FaBars} from 'react-icons/fa'
 import { Link, NavLink } from 'react-router-dom';
 import './menu.css'
+import ResponsiveMenu from './ResponsiveMenu/responsiveMenu';
 
 const Menu = (props) => {
     const [ishover, setIshover] = useState(false);
+    const [showResMenu, setShowResMenu] = useState(false);
 
     const handleHover = () => {
         setIshover(!ishover)
@@ -13,6 +15,10 @@ const Menu = (props) => {
     let classes = [] 
     if(ishover){
         classes.push('d-flex')
+    }
+
+    const responsiveMenuHandler = ()=>{
+        setShowResMenu(!showResMenu)
     }
     return ( 
         <div className="menu">
@@ -120,10 +126,10 @@ const Menu = (props) => {
                         </div>
                     </div>
                     <nav className="navbar navbar-expand-lg navbar-light">
-                        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                        <button className="navbar-toggler" type="button" aria-label="Toggle navigation" onClick={responsiveMenuHandler}>
                             <span className="navbar-toggler-icon"></span>
                         </button>
-                        <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+                        <div className="navbar-collapse" id="navbarNavAltMarkup">
                             <div className="navbar-nav">
                                 <NavLink className="nav-link" to="/" exact>Home <span className="sr-only">(current)</span></NavLink>
                                 <NavLink className="nav-link" to="/shopProducts">Shop</NavLink>
@@ -134,6 +140,8 @@ const Menu = (props) => {
                         </div>
                     </nav>
                 </div>
+                {showResMenu ? <ResponsiveMenu /> : null}
+                
             </Container>
         </div>
      );

@@ -87,9 +87,8 @@
     }
 }
 @media (max-width: 767px){
-    .topHeader .login{
-        justify-content: center;
-        margin-top: 5px;
+    .topHeader .rightCol{
+        display: none;
     }
 }
 @media (max-width: 575px){

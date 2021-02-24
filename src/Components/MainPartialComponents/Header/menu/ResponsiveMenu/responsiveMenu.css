@@ -1,0 +1,33 @@
+.responsiveMenu{
+    margin-top: 15px;
+    background-color: #6a6afc;
+    color: #fff;
+    transition: all .5s ease-in-out;
+}
+.responsiveMenu .navbar-nav .nav-link{
+    color: #fff;
+}
+.responsiveMenu .search{
+    display: none;
+    padding: 10px 0;
+}
+.responsiveMenu .right{
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    font-size: 13px;
+}
+.responsiveMenu .right .top-icon{
+    font-size: 20px;
+    margin-right: 5px;
+}
+
+@media (max-width: 767px){
+    .responsiveMenu .search{
+        display: block;
+    }
+    .responsiveMenu .right{
+        display: flex;
+    }
+}

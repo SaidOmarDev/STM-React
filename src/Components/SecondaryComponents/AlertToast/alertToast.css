@@ -1,6 +1,6 @@
 .toast{
-    position: absolute;
-    top: 250px;
+    position: fixed;
+    top: 0;
     right: 25px;
     color: #fff;
 }

@@ -1,7 +1,7 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import {Formik, Form, useField} from 'formik'
 import * as Yup from 'yup'
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { auth } from '../../../actions/AuthActions';
@@ -65,14 +65,18 @@ const MySelect = ({ label, ...props }) => {
 
 const Register = (props) => {
     const dispatch = useDispatch()
+    const history = useHistory()
     const [isRegister, setIsRegister] = useState(true);
-    const [show, setShow] = useState(true);
     const loading = useSelector(state=> state.auth.loading);
     const error = useSelector(state=> state.auth.error)
+    const token = useSelector(state=> state.auth.token)
 
-    const toggleShow = () => {
-        setShow(!show)
-    }
+    useEffect(() => {
+        if(token){
+            history.push('/verify')
+        }
+    }, [token])
+    
     return ( 
         <div className="login-page">
             {!loading ? (

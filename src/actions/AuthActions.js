@@ -7,8 +7,9 @@ export function authStart() {
             type: TYPES.AUTH_START
         })
     }
- }
- export function authSuccess(token, userid) { 
+}
+
+export function authSuccess(token, userid) { 
     return function (dispatch) { 
         dispatch({
             type: TYPES.AUTH_SUCCESS,
@@ -16,15 +17,17 @@ export function authStart() {
             userid: userid
         })
     }
- }
- export function authFail(error) { 
+}
+
+export function authFail(error) { 
     return function (dispatch) { 
         dispatch({
             type: TYPES.AUTH_FAIL,
             error: error
         })
     }
- }
+}
+
  export function auth(values, isRegister) { 
      return async function (dispatch) { 
          dispatch(authStart())
@@ -81,11 +84,20 @@ export function authStart() {
         //  })
     }
  }
- export function logout(){
-     return function (dispatch){
-         localStorage.removeItem('apiToken')
-         dispatch({
-             type: TYPES.LOGOUT
-         })
-     }
- }
+
+export function verification(){
+    return function(dispatch){
+        dispatch({
+
+        })
+    }
+}
+
+export function logout(){
+    return function (dispatch){
+        localStorage.removeItem('apiToken')
+        dispatch({
+            type: TYPES.LOGOUT
+        })
+    }
+}

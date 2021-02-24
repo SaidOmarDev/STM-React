@@ -24,6 +24,7 @@ import Register from './Components/Pages/Register/register';
 import Contacts from './Components/Pages/Contacts/contacts';
 import About from './Components/Pages/About/about';
 import ToTopButton from './Components/SecondaryComponents/ToTopButton/toTopButton';
+import VerifiCode from './Components/Pages/VerifyCode/verifyCode'
 import './App.css';
 
 function App(props) {
@@ -68,6 +69,7 @@ function App(props) {
           <Route path="/checkout" component={CheckoutDetails} />
           <Route path="/payment" component={Payment} />
           <Route path="/review" component={Review} />
+          <Route path="/verify" component={VerifiCode} />
           <Route path="/login" render={(props)=>(
               <Login {...props}/>)
             } />
